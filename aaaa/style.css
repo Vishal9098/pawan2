@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport meta – critical for mobile responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Carpet Cleaning Loveland - GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile</title>
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;       /* prevent horizontal scroll on mobile */
+      width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ---------- UTILITY CLASSES (touch friendly) ---------- */
+    a, button, .clickable {
+      cursor: pointer;
+      -webkit-tap-highlight-color: rgba(212, 175, 55, 0.2);
+    }
+
+    /* ---------- TOP BAR (same as reference) ---------- */
+    .topbar {
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 20px;
+      font-size: 14px;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .topbar-left span {
+      color: #d4af37;
+      font-size: 13px;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .topbar a {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+      font-size: 13px;
+    }
+
+    .call-now-btn {
+      background: #d4af37;
+      color: #000 !important;
+      padding: 5px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* ---------- NAVBAR (exactly like reference: hamburger + desktop nav) ---------- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: #000;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: #d4af37;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* ----- Hamburger (mobile only) ----- */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 100%;
+      height: 3px;
+      background: #d4af37;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    /* ----- Desktop Navigation (hidden on mobile) ----- */
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .desktop-nav ul {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .desktop-nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 15px;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+
+    .desktop-nav a:hover {
+      color: #d4af37;
+    }
+
+    /* Desktop dropdown */
+    .desktop-dropdown {
+      position: relative;
+    }
+
+    .desktop-dropdown > a::after {
+      content: " ▾";
+      font-size: 12px;
+    }
+
+    .desktop-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #111;
+      list-style: none;
+      padding: 8px 0;
+      min-width: 200px;
+      display: none;
+      flex-direction: column;
+      border: 1px solid #333;
+      border-radius: 6px;
+      z-index: 1001;
+    }
+
+    .desktop-dropdown-menu li {
+      padding: 8px 20px;
+      text-align: left;
+    }
+
+    .desktop-dropdown-menu a {
+      font-size: 14px;
+      display: block;
+    }
+
+    .desktop-dropdown:hover .desktop-dropdown-menu {
+      display: flex;
+    }
+
+    /* ----- Action Buttons (always visible) ----- */
+    .nav-btns {
+      display: flex;
+      gap: 10px;
+    }
+
+    .call-btn, .schedule-btn {
+      padding: 8px 16px;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    .call-btn {
+      background: #c6a86b;
+    }
+
+    .schedule-btn {
+      background: #b79a5c;
+    }
+
+    /* ----- Mobile Menu (hidden by default) ----- */
+    .mobile-menu {
+      display: none;
+      width: 100%;
+      background: #111;
+      border-radius: 12px;
+      margin-top: 12px;
+      padding: 8px 0;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+    }
+
+    .mobile-menu li {
+      border-bottom: 1px solid #222;
+    }
+
+    .mobile-menu li:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 16px 20px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .mobile-menu a:active {
+      background: #222;
+      color: #d4af37;
+    }
+
+    /* Mobile dropdown */
+    .mobile-dropdown-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      cursor: pointer;
+    }
+
+    .mobile-dropdown-header span {
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .mobile-dropdown-header .arrow {
+      color: #d4af37;
+      font-size: 14px;
+      transition: transform 0.3s;
+    }
+
+    .mobile-dropdown.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .mobile-dropdown-menu {
+      display: none;
+      background: #1a1a1a;
+      padding: 5px 0;
+    }
+
+    .mobile-dropdown.active .mobile-dropdown-menu {
+      display: block;
+    }
+
+    .mobile-dropdown-menu a {
+      padding-left: 35px !important;
+      font-size: 15px !important;
+    }
+
+    /* ----- MEDIA QUERIES (switch between mobile / desktop) ----- */
+    @media (max-width: 1024px) {
+      .desktop-nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .navbar {
+        align-items: center;
+      }
+      .nav-btns .call-btn, 
+      .nav-btns .schedule-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .hamburger {
+        display: none !important;
+      }
+      .mobile-menu {
+        display: none !important;
+      }
+      .desktop-nav {
+        display: flex;
+      }
+    }
+
+    /* small screen fine‑tuning */
+    @media (max-width: 600px) {
+      .topbar-left span {
+        display: none;
+      }
+      .topbar {
+        justify-content: center;
+        text-align: center;
+      }
+      .nav-btns .schedule-btn {
+        display: none;
+      }
+      .nav-btns .call-btn {
+        padding: 8px 18px;
+      }
+    }
+
+    /* ---------- ALL OTHER STYLES (completely unchanged) ---------- */
+    .hero {
+      min-height: 70vh;
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                  url('https://images.unsplash.com/photo-1581578731548-c64695cc6952');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      width: 100%;
+    }
+    .hero-content { max-width: 900px; width: 100%; }
+    .hero h1 { font-size: clamp(28px, 8vw, 60px); margin-bottom: 20px; line-height: 1.2; }
+    .hero p { max-width: 700px; margin: 0 auto 30px; font-size: clamp(16px, 4vw, 18px); line-height: 1.7; }
+    .hero h3 { color: #d4af37; margin-bottom: 25px; letter-spacing: 2px; font-size: clamp(14px, 3vw, 18px); }
+    .buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+    .buttons a { background: #b79a5c; padding: 14px 20px; text-decoration: none; color: #fff; font-weight: bold; border-radius: 6px; flex: 1 1 180px; font-size: 16px; }
+
+    .features { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/1600x900/?clean-carpet,room'); background-size: cover; background-position: center; text-align: center; padding: 60px 20px; }
+    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 40px; }
+    .badges img { width: 90px; height: 90px; background: #d4af37; padding: 18px; border-radius: 50%; transition: transform 0.3s; cursor: pointer; }
+    .features h2 { color: #d4af37; font-size: clamp(24px, 6vw, 36px); letter-spacing: 2px; line-height: 1.4; }
+
+    .services-intro { background: #f5f5f5; color: #333; text-align: center; padding: 70px 20px; }
+    .services-intro .stars { color: #d4af37; font-size: 40px; letter-spacing: 6px; margin-bottom: 10px; }
+    .services-intro .experience { color: #d4af37; font-size: 14px; letter-spacing: 3px; margin-bottom: 25px; }
+    .services-intro h2 { font-size: clamp(32px, 7vw, 48px); margin-bottom: 20px; }
+    .services-intro p { max-width: 850px; margin: 0 auto; font-size: clamp(16px, 4vw, 20px); line-height: 1.7; color: #555; }
+
+    .services-grid { background: #f5f5f5; display: grid; grid-template-columns: 1fr; gap: 20px; padding: 30px 20px 50px; }
+    .service-card { position: relative; height: 300px; overflow: hidden; border-radius: 12px; cursor: pointer; max-width: 600px; margin: 0 auto; width: 100%; }
+    .service-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; text-align: center; padding: 15px; }
+    .overlay h3 { color: #fff; font-size: clamp(24px, 7vw, 34px); font-weight: 500; line-height: 1.3; }
+
+    .about-company { background: #f5f5f5; padding: 60px 20px; }
+    .about-container { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .about-image img { width: 100%; height: auto; max-height: 450px; object-fit: cover; border-radius: 10px; }
+    .about-content { text-align: center; color: #333; }
+    .about-content h2 { font-size: clamp(32px, 7vw, 48px); margin-bottom: 20px; }
+    .about-content p { font-size: clamp(16px, 4vw, 20px); line-height: 1.7; color: #555; max-width: 550px; margin: 0 auto 30px; }
+    .about-btn { background: #9f8d57; color: #fff; padding: 16px 32px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; }
+
+    .why-choose { background: #efefef; padding: 60px 20px; }
+    .why-container { display: grid; grid-template-columns: 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; }
+    .why-text { text-align: center; color: #333; }
+    .why-text h2 { font-size: clamp(40px, 8vw, 56px); margin-bottom: 20px; }
+    .why-text p { font-size: clamp(16px, 4vw, 20px); line-height: 1.7; color: #555; max-width: 550px; margin: 0 auto 30px; }
+    .why-btn { background: #9f8d57; color: #fff; padding: 18px 36px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; }
+    .why-images img { width: 100%; max-height: 450px; object-fit: cover; border-radius: 10px; }
+
+    .cta-section { background: url('https://images.unsplash.com/photo-1584622781564-1d987f7333c1'); background-size: cover; background-position: center; padding: 80px 20px; text-align: center; color: #fff; position: relative; }
+    .cta-section::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+    .cta-section h2, .cta-section p, .cta-buttons { position: relative; }
+    .cta-section h2 { font-size: clamp(32px, 7vw, 48px); margin-bottom: 20px; }
+    .cta-section p { font-size: clamp(16px, 4vw, 20px); margin-bottom: 35px; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
+    .cta-buttons a { background: #a9975b; padding: 15px 28px; color: #fff; text-decoration: none; font-weight: bold; border-radius: 6px; flex: 1 1 200px; }
+
+    .neighborhoods { background: url('https://source.unsplash.com/1600x900/?carpet,livingroom'); background-size: cover; background-position: center; padding: 60px 20px; color: #fff; text-align: center; }
+    .neighborhoods h2 { font-size: clamp(32px, 7vw, 50px); margin-bottom: 20px; }
+    .neighborhoods p { max-width: 900px; margin: 0 auto 50px; font-size: clamp(15px, 4vw, 20px); }
+    .circle-grid { display: grid; grid-template-columns: 1fr; gap: 35px; max-width: 400px; margin: 0 auto; }
+    .circle-card img { width: 100%; max-width: 250px; height: 250px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 3px solid #d4af37; }
+    .circle-card h3 { font-size: 22px; color: #d4af37; }
+    .circle-card p { font-size: 16px; max-width: 280px; margin: 0 auto; }
+
+    .footer { background: #000; color: #fff; display: flex; flex-direction: column; gap: 35px; padding: 50px 20px; border-top: 1px solid #d4af37; text-align: center; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px 20px; margin-bottom: 20px; }
+    .footer-links a { color: #fff; text-decoration: none; font-size: 15px; }
+    .hours p { margin: 5px 0; }
+    .footer a[href^="tel"] { color: #d4af37; text-decoration: none; }
+
+    @media (min-width: 600px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .circle-grid { grid-template-columns: repeat(2, 1fr); max-width: 800px; gap: 30px; }
+    }
+    @media (min-width: 900px) {
+      .services-grid { grid-template-columns: repeat(4, 1fr); padding: 60px; }
+      .circle-grid { grid-template-columns: repeat(4, 1fr); max-width: none; gap: 40px; }
+      .about-container { grid-template-columns: 1fr 1fr; }
+      .why-container { grid-template-columns: 1fr 1fr; }
+      .footer { flex-direction: row; justify-content: space-between; text-align: left; padding: 80px 60px; }
+      .footer-links { justify-content: flex-start; }
+      .hero { min-height: 85vh; }
+      .service-card { height: 380px; }
+    }
+    @media (min-width: 1200px) {
+      .desktop-nav ul { gap: 28px; }
+      .hero h1 { font-size: 60px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- TOP BAR – same as reference -->
+  <!-- <div class="topbar">
+    <div class="topbar-left">
+      <span>📍 Bhopal, Madhya Pradesh</span>
+      <span>⏰ Open 24/7</span>
+    </div>
+    <div class="topbar-right">
+      <a href="#">⭐ Leave Review</a>
+      <a href="tel:+919424430664" class="call-now-btn">📞 +91 94244 30664</a>
+    </div>
+  </div> -->
+
+  <!-- NAVBAR with hamburger (exactly as your reference) -->
+  <header class="navbar">
+    <div class="logo" onclick="window.location.href='#'">GOODWILL BHARAT™ Upholstery Cleaners</div>
+    
+    <!-- Desktop Navigation (visible on large screens) -->
+    <div class="desktop-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li class="desktop-dropdown">
+          <a href="#">Services</a>
+          <ul class="desktop-dropdown-menu">
+            <li><a href="tilefloorcleaning.html">Tile Floor Cleaning</a></li>
+            <li><a href="#">Pet Stain Removal</a></li>
+            <li><a href="#">Upholstery Cleaning</a></li>
+            <li><a href="#">Air Duct Cleaning</a></li>
+            <li><a href="#">Commercial Cleaning</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Locations</a></li>
+        <li><a href="EmergencyFloorCleaningService.html">Emergency</a></li>
+        <li><a href="CommercialCleaning.html">Commercial</a></li>
+        <li><a href="house-cleaning.html">House Cleaning</a></li>
+        <li><a href="#">More</a></li>
+      </ul>
+    </div>
+    
+    <!-- Action Buttons -->
+    <!-- <div class="nav-btns">
+      <a class="call-btn" href="tel:+19702007677">📞 Call</a>
+      <a class="schedule-btn" href="#" onclick="alert('Schedule service form')">📅 Schedule</a>
+    </div> -->
+
+    <!-- Hamburger Icon (mobile only) -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li class="mobile-dropdown" id="mobileServices">
+        <div class="mobile-dropdown-header">
+          <span>Services</span>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="mobile-dropdown-menu">
+          <a href="tilefloorcleaning.html">Tile Floor Cleaning</a>
+          <a href="#">Pet Stain Removal</a>
+          <a href="#">Upholstery Cleaning</a>
+          <a href="#">Air Duct Cleaning</a>
+          <a href="#">Commercial Cleaning</a>
+        </div>
+      </li>
+      <li><a href="#">Locations</a></li>
+      <li><a href="EmergencyFloorCleaningService.html">Emergency Floor Cleaning</a></li>
+      <li><a href="CommercialCleaning.html">Commercial Cleaning</a></li>
+      <li><a href="house-cleaning.html">House Cleaning</a></li>
+      <li><a href="#">More</a></li>
+      <li><a href="#">⭐ Leave Review</a></li>
+    </ul>
+  </div>
+
+  <!-- rest of the page (unchanged) -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>CARPET CLEANING NEAR YOU IN MP , BHOPAL</h1>
+      <p>Revitalize your carpets with expert carpet cleaning in Loveland, Larimer County. GOODWILL BHARAT™ Upholstery Cleaners Carpet and Tile Cleaning removes dirt, stains, and allergens for a fresher, healthier home.</p>
+      <h3>QUALITY FLOOR CLEANING</h3>
+      <div class="buttons">
+        <a href="#">📋 Get a Quote</a>
+        <a href="tel:+19702007677">📞 Call Us to Schedule</a>
+        <a href="#" onclick="alert('Emergency')">🚨 Emergency Service</a>
+        <a href="#" onclick="alert('Booking')">📅 Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="badges">
+      <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Eco Friendly" onclick="alert('eco')">
+      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="24/7" onclick="alert('24/7')">
+      <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Certified" onclick="alert('certified')">
+      <img src="https://cdn-icons-png.flaticon.com/512/2909/2909766.png" alt="Guaranteed" onclick="alert('guaranteed')">
+    </div>
+    <h2>OPEN 24/7/365 FOR EMERGENCY FLOOR CLEANING</h2>
+  </section>
+
+  <section class="services-intro">
+    <div class="stars">★★★★★</div>
+    <div class="experience">5 STAR EXPERIENCE</div>
+    <h2>Our Floor Cleaning Services</h2>
+    <p>At GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile, we pride ourselves on using environmentally safe products to revitalize your floors, ensuring a clean and healthy home environment. Our professional floor cleaners are equipped to handle all your cleaning needs with precision and care. Our services include:</p>
+  </section>
+
+  <section class="services-grid">
+    <div class="service-card" onclick="alert('Deep cleaning')"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Deep Cleaning"><div class="overlay"><h3>Deep Cleaning for Sofas and Couches</h3></div></div>
+    <div class="service-card" onclick="alert('Stain removal')"><img src="https://images.unsplash.com/photo-1558317374-067fb5f30001" alt="Stain Removal"><div class="overlay"><h3>Stain Removal</h3></div></div>
+    <div class="service-card" onclick="alert('Pet stain')"><img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1" alt="Pet Stain"><div class="overlay"><h3>Pet Stain and Odor Removal</h3></div></div>
+    <div class="service-card" onclick="alert('Tile cleaning')"><img src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1" alt="Tile Cleaning"><div class="overlay"><h3>Tile Cleaning</h3></div></div>
+  </section>
+
+  <section class="about-company">
+    <div class="about-container">
+      <div class="about-image"><img src="https://images.unsplash.com/photo-1558317374-067fb5f30001" alt="About"></div>
+      <div class="about-content"><h2>About Our Floor Cleaning Company</h2><p>With a focus on sustainability and excellence, GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile is committed to delivering top-notch results that exceed expectations.</p><a href="#" class="about-btn" onclick="alert('Call us')">📞 Call Us Today</a></div>
+    </div>
+  </section>
+
+  <section class="why-choose">
+    <div class="why-container">
+      <div class="why-text"><h2>Why Choose Us</h2><p>Choose GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile for our eco-friendly approach, attention to detail, and dedication to customer satisfaction.</p><a href="#" class="why-btn" onclick="alert('Schedule')">📞 Call Us to Schedule</a></div>
+      <div class="why-images"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a" alt="Why Choose Us"></div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Schedule a Cleaning Today</h2><p>We guarantee that you will be satisfied with the results.</p>
+    <div class="cta-buttons"><a href="#">📋 Get A Quote</a><a href="tel:+19702007677">📞 Call Us to Schedule</a></div>
+  </section>
+
+  <section class="neighborhoods">
+    <h2>Key neighborhoods where we offer carpet cleaning in MP , BHOPAL</h2>
+    <p>We provide <b>carpet cleaning in MP , BHOPAL</b>, covering key neighborhoods like <b>Downtown Loveland, Mariana Butte, Boyd Lake, and The Lakes at Centerra.</b></p>
+    <div class="circle-grid">
+      <div class="circle-card"><img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae" alt="Blackbird"><h3>Blackbird Nolls MP , BHOPAL</h3><p>Peaceful neighborhood with parks.</p></div>
+      <div class="circle-card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Boyd Lake"><h3>Boyd Lake, MP , BHOPAL</h3><p>Scenic neighborhood near water views.</p></div>
+      <div class="circle-card"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="Seven Lakes"><h3>Seven Lakes, MP , BHOPAL</h3><p>Tranquil neighborhood surrounded by nature.</p></div>
+      <div class="circle-card"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429" alt="Mariana Butte"><h3>Mariana Butte, MP , BHOPAL</h3><p>Scenic landscapes and beautiful homes.</p></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div><p>©2024 GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile® - All rights reserved.</p></div>
+    <div>
+      <div class="footer-links"><a href="#">Home</a><a href="#">Free Quote</a><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Contact</a></div>
+      <p>Address: Bhopal, Madhya Pradesh, India</p>
+      <div class="hours"><p>Monday - Sunday Open 24 hours</p></div>
+      <p>Phone: <a href="tel:+919424430664">+91 94244 30664</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle (exactly as reference)
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+      });
+    }
+
+    // Mobile dropdown toggle
+    const mobileServices = document.getElementById('mobileServices');
+    if (mobileServices) {
+      mobileServices.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+      });
+    }
+
+    // Close mobile menu when a link is clicked
+    const mobileLinks = document.querySelectorAll('.mobile-menu a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
