@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kitchen Deep Cleaning — GOODWILL BHARAT™
+Sofa, Carpet & Tile Cleaning Cleaners</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--black:#080808;--black-mid:#111111;--black-soft:#1a1a1a;--charcoal:#222222;--gold:#c8a85a;--gold-light:#e4c97a;--gold-pale:#f2e0a8;--white:#ffffff;--off-white:#f9f5ee;--cream:#f2ead8;--muted:#888888;--border:rgba(200,168,90,0.2);--border-light:rgba(200,168,90,0.08);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'Montserrat',sans-serif;overflow-x:hidden;line-height:1.6;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");}
+img{display:block;}a{text-decoration:none;color:inherit;}
+.gold-line{width:60px;height:1px;background:var(--gold);display:inline-block;margin-bottom:20px;}
+.gold-line-center{display:block;margin:0 auto 20px;}
+
+/* NAV */
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:all .5s ease;}
+header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:22px 48px;max-width:1320px;margin:0 auto;}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;line-height:1.1;}
+.logo-text em{font-style:normal;color:var(--gold);display:block;font-size:10px;letter-spacing:4px;font-family:'Montserrat',sans-serif;font-weight:400;margin-top:2px;}
+.nav-links{display:flex;align-items:center;gap:20px;list-style:none;}
+.nav-links>li>a{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500;color:rgba(255,255,255,.7);transition:color .3s;position:relative;padding:4px 0;white-space:nowrap;}
+.nav-links>li>a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .3s;}
+.nav-links>li>a:hover{color:var(--gold);}
+.nav-links>li>a:hover::after{width:100%;}
+.has-dropdown{position:relative;}
+.dropdown-menu{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);min-width:220px;background:var(--black-soft);border:1px solid var(--border);opacity:0;visibility:hidden;transition:all .3s ease;pointer-events:none;list-style:none;}
+.dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;width:12px;height:12px;background:var(--black-soft);border-left:1px solid var(--border);border-top:1px solid var(--border);transform:translateX(-50%) rotate(45deg);}
+.has-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;pointer-events:all;top:calc(100% + 14px);}
+.dropdown-menu li a{display:block;padding:13px 22px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);border-bottom:1px solid var(--border-light);transition:all .3s;}
+.dropdown-menu li:last-child a{border-bottom:none;}
+.dropdown-menu li a:hover{color:var(--gold);padding-left:28px;}
+.nav-cta{font-size:11px!important;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;padding:12px 26px;border:1px solid var(--gold);color:var(--gold)!important;transition:all .35s!important;}
+.nav-cta::after{display:none!important;}
+.nav-cta:hover{background:var(--gold)!important;color:var(--black)!important;}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;width:36px;padding:4px 0;}
+.menu-toggle span{display:block;height:1px;background:var(--gold);transition:all .4s ease;}
+.menu-toggle.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px);}
+.menu-toggle.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.menu-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
+.mobile-menu{position:fixed;top:0;right:-100%;bottom:0;width:min(340px,90vw);background:var(--black-soft);z-index:999;padding:100px 40px 60px;transition:right .5s cubic-bezier(.4,0,.2,1);border-left:1px solid var(--border);overflow-y:auto;}
+.mobile-menu.open{right:0;}
+.mobile-menu ul{list-style:none;}
+.mobile-menu>ul>li{border-bottom:1px solid var(--border-light);}
+.mobile-menu>ul>li>a{display:block;padding:16px 0;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500;color:rgba(255,255,255,.7);transition:color .3s;}
+.mobile-menu>ul>li>a:hover{color:var(--gold);}
+.mobile-sub{padding-left:18px;list-style:none;display:none;}
+.mobile-sub.show{display:block;}
+.mobile-sub li a{display:block;padding:12px 0;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5);border-bottom:1px solid var(--border-light);}
+.mobile-sub li:last-child a{border-bottom:none;}
+.mobile-sub li a:hover{color:var(--gold);}
+.menu-item-with-sub{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:16px 0;}
+.menu-item-with-sub span{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500;color:rgba(255,255,255,.7);}
+.menu-item-with-sub .sub-arrow{color:var(--gold);font-size:12px;transition:transform .3s;}
+.menu-item-with-sub.open .sub-arrow{transform:rotate(180deg);}
+.m-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:998;backdrop-filter:blur(4px);}
+.m-overlay.open{display:block;}
+
+/* BUTTONS */
+.btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);padding:16px 34px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;transition:all .35s;}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);padding:16px 34px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;border:1px solid rgba(255,255,255,.35);transition:all .35s;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+
+/* HERO */
+.svc-hero{position:relative;min-height:80vh;display:flex;align-items:flex-end;padding:0 0 80px;overflow:hidden;}
+.svc-hero-bg{position:absolute;inset:0;z-index:0;}
+.svc-hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.35);}
+.svc-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,.95) 0%,rgba(8,8,8,.4) 60%,transparent 100%);}
+.svc-hero-content{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:0 48px;width:100%;}
+.svc-hero-pre{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:500;display:flex;align-items:center;gap:16px;margin-bottom:24px;}
+.svc-hero-pre::before{content:'';width:40px;height:1px;background:var(--gold);opacity:.5;}
+.svc-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,8vw,90px);font-weight:300;line-height:1.05;letter-spacing:-1px;margin-bottom:20px;}
+.svc-hero h1 em{font-style:italic;color:var(--gold-light);}
+.svc-hero-desc{font-size:17px;color:rgba(255,255,255,.75);max-width:640px;line-height:1.85;font-weight:300;margin-bottom:36px;}
+.svc-hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+
+/* STATS BAR */
+.stats-bar{background:var(--black-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;max-width:100%;}
+.stat-item{flex:1;text-align:center;padding:30px 20px;border-right:1px solid var(--border);}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--gold);display:block;line-height:1;}
+.stat-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:6px;display:block;font-weight:500;}
+
+/* ABOUT */
+.svc-about{display:grid;grid-template-columns:1fr 1fr;min-height:560px;}
+.svc-about-img{position:relative;overflow:hidden;}
+.svc-about-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease;}
+.svc-about-img:hover img{transform:scale(1.04);}
+.svc-about-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,168,90,.08),transparent 60%);}
+.svc-about-text{background:var(--off-white);color:var(--black);display:flex;align-items:center;padding:80px 72px;}
+.svc-about-inner{max-width:500px;}
+.svc-about-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,48px);font-weight:400;line-height:1.15;color:var(--black);margin-bottom:20px;}
+.svc-about-inner h2 em{font-style:italic;color:var(--gold);}
+.svc-about-inner p{font-size:16px;color:#555;line-height:1.9;font-weight:300;margin-bottom:28px;}
+.svc-checklist{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:36px;}
+.svc-checklist li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#444;font-weight:400;}
+.svc-checklist li::before{content:'✦';color:var(--gold);font-size:.75rem;margin-top:2px;flex-shrink:0;}
+
+/* PROCESS */
+.svc-process{background:var(--black-mid);padding:90px 48px;}
+.svc-process .sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px;}
+.svc-process h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,52px);font-weight:300;line-height:1.1;margin-bottom:60px;}
+.svc-process h2 em{font-style:italic;color:var(--gold-light);}
+.process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--border);}
+.p-step{padding:36px 28px;border-right:1px solid var(--border);position:relative;transition:background .3s;}
+.p-step:hover{background:rgba(200,168,90,.04);}
+.p-step:last-child{border-right:none;}
+.p-step-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;color:rgba(200,168,90,.1);line-height:1;margin-bottom:16px;}
+.p-step-icon{font-size:1.6rem;margin-bottom:14px;}
+.p-step-title{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;}
+.p-step-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;font-weight:300;}
+
+/* TYPES */
+.svc-types{background:var(--black-soft);padding:90px 48px;}
+.svc-types .sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px;}
+.svc-types h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,52px);font-weight:300;line-height:1.1;margin-bottom:50px;}
+.svc-types h2 em{font-style:italic;color:var(--gold-light);}
+.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.type-card{background:var(--black-mid);padding:40px 32px;border-bottom:2px solid transparent;transition:all .35s;}
+.type-card:hover{border-color:var(--gold);background:rgba(200,168,90,.04);}
+.type-icon{font-size:2rem;margin-bottom:18px;}
+.type-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--gold);margin-bottom:10px;}
+.type-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;font-weight:300;}
+
+/* WHY */
+.svc-why{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
+.svc-why-img{position:relative;overflow:hidden;}
+.svc-why-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.svc-why-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(8,8,8,.3),transparent);}
+.svc-why-text{background:var(--black-soft);display:flex;flex-direction:column;justify-content:center;padding:80px 72px;}
+.svc-why-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,52px);font-weight:300;line-height:1.1;margin-bottom:16px;}
+.svc-why-text h2 em{font-style:italic;color:var(--gold);}
+.svc-why-text>p{font-size:15px;color:rgba(255,255,255,.6);line-height:1.9;margin-bottom:36px;font-weight:300;}
+.why-features{list-style:none;}
+.why-features li{display:flex;align-items:flex-start;gap:18px;padding:18px 0;border-bottom:1px solid var(--border-light);}
+.why-features li:last-child{border-bottom:none;}
+.wf-icon{width:40px;height:40px;border:1px solid var(--gold);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:14px;margin-top:2px;}
+.wf-title{font-size:13px;letter-spacing:1px;font-weight:600;margin-bottom:5px;}
+.wf-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;}
+
+/* FAQ */
+.svc-faq{background:var(--off-white);padding:100px 48px;color:var(--black);display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;}
+.faq-img-wrap{position:relative;}
+.faq-img-wrap img{width:100%;height:480px;object-fit:cover;display:block;}
+.faq-gold-frame{position:absolute;top:-24px;left:-24px;width:65%;height:65%;border-top:3px solid var(--gold);border-left:3px solid var(--gold);pointer-events:none;}
+.faq-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;line-height:1.2;color:var(--black);margin-bottom:16px;}
+.faq-content>p{font-size:15px;color:#666;line-height:1.85;margin-bottom:36px;font-weight:300;}
+.faq-item{border-bottom:1px solid rgba(200,168,90,.2);overflow:hidden;}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 0;cursor:pointer;gap:16px;}
+.faq-q span{font-size:14px;font-weight:600;color:var(--black);letter-spacing:.5px;transition:color .3s;}
+.faq-q:hover span{color:var(--gold);}
+.faq-icon{width:28px;height:28px;border:1px solid rgba(200,168,90,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-size:13px;transition:transform .35s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{font-size:14px;color:#666;line-height:1.8;padding-bottom:18px;display:none;font-weight:300;}
+.faq-item.open .faq-a{display:block;}
+
+/* CTA */
+.svc-cta{position:relative;padding:110px 20px;text-align:center;}
+.svc-cta-bg{position:absolute;inset:0;z-index:0;}
+.svc-cta-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+.svc-cta-bg::after{content:'';position:absolute;inset:0;background:rgba(8,8,8,.8);}
+.svc-cta-content{position:relative;z-index:1;max-width:760px;margin:0 auto;}
+.svc-cta-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5.5vw,68px);font-weight:300;line-height:1.1;margin-bottom:16px;}
+.svc-cta-content h2 em{font-style:italic;color:var(--gold);}
+.svc-cta-content p{font-size:17px;color:rgba(255,255,255,.7);margin-bottom:40px;line-height:1.8;font-weight:300;}
+.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+
+/* FOOTER */
+footer{background:var(--black-soft);padding:80px 48px 40px;border-top:1px solid var(--border);position:relative;}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1.2fr;gap:60px;max-width:1320px;margin:0 auto 60px;}
+.footer-brand .logo-text{font-size:22px;margin-bottom:20px;display:inline-block;}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.8;max-width:280px;margin-bottom:28px;font-weight:300;}
+.social-row{display:flex;gap:12px;}
+.social-row a{width:38px;height:38px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.5);transition:all .3s;}
+.social-row a:hover{border-color:var(--gold);color:var(--gold);}
+.footer-col h4{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;font-weight:600;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:12px;}
+.footer-col ul li a,.footer-col ul li span{font-size:13px;color:rgba(255,255,255,.45);font-weight:300;transition:color .3s;display:flex;align-items:center;gap:10px;}
+.footer-col ul li a:hover{color:var(--gold);}
+.footer-col ul li i{color:var(--gold);width:14px;font-size:12px;flex-shrink:0;}
+.hours-list li{margin-bottom:6px!important;}
+.footer-bottom{border-top:1px solid var(--border-light);padding-top:32px;max-width:1320px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.3);letter-spacing:.5px;font-weight:300;}
+.footer-links-row{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links-row a{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.5px;transition:color .3s;}
+.footer-links-row a:hover{color:var(--gold);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease;}
+.reveal.left{transform:translateX(-28px);}
+.reveal.right{transform:translateX(28px);}
+.reveal.visible{opacity:1!important;transform:translate(0,0)!important;}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.footer-grid{grid-template-columns:1fr 1fr;}.footer-brand{grid-column:1/-1;}.process-grid{grid-template-columns:repeat(3,1fr);}.nav-links{gap:12px;}}
+@media(max-width:900px){.nav-wrap{padding:18px 24px;}.nav-links{display:none;}.menu-toggle{display:flex;}.svc-about{grid-template-columns:1fr;}.svc-about-img{height:340px;}.svc-about-text{padding:60px 36px;}.svc-why{grid-template-columns:1fr;}.svc-why-img{height:320px;order:-1;}.svc-why-text{padding:60px 36px;}.svc-faq{grid-template-columns:1fr;padding:80px 24px;gap:50px;}.svc-process{padding:80px 24px;}.svc-types{padding:80px 24px;}.types-grid{grid-template-columns:1fr 1fr;}.process-grid{grid-template-columns:repeat(2,1fr);}.svc-hero-content{padding:0 24px;}.svc-hero h1{font-size:clamp(38px,8vw,64px);}}
+@media(max-width:600px){.stats-bar{flex-wrap:wrap;}.stat-item{flex:1 1 50%;border-bottom:1px solid var(--border);}.types-grid{grid-template-columns:1fr;}.process-grid{grid-template-columns:1fr;}.svc-about-text{padding:50px 24px;}.svc-why-text{padding:50px 24px;}.footer-grid{grid-template-columns:1fr;gap:36px;}.footer-bottom{flex-direction:column;text-align:center;}.footer-links-row{justify-content:center;}.cta-btns{flex-direction:column;align-items:center;}.svc-hero-btns{flex-direction:column;}.btn-gold,.btn-outline{justify-content:center;}}
+</style>
+</head>
+<body>
+<div class="m-overlay" id="mOverlay" onclick="closeMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+    <li><a href="aboutus.html" onclick="closeMenu()">About Us</a></li>
+    <li>
+      <div class="menu-item-with-sub" onclick="toggleMobileSub(this)">
+        <span>Services</span><i class="fas fa-chevron-down sub-arrow"></i>
+      </div>
+      <ul class="mobile-sub">
+        <li><a href="sofa-cleaning.html" onclick="closeMenu()">Sofa Cleaning</a></li>
+        <li><a href="carpet-cleaning.html" onclick="closeMenu()">Carpet Cleaning</a></li>
+        <li><a href="chair-cleaning.html" onclick="closeMenu()">Chair Cleaning</a></li>
+        <li><a href="mattress-cleaning.html" onclick="closeMenu()">Mattress Cleaning</a></li>
+        <li><a href="blinds-cleaning.html" onclick="closeMenu()">Window Blinds Cleaning</a></li>
+        <li><a href="curtain-cleaning.html" onclick="closeMenu()">Curtain Cleaning</a></li>
+        <li><a href="post-construction-cleaning.html" onclick="closeMenu()">Post-Construction Cleaning</a></li>
+        <li><a href="occupied-house-cleaning.html" onclick="closeMenu()">Occupied House Cleaning</a></li>
+        <li><a href="apartment-cleaning.html" onclick="closeMenu()">Flat &amp; Apartment Cleaning</a></li>
+        <li><a href="kitchen-cleaning.html" onclick="closeMenu()">Kitchen Deep Cleaning</a></li>
+        <li><a href="bathroom-cleaning.html" onclick="closeMenu()">Bathroom Deep Cleaning</a></li>
+        <li><a href="floor-cleaning.html" onclick="closeMenu()">Floor Cleaning</a></li>
+        <li><a href="water-tank-cleaning.html" onclick="closeMenu()">Water Tank Cleaning</a></li>
+        <li><a href="glass-cleaning.html" onclick="closeMenu()">Glass Cleaning</a></li>
+      </ul>
+    </li>
+    <li><a href="#" onclick="closeMenu()">Locations</a></li>
+    <li><a href="EmergencyFloorCleaningService.html" onclick="closeMenu()">Emergency</a></li>
+    <li><a href="house-cleaning.html" onclick="closeMenu()">House</a></li>
+    <li><a href="CommercialCleaning.html" onclick="closeMenu()">Commercial</a></li>
+    <!-- <li>
+      <div class="menu-item-with-sub" onclick="toggleMobileSub(this)">
+        <span>More</span><i class="fas fa-chevron-down sub-arrow"></i>
+      </div>
+      <ul class="mobile-sub">
+        <li><a href="blog.html" onclick="closeMenu()">Blog</a></li>
+        <li><a href="contactus.html" onclick="closeMenu()">Contact Us</a></li>
+      </ul>
+    </li> -->
+     <li><a href="gallery.html">Gallery</a></li>
+  </ul>
+</div>
+<header id="header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo-text">GOODWILL BHARAT™
+Sofa, Carpet & Tile Cleaning<em>Carpet &amp; Tile Cleaning</em></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About</a></li>
+      <li class="has-dropdown">
+        <a href="#">Services <i class="fas fa-chevron-down" style="font-size:9px;margin-left:4px"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="sofa-cleaning.html">Sofa Cleaning</a></li>
+          <li><a href="carpet-cleaning.html">Carpet Cleaning</a></li>
+          <li><a href="chair-cleaning.html">Chair Cleaning</a></li>
+          <li><a href="mattress-cleaning.html">Mattress Cleaning</a></li>
+          <li><a href="blinds-cleaning.html">Window Blinds Cleaning</a></li>
+          <li><a href="curtain-cleaning.html">Curtain Cleaning</a></li>
+          <li><a href="post-construction-cleaning.html">Post-Construction Cleaning</a></li>
+          <li><a href="occupied-house-cleaning.html">Occupied House Cleaning</a></li>
+          <li><a href="apartment-cleaning.html">Flat &amp; Apartment Cleaning</a></li>
+          <li><a href="kitchen-cleaning.html">Kitchen Deep Cleaning</a></li>
+          <li><a href="bathroom-cleaning.html">Bathroom Deep Cleaning</a></li>
+          <li><a href="floor-cleaning.html">Floor Cleaning</a></li>
+          <li><a href="water-tank-cleaning.html">Water Tank Cleaning</a></li>
+          <li><a href="glass-cleaning.html">Glass Cleaning</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Locations</a></li>
+      <li><a href="EmergencyFloorCleaningService.html">Emergency</a></li>
+      <li><a href="house-cleaning.html">House</a></li>
+      <li><a href="CommercialCleaning.html">Commercial</a></li>
+      <!-- <li class="has-dropdown">
+        <a href="#">More <i class="fas fa-chevron-down" style="font-size:9px;margin-left:4px"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+      </li> -->
+       <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contactus.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="svc-hero-bg">
+    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80" alt="Kitchen Deep Cleaning" onerror="this.src='https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80'">
+  </div>
+  <div class="svc-hero-content">
+    <div class="svc-hero-pre">Grease & Grime Elimination</div>
+    <h1>Kitchen <em>Deep Cleaning</em></h1>
+    <p class="svc-hero-desc">Kitchens accumulate grease, grime and bacteria that regular cleaning can't tackle. Our specialised deep cleaning removes years of buildup, leaving a hygienically safe cooking space.</p>
+    <div class="svc-hero-btns">
+      <a href="contactus.html" class="btn-gold"><i class="fas fa-file-invoice"></i> Get a Free Quote</a>
+      <a href="tel:+919424430664" class="btn-outline"><i class="fas fa-phone"></i> Call Now</a>
+      <a href="index.html" class="btn-outline"><i class="fas fa-th-large"></i> All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar"><div class="stat-item"><span class="stat-num">900+</span><span class="stat-label">Kitchens Cleaned</span></div><div class="stat-item"><span class="stat-num">4.8★</span><span class="stat-label">Google Rating</span></div><div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Grease-Free</span></div><div class="stat-item"><span class="stat-num">Food Safe</span><span class="stat-label">Products</span></div></div>
+
+<!-- ABOUT -->
+<section class="svc-about">
+  <div class="svc-about-img reveal left">
+    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80" alt="Kitchen Deep Cleaning" onerror="this.src='images/flordeep.jpeg'">
+  </div>
+  <div class="svc-about-text reveal right">
+    <div class="svc-about-inner">
+      <div class="gold-line"></div>
+      <h2>Professional <em>Kitchen Deep Clean</em></h2>
+      <p>Kitchens are the hardest-working rooms in any home, and grease, food residue and bacteria accumulate on every surface. Our service tackles everything from the oven interior and chimney hood filters to tile grout, cabinet interiors and drainage systems, using food-safe professional degreasers.</p>
+      <ul class="svc-checklist"><li>Oven, microwave and refrigerator deep cleaned inside</li><li>Chimney and hood filter degreasing</li><li>Tile and grout scrubbing and sanitisation</li><li>Cabinet interior and exterior cleaning</li><li>Drainage cleaning and sanitisation</li><li>All food-safe, non-toxic cleaning products used</li></ul>
+      <a href="contactus.html" class="btn-gold"><i class="fas fa-file-invoice"></i> Book This Service</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="svc-process">
+  <div class="sec-label">How We Work</div>
+  <h2>Our <em>5-Step</em> Cleaning Process</h2>
+  <div class="process-grid"><div class="p-step reveal"><div class="p-step-num">01</div><div class="p-step-icon">🔍</div><div class="p-step-title">Survey</div><div class="p-step-desc">Kitchen assessed for grease level, appliances and tile condition.</div></div><div class="p-step reveal"><div class="p-step-num">02</div><div class="p-step-icon">💥</div><div class="p-step-title">Degrease</div><div class="p-step-desc">Powerful food-safe degreasers applied to all greasy surfaces.</div></div><div class="p-step reveal"><div class="p-step-num">03</div><div class="p-step-icon">🧱</div><div class="p-step-title">Tiles & Grout</div><div class="p-step-desc">Tile scrubbing and grout brightening using specialised tools.</div></div><div class="p-step reveal"><div class="p-step-num">04</div><div class="p-step-icon">🍳</div><div class="p-step-title">Appliances</div><div class="p-step-desc">Oven, chimney, fridge and microwave cleaned inside and out.</div></div><div class="p-step reveal"><div class="p-step-num">05</div><div class="p-step-icon">✨</div><div class="p-step-title">Sanitise & Shine</div><div class="p-step-desc">All surfaces sanitised and polished; drains cleared.</div></div></div>
+</section>
+
+<!-- TYPES -->
+<section class="svc-types">
+  <div class="sec-label">What We Cover</div>
+  <h2>Types of <em>Kitchen Deep Cleaning</em> We Offer</h2>
+  <div class="types-grid"><div class="type-card reveal" style="transition-delay:0.0s"><div class="type-icon">🏠</div><div class="type-title">Home Kitchens</div><div class="type-desc">Full residential kitchen deep clean including all appliances.</div></div><div class="type-card reveal" style="transition-delay:0.1s"><div class="type-icon">🍕</div><div class="type-title">Modular Kitchens</div><div class="type-desc">Specialist cleaning for modular kitchen units and fittings.</div></div><div class="type-card reveal" style="transition-delay:0.2s"><div class="type-icon">🏨</div><div class="type-title">Commercial Kitchens</div><div class="type-desc">Restaurant and hotel kitchen deep clean with certificate.</div></div><div class="type-card reveal" style="transition-delay:0.30000000000000004s"><div class="type-icon">🔥</div><div class="type-title">Chimney & Hood</div><div class="type-desc">Chimney filter degreasing and hood duct cleaning service.</div></div><div class="type-card reveal" style="transition-delay:0.4s"><div class="type-icon">❄️</div><div class="type-title">Refrigerator Clean</div><div class="type-desc">Refrigerator interior defrosting and hygiene deep clean.</div></div><div class="type-card reveal" style="transition-delay:0.5s"><div class="type-icon">🧱</div><div class="type-title">Tiles & Grout</div><div class="type-desc">Kitchen tile and grout intensive scrub and brightening.</div></div></div>
+</section>
+
+<!-- WHY -->
+<section class="svc-why">
+  <div class="svc-why-img reveal right">
+    <img src="images\bhopal1.jpeg" alt="Why Choose Us" onerror="this.src='images\bhopal1.jpeg'">
+  </div>
+  <div class="svc-why-text reveal left">
+    <div class="gold-line"></div>
+    <h2>Why Choose <em>Us</em></h2>
+    <p>Choose GOODWILL BHARAT™
+Sofa, Carpet & Tile Cleaning Cleaners for our eco-friendly approach, certified technicians, and unmatched dedication to your satisfaction.</p>
+    <ul class="why-features"><li><div class="wf-icon"><i class="fas fa-utensils"></i></div><div><div class="wf-title">Food Safe</div><div class="wf-desc">All products certified food-safe and non-toxic.</div></div></li><li><div class="wf-icon"><i class="fas fa-fire"></i></div><div><div class="wf-title">Grease Specialists</div><div class="wf-desc">Industrial degreasers that dissolve years of grease buildup.</div></div></li><li><div class="wf-icon"><i class="fas fa-award"></i></div><div><div class="wf-title">Hygiene First</div><div class="wf-desc">Kills bacteria and prevents mould growth in kitchen areas.</div></div></li></ul>
+    <a href="contactus.html" class="btn-gold" style="margin-top:36px">Schedule a Cleaning <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="svc-faq">
+  <div class="faq-img-wrap reveal left">
+    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80" alt="FAQ" onerror="this.src='images/flordeep.jpeg'">
+    <div class="faq-gold-frame"></div>
+  </div>
+  <div class="faq-content reveal right">
+    <div class="gold-line"></div>
+    <h2>Frequently Asked<br>Questions</h2>
+    <p>Everything you need to know about our kitchen deep cleaning service.</p>
+    <div class="faq-list"><div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)"><span>Does the kitchen deep clean include the oven?</span><div class="faq-icon"><i class="fas fa-plus"></i></div></div><div class="faq-a">Yes — oven interior, racks and door glass are all deep cleaned.</div></div><div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Do you clean chimney filters?</span><div class="faq-icon"><i class="fas fa-plus"></i></div></div><div class="faq-a">Yes — chimney filters are degreased and cleaned as part of the service.</div></div><div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Are your products safe for food surfaces?</span><div class="faq-icon"><i class="fas fa-plus"></i></div></div><div class="faq-a">Yes — all products are food-safe and certified non-toxic.</div></div><div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>How long does kitchen deep cleaning take?</span><div class="faq-icon"><i class="fas fa-plus"></i></div></div><div class="faq-a">Typically 3–5 hours for a standard home kitchen.</div></div><div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Do you clean the inside of cabinets?</span><div class="faq-icon"><i class="fas fa-plus"></i></div></div><div class="faq-a">Yes — cabinet interiors and exteriors are both cleaned.</div></div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="svc-cta">
+  <div class="svc-cta-bg">
+    <img src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?w=1600&q=80" alt="CTA" onerror="this.src='https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80'">
+  </div>
+  <div class="svc-cta-content reveal">
+    <div class="gold-line gold-line-center"></div>
+    <h2>Ready for a <em>Spotless</em> Clean?</h2>
+    <p>We guarantee complete satisfaction. Experience the luxury of truly clean spaces today.</p>
+    <div class="cta-btns">
+      <a href="contactus.html" class="btn-gold"><i class="fas fa-file-invoice"></i> Get a Free Quote</a>
+      <a href="tel:+919424430664" class="btn-outline"><i class="fas fa-phone"></i> Call to Schedule</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand reveal">
+      <div class="logo-text">GOODWILL BHARAT™
+Sofa, Carpet & Tile Cleaning<em>Carpet &amp; Tile Cleaning</em></div>
+      <p>Creating cleaner, healthier spaces with eco-friendly techniques and unmatched attention to detail in MP, Bhopal.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:.1s">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+        <li><a href="sofa-cleaning.html"><i class="fas fa-chevron-right"></i> Sofa Cleaning</a></li>
+        <li><a href="carpet-cleaning.html"><i class="fas fa-chevron-right"></i> Carpet Cleaning</a></li>
+        <li><a href="kitchen-cleaning.html"><i class="fas fa-chevron-right"></i> Kitchen Cleaning</a></li>
+        <li><a href="bathroom-cleaning.html"><i class="fas fa-chevron-right"></i> Bathroom Cleaning</a></li>
+        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+        <li><a href="contactus.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:.2s">
+      <h4>Contact &amp; Hours</h4>
+      <ul>
+        <li><span><i class="fas fa-phone"></i> +91 94244 30664</span></li>
+        <li><span><i class="fas fa-map-marker-alt"></i> Bhopal, Madhya Pradesh</span></li>
+        <li><span><i class="fas fa-envelope"></i> info@goodwillbharat.com</span></li>
+      </ul>
+      <ul class="hours-list" style="margin-top:20px">
+        <li><span><i class="fas fa-clock"></i> Mon – Sun: Open 24 Hours</span></li>
+        <li><span style="padding-left:24px;font-size:12px;color:rgba(255,255,255,.3)">Emergency calls welcome anytime</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 GOODWILL BHARAT™
+Sofa, Carpet & Tile Cleaning Cleaners Carpet &amp; Tile® — All rights reserved.</p>
+    <div class="footer-links-row">
+      <a href="index.html">Home</a>
+      <a href="contactus.html">Free Quote</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="contactus.html">Contact</a>
+    </div>
+  </div>
+</footer><script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('header').classList.toggle('scrolled',window.scrollY>60);
+});
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu'),o=document.getElementById('mOverlay'),t=document.getElementById('menuToggle');
+  const open=m.classList.contains('open');
+  m.classList.toggle('open',!open);o.classList.toggle('open',!open);t.classList.toggle('open',!open);
+  document.body.style.overflow=open?'':'hidden';
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('mOverlay').classList.remove('open');
+  document.getElementById('menuToggle').classList.remove('open');
+  document.body.style.overflow='';
+}
+window.addEventListener('resize',()=>{if(window.innerWidth>900)closeMenu();});
+function toggleMobileSub(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('show');}
+function toggleFaq(qEl){
+  const item=qEl.closest('.faq-item'),isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+</script>
+</body></html>

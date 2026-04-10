@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carpet Cleaning</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Georgia, serif;
+}
+
+/* HEADER */
+
+header{
+background:#000;
+color:white;
+}
+
+header{
+background:#000;
+color:white;
+position:relative;
+z-index:1000;
+}
+
+.nav-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:15px 40px;
+}
+
+.logo img{
+height:60px;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+gap:25px;
+align-items:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:16px;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu{
+top:100%;
+}
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#000;
+min-width:220px;
+flex-direction:column;
+border-radius:4px;
+overflow:hidden;
+z-index:9999;
+flex-direction:column;
+}
+
+.dropdown-menu a{
+padding:12px 18px;
+display:block;
+color:white;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.dropdown-menu a:hover{
+background:#c8a85a;
+}
+
+.dropdown:hover .dropdown-menu{
+display:flex;
+flex-direction:column;
+}
+
+/* MOBILE MENU BUTTON */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+color:white;
+cursor:pointer;
+}
+
+/* HERO SECTION */
+
+.hero{
+position:relative;
+background:url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
+height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+position:relative;
+max-width:900px;
+padding:20px;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:20px;
+line-height:1.6;
+}
+
+.hero h3{
+color:#c8a85a;
+margin-bottom:20px;
+letter-spacing:2px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.hero-buttons a{
+background:#c8a85a;
+padding:12px 18px;
+text-decoration:none;
+color:white;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media (max-width:900px){
+
+nav{
+display:none;
+flex-direction:column;
+width:100%;
+margin-top:15px;
+}
+
+nav.show{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
+/* MOBILE DROPDOWN */
+
+.dropdown-menu{
+position:static;
+}
+
+.dropdown:hover .dropdown-menu{
+display:none;
+}
+
+.dropdown.active .dropdown-menu{
+display:block;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero{
+height:auto;
+padding:80px 20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav-container">
+
+<div class="logo">
+<img src="images/b.jpg" alt="Logo">
+</div>
+
+<nav id="menu">
+
+<a href="index.html">Home</a>
+<a href="aboutus.html">About Us</a>
+
+<div class="dropdown">
+  <a href="#" onclick="toggleDropdown(this.parentElement)">Services ▼</a>
+
+  <div class="dropdown-menu">
+     <a href="tilefloorcleaning.html">Tile Cleaning</a>
+          <a href="Air Duct Cleaning SERVICES.html"> Air Duct Cleaning</a>
+          <a href="deepcleaning.html">Deep Steam Cleaning</a>
+  </div>
+</div>
+<a href="#">Locations</a>
+<a href="EmergencyFloorCleaningService.html">Emergency Floor Cleaning</a>
+<a href="CommercialCleaning.html">Commercial Cleaning</a>
+<a href="house-cleaning.html">House Cleaning</a>
+<a href="#">More</a>
+
+</nav>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+</div>
+</header>
+
+
+<!-- <section class="hero"> -->
+<!-- 
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>CARPET CLEANING NEAR YOU IN MP , BHOPAL</h1>
+
+<p>
+Revitalize your carpets with expert <b>carpet cleaning in Loveland, Larimer County.</b>
+GOODWILL BHARAT™ Upholstery Cleaners Carpet and Tile Cleaning removes dirt, stains, and allergens
+for a fresher, healthier home.
+</p>
+
+<h3>QUALITY FLOOR CLEANING</h3>
+
+<div class="hero-buttons">
+<a href="#">Get a Quote</a>
+<a href="#">Call Us to Schedule</a>
+<a href="#">Emergency Service Call Now</a>
+<a href="#">Book Now</a>
+</div>
+
+</div>
+
+</section> -->
+
+<section class="air-duct-section">
+
+<div class="air-image">
+
+<span class="air-tag">A happy family smiles and plays together</span>
+
+<img src="images/b.jpg" alt="Family Air Quality">
+
+</div>
+
+
+<div class="air-content">
+
+<div class="air-box">
+
+<h2>Breathe Cleaner Air with Professional Air Duct Cleaning</h2>
+
+<p>
+When it comes to maintaining a healthy environment in your home or office,
+having clean ducts for your HVAC system is essential for good indoor air quality.
+GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile ensures that every nook and cranny of your ductwork is
+free from dust, debris, and allergens, providing you with clean and fresh air
+to breathe.
+</p>
+
+<a href="#" class="air-btn">Call Us Today</a>
+
+</div>
+
+</div>
+
+</section>
+<section class="duct-solution">
+
+<div class="duct-content">
+
+<div class="duct-box">
+
+<h2>Comprehensive Air Duct Cleaning Solutions</h2>
+
+<p>
+Our air duct cleaning services are designed to remove dirt, grime, and
+general dust build up while preserving the ability to keep your air
+conditioning and heating systems running smoothly. Using advanced
+techniques, we deep clean to protect the air quality of your ducts and
+dryer vents, ensuring that you always feel comfortable in your own home.
+</p>
+
+<a href="#" class="duct-btn">Call Us Today</a>
+
+</div>
+</div>
+
+
+<div class="duct-images">
+
+<img src="images/b.jpg" alt="Dirty Air Filter">
+
+<img src="images/b.jpg" alt="Cleaning Air Filter">
+
+</div>
+
+</section>
+<section class="duct-why">
+
+<div class="duct-card">
+
+<h2>Why Choose Us for Air Duct Cleaning Solutions?</h2>
+
+<p>
+With years of experience in the industry, our team of highly trained professionals
+understands the intricacies of duct systems. Our expertise allows us to effectively
+clean your air ducts, improving the overall air quality in your indoor space.
+Keeping your vents clean means a cleaner environment for you and your loved ones.
+Keep your home fresh by booking another service like
+<span class="highlight">tile floor cleaning</span>.
+</p>
+
+<a href="#" class="duct-other-btn">Other Services</a>
+
+</div>
+
+</section>
+
+<section class="eco-duct">
+
+<div class="eco-container">
+
+<div class="eco-img">
+<img src="images/a.jpg" alt="">
+</div>
+
+<div class="eco-text">
+
+<h2>Eco-Friendly Air Duct Cleaning for a Healthier Home</h2>
+
+<p>
+GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile is committed to using eco-safe methods in every
+air duct cleaning. Our products remove dust and allergens without harsh
+chemicals, keeping your indoor air clean and safe for your family.
+</p>
+
+<a href="#" class="eco-btn">Schedule a Service</a>
+
+</div>
+
+</div>
+
+</section>
+<section class="duct-detail">
+
+<div class="duct-detail-container">
+
+<div class="duct-detail-text">
+
+<h2>Detailed Air Duct Cleaning for Cleaner Air and Better HVAC Efficiency</h2>
+
+<p>
+At GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile, no detail is too small when it comes to cleaning
+your air ducts. Our team pays close attention to every aspect of the cleaning
+process, ensuring that all dust, dirt, and dander are removed efficiently.
+
+Our goal is to leave your home’s ductwork allergen-free for better air year-round.
+Air duct cleaning not only clears your vents of debris and allergens,
+but it also improves the efficiency of your HVAC unit.
+</p>
+
+<a href="#" class="duct-btn">Call Us Today</a>
+
+</div>
+
+<div class="duct-images">
+
+<img src="images/b.jpg" alt="">
+<img src="images/b.jpg" alt="">
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="duct-cta">
+
+<div class="duct-overlay"></div>
+
+<div class="duct-cta-content">
+
+<h2>Schedule a Air Duct Cleaning Today</h2>
+
+<p>
+Ensure that your home is allergy and irritant free with clean ducts from
+GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile. We understand the importance of transparency when it
+comes to pricing. That's why we offer free quotes for our air duct cleaning
+services, allowing you to know the cost upfront without any hidden fees.
+</p>
+
+<p class="highlight-text">
+Contact GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile today to experience the difference of clean air.
+</p>
+
+<a href="#" class="duct-cta-btn">Get a Free Quote</a>
+
+</div>
+
+</section>
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- LEFT -->
+
+<div class="footer-left">
+
+<div class="social">
+●
+</div>
+
+<p class="copyright">
+©2024 GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile® - All rights reserved.
+</p>
+
+</div>
+
+
+<!-- RIGHT -->
+
+<div class="footer-right">
+
+<div class="footer-links">
+
+<a href="#">Home</a> |
+<a href="#">Free Quote</a> |
+<a href="#">Privacy Policy</a> |
+<a href="#">Terms and Conditions</a> |
+<a href="#">Contact</a>
+
+</div>
+
+<p><strong>Address:</strong> Bhopal, Madhya Pradesh, India</p>
+
+<div class="hours">
+
+<p><strong>Hours:</strong></p>
+
+<p>Monday Open 24 hours</p>
+<p>Tuesday Open 24 hours</p>
+<p>Wednesday Open 24 hours</p>
+<p>Thursday Open 24 hours</p>
+<p>Friday Open 24 hours</p>
+<p>Saturday Open 24 hours</p>
+<p>Sunday Open 24 hours</p>
+
+</div>
+
+<p class="phone"><strong>Phone:</strong> +91 94244 30664</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<style>
+    /* SECTION */
+
+.duct-cta{
+position:relative;
+background:url("images/b.jpg") center/cover no-repeat;
+padding:140px 20px;
+text-align:center;
+color:white;
+}
+
+/* DARK OVERLAY */
+
+.duct-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+}
+
+/* CONTENT */
+
+.duct-cta-content{
+position:relative;
+max-width:900px;
+margin:auto;
+}
+
+/* HEADING */
+
+.duct-cta-content h2{
+font-size:52px;
+margin-bottom:25px;
+}
+
+/* TEXT */
+
+.duct-cta-content p{
+font-size:20px;
+line-height:1.9;
+margin-bottom:20px;
+color:#ddd;
+}
+
+/* GOLD TEXT */
+
+.highlight-text{
+color:#c8b46a;
+}
+
+/* BUTTON */
+
+.duct-cta-btn{
+background:#a3925b;
+color:white;
+padding:16px 38px;
+text-decoration:none;
+font-size:18px;
+display:inline-block;
+margin-top:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.duct-cta{
+padding:90px 20px;
+}
+
+.duct-cta-content h2{
+font-size:32px;
+}
+
+.duct-cta-content p{
+font-size:17px;
+}
+
+}
+    /* DETAIL SECTION */
+
+.duct-detail{
+background:#000;
+padding:80px 0;
+}
+
+.duct-detail-container{
+display:grid;
+grid-template-columns:50% 50%;
+align-items:center;
+max-width:1400px;
+margin:auto;
+}
+
+/* TEXT */
+
+.duct-detail-text{
+background:#efefef;
+padding:90px 80px;
+text-align:center;
+}
+
+.duct-detail-text h2{
+font-size:48px;
+margin-bottom:25px;
+}
+
+.duct-detail-text p{
+font-size:20px;
+line-height:1.8;
+color:#555;
+margin-bottom:30px;
+}
+
+.duct-btn{
+background:#a3925b;
+color:white;
+padding:16px 35px;
+text-decoration:none;
+font-size:18px;
+display:inline-block;
+}
+
+/* IMAGES */
+
+.duct-images{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+padding:20px;
+}
+
+.duct-images img{
+width:100%;
+height:500px;
+object-fit:cover;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.duct-detail-container{
+grid-template-columns:1fr;
+}
+
+.duct-detail-text{
+padding:50px 25px;
+}
+
+.duct-detail-text h2{
+font-size:32px;
+}
+
+.duct-detail-text p{
+font-size:17px;
+}
+
+.duct-images{
+grid-template-columns:1fr;
+}
+
+.duct-images img{
+height:300px;
+}
+
+}
+
+    /* ECO SECTION */
+
+.eco-duct{
+background:#efefef;
+padding:80px 0;
+}
+
+.eco-container{
+display:grid;
+grid-template-columns:55% 45%;
+align-items:center;
+max-width:1400px;
+margin:auto;
+}
+
+/* IMAGE */
+
+.eco-img{
+position:relative;
+padding-left:60px;
+}
+
+.eco-img::before{
+content:"";
+position:absolute;
+left:0;
+top:0;
+width:60px;
+height:100%;
+background:#c9b36b;
+}
+
+.eco-img img{
+width:100%;
+display:block;
+}
+
+/* TEXT */
+
+.eco-text{
+padding:80px 70px;
+text-align:center;
+}
+
+.eco-text h2{
+font-size:48px;
+margin-bottom:25px;
+}
+
+.eco-text p{
+font-size:20px;
+line-height:1.8;
+margin-bottom:30px;
+color:#555;
+}
+
+.eco-btn{
+background:#a3925b;
+color:white;
+padding:16px 35px;
+text-decoration:none;
+font-size:18px;
+display:inline-block;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.eco-container{
+grid-template-columns:1fr;
+}
+
+.eco-img{
+padding-left:0;
+}
+
+.eco-img::before{
+display:none;
+}
+
+.eco-text{
+padding:50px 25px;
+}
+
+.eco-text h2{
+font-size:32px;
+}
+
+.eco-text p{
+font-size:17px;
+}
+
+}
+    /* SECTION */
+
+.duct-why{
+background:url("images/air-duct-floor.jpg") center/cover no-repeat;
+padding:120px 20px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* CENTER CARD */
+
+.duct-card{
+background:#e9e6e2;
+padding:70px 60px;
+max-width:900px;
+text-align:center;
+}
+
+/* HEADING */
+
+.duct-card h2{
+font-size:48px;
+margin-bottom:25px;
+color:#222;
+}
+
+/* TEXT */
+
+.duct-card p{
+font-size:20px;
+line-height:1.9;
+color:#555;
+margin-bottom:35px;
+}
+
+/* HIGHLIGHT TEXT */
+
+.highlight{
+color:#a3925b;
+}
+
+/* BUTTON */
+
+.duct-other-btn{
+background:#a3925b;
+color:white;
+padding:16px 35px;
+font-size:18px;
+text-decoration:none;
+display:inline-block;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.duct-card{
+padding:45px 25px;
+}
+
+.duct-card h2{
+font-size:32px;
+}
+
+.duct-card p{
+font-size:17px;
+}
+
+}
+    /* SECTION */
+
+.duct-solution{
+display:grid;
+grid-template-columns:55% 45%;
+background:#efefef;
+align-items:center;
+}
+
+/* TEXT */
+
+.duct-content{
+display:flex;
+justify-content:center;
+padding:80px 60px;
+text-align:center;
+}
+
+.duct-box{
+max-width:520px;
+}
+
+.duct-box h2{
+font-size:46px;
+margin-bottom:25px;
+color:#222;
+}
+
+.duct-box p{
+font-size:20px;
+line-height:1.9;
+color:#555;
+margin-bottom:35px;
+}
+
+.duct-btn{
+background:#a3925b;
+color:white;
+padding:16px 35px;
+font-size:18px;
+text-decoration:none;
+display:inline-block;
+}
+
+/* IMAGES */
+
+.duct-images{
+display:grid;
+grid-template-columns:1fr 1fr;
+height:520px;
+}
+
+.duct-images img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.duct-solution{
+grid-template-columns:1fr;
+}
+
+.duct-images{
+grid-template-columns:1fr;
+height:auto;
+}
+
+.duct-images img{
+height:260px;
+}
+
+.duct-content{
+padding:50px 25px;
+}
+
+.duct-box h2{
+font-size:32px;
+}
+
+.duct-box p{
+font-size:17px;
+}
+
+}
+    /* SECTION */
+
+.air-duct-section{
+display:grid;
+grid-template-columns:55% 45%;
+background:#efefef;
+align-items:center;
+}
+
+/* IMAGE */
+
+.air-image{
+position:relative;
+height:520px;
+overflow:hidden;
+}
+
+.air-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+/* IMAGE LABEL */
+
+.air-tag{
+position:absolute;
+top:20px;
+left:20px;
+background:#000;
+color:#fff;
+padding:8px 14px;
+font-size:14px;
+border:2px solid white;
+}
+
+/* CONTENT */
+
+.air-content{
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:80px 60px;
+}
+
+.air-box{
+max-width:520px;
+}
+
+/* HEADING */
+
+.air-box h2{
+font-size:46px;
+margin-bottom:25px;
+color:#222;
+}
+
+/* TEXT */
+
+.air-box p{
+font-size:20px;
+line-height:1.9;
+color:#555;
+margin-bottom:35px;
+}
+
+/* BUTTON */
+
+.air-btn{
+background:#a3925b;
+color:white;
+padding:16px 35px;
+font-size:18px;
+text-decoration:none;
+display:inline-block;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.air-duct-section{
+grid-template-columns:1fr;
+}
+
+.air-image{
+height:320px;
+}
+
+.air-content{
+padding:50px 25px;
+}
+
+.air-box h2{
+font-size:32px;
+}
+
+.air-box p{
+font-size:17px;
+}
+
+}
+    /* FOOTER */
+
+.footer{
+background:#000;
+color:#ddd;
+padding:80px 60px;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+max-width:1400px;
+margin:auto;
+}
+
+/* LEFT */
+
+.footer-left{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.social{
+font-size:26px;
+color:#c8b46a;
+margin-bottom:30px;
+}
+
+.copyright{
+font-size:18px;
+}
+
+/* RIGHT */
+
+.footer-right{
+text-align:left;
+}
+
+.footer-links{
+margin-bottom:35px;
+}
+
+.footer-links a{
+color:#ddd;
+text-decoration:none;
+margin-right:8px;
+}
+
+.footer-right p{
+font-size:18px;
+margin-bottom:18px;
+line-height:1.7;
+}
+
+.hours{
+margin-top:25px;
+margin-bottom:25px;
+}
+
+.phone{
+margin-top:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.footer{
+padding:60px 25px;
+}
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.footer-right{
+text-align:center;
+}
+
+.footer-links a{
+display:inline-block;
+margin:5px;
+}
+
+}
+
+</style>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
+
+function toggleDropdown(el){
+if(window.innerWidth < 900){
+el.classList.toggle("active");
+}
+}
+
+</script>
+
+</body>
+</html>

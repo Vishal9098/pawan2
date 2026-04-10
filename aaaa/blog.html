@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carpet Cleaning</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Georgia, serif;
+}
+
+/* HEADER */
+
+header{
+background:#000;
+color:white;
+}
+
+header{
+background:#000;
+color:white;
+position:relative;
+z-index:1000;
+}
+
+.nav-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:15px 40px;
+}
+
+.logo img{
+height:60px;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+gap:25px;
+align-items:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:16px;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu{
+top:100%;
+}
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#000;
+min-width:220px;
+flex-direction:column;
+border-radius:4px;
+overflow:hidden;
+z-index:9999;
+flex-direction:column;
+}
+
+.dropdown-menu a{
+padding:12px 18px;
+display:block;
+color:white;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.dropdown-menu a:hover{
+background:#c8a85a;
+}
+
+.dropdown:hover .dropdown-menu{
+display:flex;
+flex-direction:column;
+}
+
+/* MOBILE MENU BUTTON */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+color:white;
+cursor:pointer;
+}
+
+/* HERO SECTION */
+
+.hero{
+position:relative;
+background:url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
+height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+position:relative;
+max-width:900px;
+padding:20px;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:20px;
+line-height:1.6;
+}
+
+.hero h3{
+color:#c8a85a;
+margin-bottom:20px;
+letter-spacing:2px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.hero-buttons a{
+background:#c8a85a;
+padding:12px 18px;
+text-decoration:none;
+color:white;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media (max-width:900px){
+
+nav{
+display:none;
+flex-direction:column;
+width:100%;
+margin-top:15px;
+}
+
+nav.show{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
+/* MOBILE DROPDOWN */
+
+.dropdown-menu{
+position:static;
+}
+
+.dropdown:hover .dropdown-menu{
+display:none;
+}
+
+.dropdown.active .dropdown-menu{
+display:block;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero{
+height:auto;
+padding:80px 20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav-container">
+
+<div class="logo">
+<img src="images/b.jpg" alt="Logo">
+</div>
+
+<nav id="menu">
+
+<a href="index.html">Home</a>
+<a href="aboutus.html">About Us</a>
+
+<div class="dropdown">
+  <a href="#" onclick="toggleDropdown(this.parentElement)">Services ▼</a>
+
+  <div class="dropdown-menu">
+     <a href="tilefloorcleaning.html">Tile Cleaning</a>
+          <a href="Air Duct Cleaning SERVICES.html"> Air Duct Cleaning</a>
+          <a href="deepcleaning.html">Deep Steam Cleaning</a>
+   
+  </div>
+</div>
+<a href="#">Locations</a>
+<a href="EmergencyFloorCleaningService.html">Emergency Floor Cleaning</a>
+<a href="CommercialCleaning.html">Commercial Cleaning</a>
+<a href="house-cleaning.html">House Cleaning</a>
+<!-- <a href="#">More</a> -->
+
+<div class="dropdown">
+  <a href="#" onclick="toggleDropdown(this.parentElement)">More ▼</a>
+
+  <div class="dropdown-menu">
+    <a href="blog.html">Blog</a>
+    <a href="contactus.html">Upholstery Cleaning</a>
+  </div>
+</div>
+
+</nav>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+</div>
+</header>
+
+<!-- 
+<section class="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>CARPET CLEANING NEAR YOU IN MP , BHOPAL</h1>
+
+<p>
+Revitalize your carpets with expert <b>carpet cleaning in Loveland, Larimer County.</b>
+GOODWILL BHARAT™ Upholstery Cleaners Carpet and Tile Cleaning removes dirt, stains, and allergens
+for a fresher, healthier home.
+</p>
+
+<h3>QUALITY FLOOR CLEANING</h3>
+
+<div class="hero-buttons">
+<a href="#">Get a Quote</a>
+<a href="#">Call Us to Schedule</a>
+<a href="#">Emergency Service Call Now</a>
+<a href="#">Book Now</a>
+</div>
+
+</div>
+
+</section> -->
+<section class="blog-section">
+
+<div class="blog-container">
+
+<h1>Why Professional Air Duct Cleaning Is Important for a Healthy Home</h1>
+
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Air duct cleaning">
+
+<p>
+Keeping your home clean goes beyond vacuuming floors or wiping surfaces. One area that many homeowners overlook is their <strong>air duct system</strong>. Over time, dust, allergens, and debris build up inside your ductwork, affecting the air quality inside your home. Professional air duct cleaning helps remove these contaminants and ensures that the air circulating in your home is clean and healthy.
+</p>
+
+<h2>1. Improve Indoor Air Quality</h2>
+
+<img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a" alt="Indoor air quality">
+
+<p>
+Your HVAC system circulates air throughout your entire home. If your air ducts are filled with dust, pet dander, pollen, and other particles, those contaminants can spread through the air you breathe every day. Professional duct cleaning removes these pollutants, helping create a healthier indoor environment for your family.
+</p>
+
+<h2>2. Reduce Allergies and Respiratory Issues</h2>
+
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Healthy home">
+
+<p>
+Dirty air ducts can trigger allergies and breathing problems, especially for people with asthma or sensitive respiratory systems. Dust and allergens trapped in ductwork can continuously circulate in your home. By cleaning your air ducts regularly, you reduce the amount of airborne irritants and make your home safer for everyone.
+</p>
+
+<h2>3. Increase HVAC Efficiency</h2>
+
+<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64" alt="HVAC system">
+
+<p>
+When debris accumulates inside your air ducts, it forces your HVAC system to work harder to push air through the vents. This reduces efficiency and can increase energy costs. Clean air ducts allow your heating and cooling system to operate more smoothly, improving energy efficiency and lowering your utility bills.
+</p>
+
+<h2>4. Eliminate Unpleasant Odors</h2>
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" alt="Clean living room">
+
+<p>
+Dust, mold, and other contaminants inside air ducts can cause unpleasant smells in your home. These odors often circulate whenever the HVAC system runs. Professional cleaning removes the source of these smells, leaving your home fresher and more comfortable.
+</p>
+
+<h2>5. Extend the Life of Your HVAC System</h2>
+
+<img src="https://images.unsplash.com/photo-1581092160607-ee22731e9f02" alt="HVAC maintenance">
+
+<p>
+Your HVAC system is a major investment in your home. Keeping the ductwork clean reduces strain on the system, helping it last longer and operate more effectively. Regular maintenance and cleaning can help prevent costly repairs in the future.
+</p>
+
+<h2>How Often Should Air Ducts Be Cleaned?</h2>
+
+<p>
+Experts generally recommend professional air duct cleaning <strong>every 3–5 years</strong>, depending on factors such as pets, allergies, recent renovations, or heavy dust buildup. Homes with pets or family members who suffer from allergies may benefit from more frequent cleanings.
+</p>
+
+<h2>Schedule Your Air Duct Cleaning Today</h2>
+
+<p>
+A clean home starts with clean air. Professional air duct cleaning removes hidden contaminants, improves airflow, and helps create a healthier living space. If you're looking for reliable and affordable air duct cleaning services, our experienced team is here to help.
+</p>
+
+<a href="#" class="blog-btn">Contact Us Today</a>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- LEFT -->
+
+<div class="footer-left">
+
+<div class="social">
+●
+</div>
+
+<p class="copyright">
+©2024 GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile® - All rights reserved.
+</p>
+
+</div>
+
+
+<!-- RIGHT -->
+
+<div class="footer-right">
+
+<div class="footer-links">
+
+<a href="#">Home</a> |
+<a href="#">Free Quote</a> |
+<a href="#">Privacy Policy</a> |
+<a href="#">Terms and Conditions</a> |
+<a href="#">Contact</a>
+
+</div>
+
+<p><strong>Address:</strong> Bhopal, Madhya Pradesh, India</p>
+
+<div class="hours">
+
+<p><strong>Hours:</strong></p>
+
+<p>Monday Open 24 hours</p>
+<p>Tuesday Open 24 hours</p>
+<p>Wednesday Open 24 hours</p>
+<p>Thursday Open 24 hours</p>
+<p>Friday Open 24 hours</p>
+<p>Saturday Open 24 hours</p>
+<p>Sunday Open 24 hours</p>
+
+</div>
+
+<p class="phone"><strong>Phone:</strong> +91 94244 30664</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<style>
+
+    .blog-section{
+background:#f4f4f4;
+padding:80px 20px;
+}
+
+.blog-container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:60px;
+}
+
+.blog-container h1{
+font-size:40px;
+margin-bottom:25px;
+}
+
+.blog-container h2{
+font-size:28px;
+margin-top:40px;
+margin-bottom:15px;
+}
+
+.blog-container p{
+font-size:18px;
+line-height:1.8;
+color:#555;
+margin-bottom:20px;
+}
+
+.blog-container img{
+width:100%;
+margin:25px 0;
+border-radius:4px;
+}
+
+.blog-btn{
+display:inline-block;
+margin-top:30px;
+background:#a3925b;
+color:white;
+padding:14px 28px;
+text-decoration:none;
+font-size:16px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.blog-container{
+padding:35px 20px;
+}
+
+.blog-container h1{
+font-size:28px;
+}
+
+.blog-container h2{
+font-size:22px;
+}
+
+.blog-container p{
+font-size:16px;
+}
+
+}
+    /* FOOTER */
+
+.footer{
+background:#000;
+color:#ddd;
+padding:80px 60px;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+max-width:1400px;
+margin:auto;
+}
+
+/* LEFT */
+
+.footer-left{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.social{
+font-size:26px;
+color:#c8b46a;
+margin-bottom:30px;
+}
+
+.copyright{
+font-size:18px;
+}
+
+/* RIGHT */
+
+.footer-right{
+text-align:left;
+}
+
+.footer-links{
+margin-bottom:35px;
+}
+
+.footer-links a{
+color:#ddd;
+text-decoration:none;
+margin-right:8px;
+}
+
+.footer-right p{
+font-size:18px;
+margin-bottom:18px;
+line-height:1.7;
+}
+
+.hours{
+margin-top:25px;
+margin-bottom:25px;
+}
+
+.phone{
+margin-top:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.footer{
+padding:60px 25px;
+}
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.footer-right{
+text-align:center;
+}
+
+.footer-links a{
+display:inline-block;
+margin:5px;
+}
+
+}
+
+</style>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
+
+function toggleDropdown(el){
+if(window.innerWidth < 900){
+el.classList.toggle("active");
+}
+}
+
+</script>
+
+</body>
+</html>

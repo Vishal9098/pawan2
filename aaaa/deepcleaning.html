@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carpet Cleaning</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Georgia, serif;
+}
+
+/* HEADER */
+
+header{
+background:#000;
+color:white;
+}
+
+header{
+background:#000;
+color:white;
+position:relative;
+z-index:1000;
+}
+
+.nav-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:15px 40px;
+}
+
+.logo img{
+height:60px;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+gap:25px;
+align-items:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:16px;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu{
+top:100%;
+}
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#000;
+min-width:220px;
+flex-direction:column;
+border-radius:4px;
+overflow:hidden;
+z-index:9999;
+flex-direction:column;
+}
+
+.dropdown-menu a{
+padding:12px 18px;
+display:block;
+color:white;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.dropdown-menu a:hover{
+background:#c8a85a;
+}
+
+.dropdown:hover .dropdown-menu{
+display:flex;
+flex-direction:column;
+}
+
+/* MOBILE MENU BUTTON */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+color:white;
+cursor:pointer;
+}
+
+/* HERO SECTION */
+
+.hero{
+position:relative;
+background:url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
+height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+position:relative;
+max-width:900px;
+padding:20px;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:20px;
+line-height:1.6;
+}
+
+.hero h3{
+color:#c8a85a;
+margin-bottom:20px;
+letter-spacing:2px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.hero-buttons a{
+background:#c8a85a;
+padding:12px 18px;
+text-decoration:none;
+color:white;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media (max-width:900px){
+
+nav{
+display:none;
+flex-direction:column;
+width:100%;
+margin-top:15px;
+}
+
+nav.show{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
+/* MOBILE DROPDOWN */
+
+.dropdown-menu{
+position:static;
+}
+
+.dropdown:hover .dropdown-menu{
+display:none;
+}
+
+.dropdown.active .dropdown-menu{
+display:block;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero{
+height:auto;
+padding:80px 20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav-container">
+
+<div class="logo">
+<img src="images/b.jpg" alt="Logo">
+</div>
+
+<nav id="menu">
+
+<a href="index.html">Home</a>
+<a href="aboutus.html">About Us</a>
+
+<div class="dropdown">
+  <a href="#" onclick="toggleDropdown(this.parentElement)">Services ▼</a>
+
+  <div class="dropdown-menu">
+     <a href="tilefloorcleaning.html">Tile Cleaning</a>
+          <a href="Air Duct Cleaning SERVICES.html"> Air Duct Cleaning</a>
+          <a href="deepcleaning.html">Deep Steam Cleaning</a>
+  </div>
+</div>
+<a href="#">Locations</a>
+<a href="EmergencyFloorCleaningService.html">Emergency Floor Cleaning</a>
+<a href="CommercialCleaning.html">Commercial Cleaning</a>
+<a href="house-cleaning.html">House Cleaning</a>
+<a href="#">More</a>
+
+</nav>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+</div>
+</header>
+
+
+<!-- <section class="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>CARPET CLEANING NEAR YOU IN MP , BHOPAL</h1>
+
+<p>
+Revitalize your carpets with expert <b>carpet cleaning in Loveland, Larimer County.</b>
+GOODWILL BHARAT™ Upholstery Cleaners Carpet and Tile Cleaning removes dirt, stains, and allergens
+for a fresher, healthier home.
+</p>
+
+<h3>QUALITY FLOOR CLEANING</h3>
+
+<div class="hero-buttons">
+<a href="#">Get a Quote</a>
+<a href="#">Call Us to Schedule</a>
+<a href="#">Emergency Service Call Now</a>
+<a href="#">Book Now</a>
+</div>
+
+</div>
+
+</section> -->
+
+<section class="deep-clean-section">
+
+<div class="deep-clean-content">
+
+<div class="deep-clean-box">
+
+<h2>Why Choose Our Deep Cleaning Services?</h2>
+
+<ul>
+
+<li>
+<b>Comprehensive Cleaning:</b> We cover all areas, including kitchens,
+bathrooms, carpets, upholstery, and hard-to-reach spots.
+</li>
+
+<li>
+<b>Eco-Friendly Products:</b> Our cleaning solutions are safe for your
+family, pets, and the environment.
+</li>
+
+<li>
+<b>Experienced Professionals:</b> Our trained and certified cleaners
+guarantee top-quality service.
+</li>
+
+<li>
+<b>Custom Cleaning Plans:</b> We tailor our services to meet your specific
+cleaning needs.
+</li>
+
+<li>
+<b>Affordable Rates:</b> Get premium deep cleaning at competitive prices.
+</li>
+
+</ul>
+
+<a href="#" class="deep-btn">Call Us to Schedule</a>
+
+</div>
+
+</div>
+
+
+<div class="deep-clean-image">
+
+<img src="images/b.jpg" alt="Deep Cleaning">
+
+</div>
+
+</section>
+    <section class="residential-clean-section">
+
+<div class="residential-image">
+<img src="images/a.jpg" alt="Residential Deep Cleaning">
+</div>
+
+<div class="residential-content">
+
+<div class="residential-box">
+
+<h2>Residential Deep Cleaning</h2>
+
+<p>
+Our <b>home deep cleaning services</b> are perfect for maintaining a healthy
+and hygienic living space. Whether you need a <b>one-time deep house
+cleaning</b> or regular maintenance, we have you covered.
+</p>
+
+<h3>Included Services:</h3>
+
+<ul>
+
+<li><b>Kitchen Deep Cleaning:</b> Scrubbing countertops, sinks, cabinets, and appliances.</li>
+
+<li><b>Bathroom Deep Cleaning:</b> Disinfection of sinks, showers, toilets, and tile surfaces.</li>
+
+<li><b>Carpet Deep Cleaning:</b> Removing dirt, stains, and allergens.</li>
+
+<li><b>Sofa and Upholstery Cleaning:</b> Eliminating dust, pet dander, and odors.</li>
+
+<li><b>Hardwood and Tile Floor Deep Cleaning:</b> Intensive scrubbing and polishing.</li>
+
+</ul>
+
+</div>
+</div>
+
+</section>
+
+<section class="specialty-clean">
+
+<div class="specialty-content">
+
+<div class="specialty-box">
+
+<h2>Specialty Deep Cleaning Services</h2>
+
+<ul>
+
+<li><b>Restaurant Deep Cleaning Services</b> – Maintain cleanliness and hygiene in your food establishment.</li>
+
+<li><b>Apartment Deep Cleaning Services</b> – Ideal for landlords and tenants.</li>
+
+<li><b>Bathroom Deep Cleaning Services</b> – Targeting mold, mildew, and soap scum buildup.</li>
+
+<li><b>Kitchen Deep Cleaning</b> – Degreasing, scrubbing, and sanitization.</li>
+
+<li><b>Post-Renovation Deep Cleaning</b> – Removing dust and debris from construction projects.</li>
+
+<li><b>Deep Carpet Cleaning</b> – Professional stain and odor removal.</li>
+
+</ul>
+
+<a href="#" class="specialty-btn">Call Us Today</a>
+
+</div>
+</div>
+
+<div class="specialty-image">
+<img src="images/b.jpg" alt="Kitchen Cleaning">
+</div>
+
+</section>
+<section class="specialty-clean">
+
+<div class="specialty-content">
+
+<div class="specialty-box">
+
+<h2>Specialty Deep Cleaning Services</h2>
+
+<ul>
+
+<li><b>Restaurant Deep Cleaning Services</b> – Maintain cleanliness and hygiene in your food establishment.</li>
+
+<li><b>Apartment Deep Cleaning Services</b> – Ideal for landlords and tenants.</li>
+
+<li><b>Bathroom Deep Cleaning Services</b> – Targeting mold, mildew, and soap scum buildup.</li>
+
+<li><b>Kitchen Deep Cleaning</b> – Degreasing, scrubbing, and sanitization.</li>
+
+<li><b>Post-Renovation Deep Cleaning</b> – Removing dust and debris from construction projects.</li>
+
+<li><b>Deep Carpet Cleaning</b> – Professional stain and odor removal.</li>
+
+</ul>
+
+<a href="#" class="specialty-btn">Call Us Today</a>
+
+</div>
+</div>
+
+<div class="specialty-image">
+<img src="images/a.jpg" alt="Kitchen Cleaning">
+</div>
+
+</section>
+<section class="cta-deep-clean">
+
+<div class="cta-overlay"></div>
+
+<div class="cta-content">
+
+<h2>Book Your Deep Cleaning Service Today!</h2>
+
+<p>
+If you're looking for the best <b>deep cleaning services near me</b>,
+GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile is your go-to choice in MP , BHOPAL.
+Our expert cleaners ensure your home or business stays immaculate.
+</p>
+
+<div class="cta-buttons">
+
+<a href="#" class="cta-btn">Get A Quote</a>
+
+<a href="#" class="cta-btn">Call Us to Schedule</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- LEFT -->
+
+<div class="footer-left">
+
+<div class="social">
+●
+</div>
+
+<p class="copyright">
+©2024 GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile® - All rights reserved.
+</p>
+
+</div>
+
+
+<!-- RIGHT -->
+
+<div class="footer-right">
+
+<div class="footer-links">
+
+<a href="#">Home</a> |
+<a href="#">Free Quote</a> |
+<a href="#">Privacy Policy</a> |
+<a href="#">Terms and Conditions</a> |
+<a href="#">Contact</a>
+
+</div>
+
+<p><strong>Address:</strong> Bhopal, Madhya Pradesh, India</p>
+
+<div class="hours">
+
+<p><strong>Hours:</strong></p>
+
+<p>Monday Open 24 hours</p>
+<p>Tuesday Open 24 hours</p>
+<p>Wednesday Open 24 hours</p>
+<p>Thursday Open 24 hours</p>
+<p>Friday Open 24 hours</p>
+<p>Saturday Open 24 hours</p>
+<p>Sunday Open 24 hours</p>
+
+</div>
+
+<p class="phone"><strong>Phone:</strong> +91 94244 30664</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<style>
+/* SECTION */
+
+.cta-deep-clean{
+position:relative;
+background:url("images/b.jpg") center/cover no-repeat;
+padding:140px 20px;
+text-align:center;
+color:white;
+}
+
+/* OVERLAY */
+
+.cta-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+/* CONTENT */
+
+.cta-content{
+position:relative;
+max-width:900px;
+margin:auto;
+}
+
+/* HEADING */
+
+.cta-content h2{
+font-size:48px;
+margin-bottom:25px;
+}
+
+/* TEXT */
+
+.cta-content p{
+font-size:20px;
+line-height:1.9;
+color:#eee;
+margin-bottom:40px;
+}
+
+/* BUTTONS */
+
+.cta-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.cta-btn{
+background:#a3925b;
+color:white;
+padding:16px 35px;
+font-size:18px;
+text-decoration:none;
+display:inline-block;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.cta-deep-clean{
+padding:90px 20px;
+}
+
+.cta-content h2{
+font-size:32px;
+}
+
+.cta-content p{
+font-size:17px;
+}
+
+.cta-buttons{
+flex-direction:column;
+gap:12px;
+}
+
+}
+
+    .tips-clean{
+display:grid;
+grid-template-columns:55% 45%;
+background:#efefef;
+align-items:center;
+}
+
+.tips-image{
+height:520px;
+overflow:hidden;
+}
+
+.tips-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.tips-content{
+padding:80px 60px;
+display:flex;
+justify-content:center;
+text-align:center;
+}
+
+.tips-box{
+max-width:550px;
+}
+
+.tips-box h2{
+font-size:46px;
+margin-bottom:30px;
+color:#222;
+}
+
+.tips-box ol{
+padding-left:25px;
+}
+
+.tips-box li{
+font-size:20px;
+line-height:1.8;
+color:#555;
+margin-bottom:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.tips-clean{
+grid-template-columns:1fr;
+}
+
+.tips-image{
+height:320px;
+}
+
+.tips-content{
+padding:50px 25px;
+}
+
+.tips-box h2{
+font-size:32px;
+}
+
+.tips-box li{
+font-size:17px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+    .specialty-clean{
+display:grid;
+grid-template-columns:55% 45%;
+background:#efefef;
+align-items:center;
+}
+
+.specialty-content{
+padding:80px 60px;
+display:flex;
+justify-content:center;
+}
+
+.specialty-box{
+max-width:550px;
+}
+
+.specialty-box h2{
+font-size:46px;
+margin-bottom:30px;
+color:#222;
+}
+
+.specialty-box ul{
+list-style:disc;
+padding-left:25px;
+margin-bottom:40px;
+}
+
+.specialty-box li{
+font-size:20px;
+line-height:1.8;
+color:#555;
+margin-bottom:10px;
+}
+
+.specialty-btn{
+background:#a3925b;
+color:white;
+padding:16px 35px;
+font-size:18px;
+text-decoration:none;
+display:inline-block;
+}
+
+.specialty-image{
+height:520px;
+overflow:hidden;
+}
+
+.specialty-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.specialty-clean{
+grid-template-columns:1fr;
+}
+
+.specialty-content{
+padding:50px 25px;
+text-align:center;
+}
+
+.specialty-box h2{
+font-size:32px;
+}
+
+.specialty-box li{
+font-size:17px;
+}
+
+.specialty-image{
+height:320px;
+}
+
+}
+
+/* SECTION */
+
+.residential-clean-section{
+display:grid;
+grid-template-columns:55% 45%;
+background:#efefef;
+align-items:center;
+}
+
+/* IMAGE */
+
+.residential-image{
+height:520px;
+overflow:hidden;
+}
+
+.residential-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+/* CONTENT */
+
+.residential-content{
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:80px 60px;
+}
+
+.residential-box{
+max-width:550px;
+}
+
+/* HEADING */
+
+.residential-box h2{
+font-size:48px;
+margin-bottom:25px;
+color:#222;
+}
+
+/* TEXT */
+
+.residential-box p{
+font-size:20px;
+line-height:1.9;
+color:#555;
+margin-bottom:30px;
+}
+
+/* SUBTITLE */
+
+.residential-box h3{
+font-size:22px;
+margin-bottom:20px;
+color:#333;
+}
+
+/* LIST */
+
+.residential-box ul{
+list-style:none;
+padding:0;
+}
+
+.residential-box li{
+font-size:20px;
+line-height:1.8;
+color:#555;
+margin-bottom:10px;
+position:relative;
+padding-left:22px;
+}
+
+.residential-box li::before{
+content:"•";
+position:absolute;
+left:0;
+color:#666;
+font-size:26px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.residential-clean-section{
+grid-template-columns:1fr;
+}
+
+.residential-image{
+height:320px;
+}
+
+.residential-content{
+padding:50px 25px;
+}
+
+.residential-box h2{
+font-size:32px;
+}
+
+.residential-box p,
+.residential-box li{
+font-size:17px;
+}
+
+}
+    /* SECTION */
+
+.deep-clean-section{
+display:grid;
+grid-template-columns: 50% 50%;
+align-items:center;
+background:#efefef;
+}
+
+/* TEXT SIDE */
+
+.deep-clean-content{
+padding:80px 70px;
+display:flex;
+justify-content:center;
+}
+
+.deep-clean-box{
+max-width:600px;
+}
+
+/* HEADING */
+
+.deep-clean-box h2{
+font-size:48px;
+margin-bottom:30px;
+color:#222;
+text-align:center;
+}
+
+/* LIST */
+
+.deep-clean-box ul{
+list-style:disc;
+padding-left:25px;
+margin-bottom:40px;
+}
+
+.deep-clean-box li{
+font-size:20px;
+line-height:1.9;
+color:#555;
+margin-bottom:10px;
+}
+
+/* BUTTON */
+
+.deep-btn{
+display:inline-block;
+background:#a3925b;
+color:white;
+padding:16px 35px;
+text-decoration:none;
+font-size:18px;
+}
+
+/* IMAGE */
+
+.deep-clean-image{
+height:520px;
+overflow:hidden;
+}
+
+.deep-clean-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.deep-clean-section{
+grid-template-columns:1fr;
+}
+
+.deep-clean-content{
+padding:50px 25px;
+text-align:center;
+}
+
+.deep-clean-box h2{
+font-size:32px;
+}
+
+.deep-clean-box li{
+font-size:17px;
+}
+
+.deep-clean-image{
+height:320px;
+}
+
+}
+    /* FOOTER */
+
+.footer{
+background:#000;
+color:#ddd;
+padding:80px 60px;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+max-width:1400px;
+margin:auto;
+}
+
+/* LEFT */
+
+.footer-left{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.social{
+font-size:26px;
+color:#c8b46a;
+margin-bottom:30px;
+}
+
+.copyright{
+font-size:18px;
+}
+
+/* RIGHT */
+
+.footer-right{
+text-align:left;
+}
+
+.footer-links{
+margin-bottom:35px;
+}
+
+.footer-links a{
+color:#ddd;
+text-decoration:none;
+margin-right:8px;
+}
+
+.footer-right p{
+font-size:18px;
+margin-bottom:18px;
+line-height:1.7;
+}
+
+.hours{
+margin-top:25px;
+margin-bottom:25px;
+}
+
+.phone{
+margin-top:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.footer{
+padding:60px 25px;
+}
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.footer-right{
+text-align:center;
+}
+
+.footer-links a{
+display:inline-block;
+margin:5px;
+}
+
+}
+
+</style>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
+
+function toggleDropdown(el){
+if(window.innerWidth < 900){
+el.classList.toggle("active");
+}
+}
+
+</script>
+
+</body>
+</html>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- LEFT -->
+
+<div class="footer-left">
+
+<div class="social">
+●
+</div>
+
+<p class="copyright">
+©2024 GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile® - All rights reserved.
+</p>
+
+</div>
+
+
+<!-- RIGHT -->
+
+<div class="footer-right">
+
+<div class="footer-links">
+
+<a href="#">Home</a> |
+<a href="#">Free Quote</a> |
+<a href="#">Privacy Policy</a> |
+<a href="#">Terms and Conditions</a> |
+<a href="#">Contact</a>
+
+</div>
+
+<p><strong>Address:</strong> Bhopal, Madhya Pradesh, India</p>
+
+<div class="hours">
+
+<p><strong>Hours:</strong></p>
+
+<p>Monday Open 24 hours</p>
+<p>Tuesday Open 24 hours</p>
+<p>Wednesday Open 24 hours</p>
+<p>Thursday Open 24 hours</p>
+<p>Friday Open 24 hours</p>
+<p>Saturday Open 24 hours</p>
+<p>Sunday Open 24 hours</p>
+
+</div>
+
+<p class="phone"><strong>Phone:</strong> +91 94244 30664</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<style>
+    /* FOOTER */
+
+.footer{
+background:#000;
+color:#ddd;
+padding:80px 60px;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+max-width:1400px;
+margin:auto;
+}
+
+/* LEFT */
+
+.footer-left{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.social{
+font-size:26px;
+color:#c8b46a;
+margin-bottom:30px;
+}
+
+.copyright{
+font-size:18px;
+}
+
+/* RIGHT */
+
+.footer-right{
+text-align:left;
+}
+
+.footer-links{
+margin-bottom:35px;
+}
+
+.footer-links a{
+color:#ddd;
+text-decoration:none;
+margin-right:8px;
+}
+
+.footer-right p{
+font-size:18px;
+margin-bottom:18px;
+line-height:1.7;
+}
+
+.hours{
+margin-top:25px;
+margin-bottom:25px;
+}
+
+.phone{
+margin-top:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.footer{
+padding:60px 25px;
+}
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.footer-right{
+text-align:center;
+}
+
+.footer-links a{
+display:inline-block;
+margin:5px;
+}
+
+}
+
+</style>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
+
+function toggleDropdown(el){
+if(window.innerWidth < 900){
+el.classList.toggle("active");
+}
+}
+
+</script>
+
+</body>
+</html>

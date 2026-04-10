@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport meta – essential for mobile responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Carpet Cleaning Loveland - GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile</title>
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ---------- TOP BAR (exactly like reference) ---------- */
+    .topbar {
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 20px;
+      font-size: 14px;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .topbar-left span {
+      color: #d4af37;
+      font-size: 13px;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .topbar a {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+      font-size: 13px;
+    }
+
+    .call-now-btn {
+      background: #d4af37;
+      color: #000 !important;
+      padding: 5px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* ---------- NAVBAR with hamburger (same as reference) ---------- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: #000;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: #d4af37;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Hamburger menu (mobile only) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 100%;
+      height: 3px;
+      background: #d4af37;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    /* Desktop navigation */
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .desktop-nav ul {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .desktop-nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 15px;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+
+    .desktop-nav a:hover {
+      color: #d4af37;
+    }
+
+    /* Desktop dropdown */
+    .desktop-dropdown {
+      position: relative;
+    }
+
+    .desktop-dropdown > a::after {
+      content: " ▾";
+      font-size: 12px;
+    }
+
+    .desktop-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #111;
+      list-style: none;
+      padding: 8px 0;
+      min-width: 200px;
+      display: none;
+      flex-direction: column;
+      border: 1px solid #333;
+      border-radius: 6px;
+      z-index: 1001;
+    }
+
+    .desktop-dropdown-menu li {
+      padding: 8px 20px;
+    }
+
+    .desktop-dropdown-menu a {
+      font-size: 14px;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .desktop-dropdown:hover .desktop-dropdown-menu {
+      display: flex;
+    }
+
+    /* Action buttons */
+    .nav-btns {
+      display: flex;
+      gap: 10px;
+    }
+
+    .call-btn, .schedule-btn {
+      padding: 8px 16px;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    .call-btn {
+      background: #c6a86b;
+    }
+
+    .schedule-btn {
+      background: #b79a5c;
+    }
+
+    /* Mobile menu (hidden by default) */
+    .mobile-menu {
+      display: none;
+      width: 100%;
+      background: #111;
+      border-radius: 12px;
+      margin-top: 12px;
+      padding: 8px 0;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+    }
+
+    .mobile-menu li {
+      border-bottom: 1px solid #222;
+    }
+
+    .mobile-menu li:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 16px 20px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .mobile-menu a:active {
+      background: #222;
+      color: #d4af37;
+    }
+
+    /* Mobile dropdown */
+    .mobile-dropdown-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      cursor: pointer;
+    }
+
+    .mobile-dropdown-header span {
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .mobile-dropdown-header .arrow {
+      color: #d4af37;
+      font-size: 14px;
+      transition: transform 0.3s;
+    }
+
+    .mobile-dropdown.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .mobile-dropdown-menu {
+      display: none;
+      background: #1a1a1a;
+      padding: 5px 0;
+    }
+
+    .mobile-dropdown.active .mobile-dropdown-menu {
+      display: block;
+    }
+
+    .mobile-dropdown-menu a {
+      padding-left: 35px !important;
+      font-size: 15px !important;
+    }
+
+    /* Media Queries */
+    @media (max-width: 1024px) {
+      .desktop-nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .nav-btns .call-btn, 
+      .nav-btns .schedule-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .hamburger {
+        display: none !important;
+      }
+      .mobile-menu {
+        display: none !important;
+      }
+      .desktop-nav {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar-left span {
+        display: none;
+      }
+      .topbar {
+        justify-content: center;
+        text-align: center;
+      }
+      .nav-btns .schedule-btn {
+        display: none;
+      }
+      .nav-btns .call-btn {
+        padding: 8px 18px;
+      }
+    }
+
+    /* ---------- HERO SECTION (unchanged) ---------- */
+    .hero {
+      min-height: 70vh;
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                  url('https://images.unsplash.com/photo-1581578731548-c64695cc6952');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      width: 100%;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 8vw, 60px);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: clamp(16px, 4vw, 18px);
+      line-height: 1.7;
+    }
+
+    .hero h3 {
+      color: #d4af37;
+      margin-bottom: 25px;
+      letter-spacing: 2px;
+      font-size: clamp(14px, 3vw, 18px);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .buttons a {
+      background: #b79a5c;
+      padding: 14px 20px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: 0.3s;
+      flex: 1 1 170px;
+      font-size: 15px;
+    }
+
+    /* ---------- FEATURES (unchanged) ---------- */
+    .features {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url('https://source.unsplash.com/1600x900/?clean-carpet,room');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .badges img {
+      width: 90px;
+      height: 90px;
+      background: #d4af37;
+      padding: 18px;
+      border-radius: 50%;
+      transition: transform 0.3s;
+      cursor: pointer;
+      max-width: 100%;
+    }
+
+    .features h2 {
+      color: #d4af37;
+      font-size: clamp(24px, 6vw, 36px);
+      letter-spacing: 2px;
+      line-height: 1.4;
+    }
+
+    /* ---------- SERVICES INTRO (unchanged) ---------- */
+    .services-intro {
+      background: #f5f5f5;
+      color: #333;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .services-intro .stars {
+      color: #d4af37;
+      font-size: 40px;
+      letter-spacing: 6px;
+      margin-bottom: 10px;
+    }
+
+    .services-intro .experience {
+      color: #d4af37;
+      font-size: 14px;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+    }
+
+    .services-intro h2 {
+      font-size: clamp(32px, 7vw, 48px);
+      margin-bottom: 20px;
+    }
+
+    .services-intro p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: clamp(16px, 4vw, 20px);
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* ---------- SERVICES GRID (unchanged) ---------- */
+    .services-grid {
+      background: #f5f5f5;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 30px 20px 50px;
+    }
+
+    .service-card {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      max-width: 600px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .overlay h3 {
+      color: #fff;
+      font-size: clamp(24px, 7vw, 34px);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    /* ---------- FOOTER (unchanged) ---------- */
+    .footer {
+      background: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      padding: 50px 20px;
+      border-top: 1px solid #d4af37;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px 20px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .footer-links a:hover {
+      color: #d4af37;
+    }
+
+    .hours p {
+      margin: 5px 0;
+    }
+
+    .footer a[href^="tel"] {
+      color: #d4af37;
+      text-decoration: none;
+    }
+
+    @media (min-width: 900px) {
+      .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding: 80px 60px;
+      }
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+
+    /* touch-friendly */
+    .dropdown-menu li a,
+    .buttons a,
+    .call-btn,
+    .schedule-btn {
+      touch-action: manipulation;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR (exactly like reference) -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span>📍 Bhopal, Madhya Pradesh</span>
+      <span>⏰ Open 24/7</span>
+    </div>
+    <div class="topbar-right">
+      <a href="#">⭐ Leave Review</a>
+      <a href="tel:+919424430664" class="call-now-btn">📞 +91 94244 30664</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR with hamburger (exactly like reference) -->
+  <header class="navbar">
+    <div class="logo" onclick="window.location.href='#'">GOODWILL BHARAT™ Upholstery Cleaners</div>
+    
+    <!-- Desktop Navigation (visible on large screens) -->
+    <div class="desktop-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li class="desktop-dropdown">
+          <a href="#">Services</a>
+          <ul class="desktop-dropdown-menu">
+            <li><a href="tilefloorcleaning.html">Tile Floor Cleaning</a></li>
+            <li><a href="PetStainRemoval.html">Pet Stain Removal</a></li>
+            <li><a href="#">Upholstery Cleaning</a></li>
+            <li><a href="#">Pet Stain Removal</a></li>
+            <li><a href="#">Commercial Cleaning</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Locations</a></li>
+        <li><a href="#">Emergency Floor Cleaning</a></li>
+        <li><a href="#">Commercial Cleaning</a></li>
+        <li><a href="#">House Cleaning</a></li>
+        <li><a href="#">More</a></li>
+      </ul>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="nav-btns">
+      <a class="call-btn" href="tel:+19702007677">📞 Call</a>
+      <a class="schedule-btn" href="#" onclick="alert('Schedule service form would open here')">📅 Schedule</a>
+    </div>
+
+    <!-- Hamburger Icon (mobile only) -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li class="mobile-dropdown" id="mobileServices">
+        <div class="mobile-dropdown-header">
+          <span>Services</span>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="mobile-dropdown-menu">
+          <a href="tilefloorcleaning.html">Tile Floor Cleaning</a>
+          <a href="PetStainRemoval.html">Pet Stain Removal</a>
+          <a href="#">Upholstery Cleaning</a>
+          <a href="#">Pet Stain Removal</a>
+          <a href="#">Commercial Cleaning</a>
+        </div>
+      </li>
+      <li><a href="#">Locations</a></li>
+      <li><a href="#">Emergency Floor Cleaning</a></li>
+      <li><a href="#">Commercial Cleaning</a></li>
+      <li><a href="#">House Cleaning</a></li>
+      <li><a href="#">More</a></li>
+      <li><a href="#">⭐ Leave Review</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>CARPET CLEANING NEAR YOU IN MP , BHOPAL</h1>
+      <p>Revitalize your carpets with expert carpet cleaning in Loveland, Larimer County. GOODWILL BHARAT™ Upholstery Cleaners Carpet and Tile Cleaning removes dirt, stains, and allergens for a fresher, healthier home.</p>
+      <h3>QUALITY FLOOR CLEANING</h3>
+      <div class="buttons">
+        <a href="#">Get a Quote</a>
+        <a href="tel:+19702007677">Call Us to Schedule</a>
+        <a href="#" onclick="alert('Emergency service would be dispatched')">Emergency Service</a>
+        <a href="#" onclick="alert('Booking form would open here')">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="badges">
+      <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Eco Friendly" onclick="alert('Learn about our eco-friendly cleaning')">
+      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="24/7 Service" onclick="alert('We are available 24/7 for emergencies')">
+      <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="Certified" onclick="alert('View our certifications')">
+      <img src="https://cdn-icons-png.flaticon.com/512/2909/2909766.png" alt="Satisfaction Guaranteed" onclick="alert('100% satisfaction guaranteed')">
+    </div>
+    <h2>OPEN 24/7/365 FOR EMERGENCY FLOOR CLEANING</h2>
+  </section>
+
+  <!-- SERVICES INTRO -->
+  <section class="services-intro">
+    <div class="stars" onclick="alert('Read our 5-star reviews')">★★★★★</div>
+    <div class="experience">5 STAR EXPERIENCE</div>
+    <h2>Our Floor Cleaning Services</h2>
+    <p>At GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile, we pride ourselves on using environmentally safe products to revitalize your floors, ensuring a clean and healthy home environment. Our professional floor cleaners are equipped to handle all your cleaning needs with precision and care. Our services include:</p>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="services-grid">
+    <div class="service-card" onclick="alert('Deep cleaning service details would open here')">
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Deep Cleaning">
+      <div class="overlay"><h3>Deep Cleaning for Sofas and Couches</h3></div>
+    </div>
+    <div class="service-card" onclick="alert('Stain removal service details would open here')">
+      <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001" alt="Stain Removal">
+      <div class="overlay"><h3>Stain Removal</h3></div>
+    </div>
+    <div class="service-card" onclick="alert('Pet stain and odor removal details would open here')">
+      <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1" alt="Pet Stain Removal">
+      <div class="overlay"><h3>Pet Stain and Odor Removal</h3></div>
+    </div>
+    <div class="service-card" onclick="alert('Tile cleaning service details would open here')">
+      <img src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1" alt="Tile Cleaning">
+      <div class="overlay"><h3>Tile Cleaning</h3></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>
+      <p>©2024 GOODWILL BHARAT™ Upholstery Cleaners Carpet & Tile® - All rights reserved.</p>
+    </div>
+    <div>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#" onclick="alert('Quote form')">Free Quote</a>
+        <a href="#" onclick="alert('Privacy policy')">Privacy Policy</a>
+        <a href="#" onclick="alert('Terms')">Terms</a>
+        <a href="#" onclick="alert('Contact')">Contact</a>
+      </div>
+      <p>Address: Bhopal, Madhya Pradesh</p>
+      <div class="hours">
+        <p>Monday Open 24 hours</p>
+        <p>Tuesday Open 24 hours</p>
+        <p>Wednesday Open 24 hours</p>
+        <p>Thursday Open 24 hours</p>
+        <p>Friday Open 24 hours</p>
+        <p>Saturday Open 24 hours</p>
+        <p>Sunday Open 24 hours</p>
+      </div>
+      <p>Phone: <a href="tel:+919424430664">+91 94244 30664</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+      });
+    }
+    
+    // Mobile dropdown toggle
+    const mobileServices = document.getElementById('mobileServices');
+    if (mobileServices) {
+      mobileServices.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+      });
+    }
+    
+    // Close mobile menu when a link is clicked
+    const mobileLinks = document.querySelectorAll('.mobile-menu a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

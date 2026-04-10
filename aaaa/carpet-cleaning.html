@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Carpet Cleaning — GOODWILL BHARAT™ | Premium Upholstery & Carpet Cleaning</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ═══════════════════════════════════════
+   ROOT & RESET
+═══════════════════════════════════════ */
+:root {
+  --black:        #080808;
+  --black-mid:    #111111;
+  --black-soft:   #1a1a1a;
+  --gold:         #c8a85a;
+  --gold-light:   #e4c97a;
+  --white:        #ffffff;
+  --off-white:    #f9f5ee;
+  --muted:        #888888;
+  --border:       rgba(200,168,90,0.2);
+  --border-light: rgba(200,168,90,0.08);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  background:var(--black); color:var(--white);
+  font-family:'Montserrat',sans-serif;
+  overflow-x:hidden; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+body::before {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.3;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+}
+img { display:block; max-width:100%; }
+a { text-decoration:none; color:inherit; }
+.gold-line { width:56px; height:1px; background:var(--gold); display:inline-block; margin-bottom:18px; }
+.gold-line-center { display:block; margin:0 auto 18px; }
+
+/* ═══════════════════════════════════════
+   FLOATING BUTTONS
+═══════════════════════════════════════ */
+.floating-btns {
+  position:fixed; bottom:clamp(18px,4vw,28px); right:clamp(14px,3vw,20px);
+  z-index:9999; display:flex; flex-direction:column; gap:10px; align-items:center;
+}
+.float-btn {
+  width:clamp(46px,8vw,56px); height:clamp(46px,8vw,56px); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:clamp(18px,3.5vw,22px); color:#fff;
+  box-shadow:0 4px 20px rgba(0,0,0,.45);
+  transition:transform .3s,box-shadow .3s; position:relative;
+}
+.float-btn:hover { transform:scale(1.1); }
+.float-btn-wa { background:#25D366; }
+.float-btn-ph { background:var(--gold); }
+.float-btn-wa::before {
+  content:''; position:absolute; inset:-6px; border-radius:50%;
+  border:2px solid #25D366; animation:pulse 2s ease-out infinite; opacity:0;
+}
+@keyframes pulse { 0%{transform:scale(1);opacity:.6} 100%{transform:scale(1.5);opacity:0} }
+.float-btn .tip {
+  position:absolute; right:66px; background:rgba(0,0,0,.88); color:#fff;
+  font-size:11px; letter-spacing:.5px; padding:6px 12px; border-radius:4px;
+  white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .25s;
+  font-family:'Montserrat',sans-serif;
+}
+.float-btn:hover .tip { opacity:1; }
+
+/* ═══════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════ */
+header {
+  position:fixed; top:0; left:0; width:100%; z-index:1000; transition:all .5s ease;
+}
+header.scrolled {
+  background:rgba(8,8,8,.97); backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px); border-bottom:1px solid var(--border);
+}
+.nav-wrap {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:clamp(10px,2vw,16px) clamp(20px,4vw,48px);
+  max-width:1320px; margin:0 auto; gap:12px;
+}
+.logo-link { display:flex; align-items:center; gap:11px; flex-shrink:0; }
+.logo-img {
+  width:clamp(38px,5.5vw,50px); height:clamp(38px,5.5vw,50px);
+  border-radius:50%; object-fit:cover; border:1.5px solid var(--gold);
+}
+.logo-text {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(14px,2.2vw,20px); font-weight:600;
+  letter-spacing:1.2px; text-transform:uppercase; line-height:1.15;
+}
+.logo-text em {
+  font-style:normal; color:var(--gold); display:block;
+  font-size:9px; letter-spacing:2.5px;
+  font-family:'Montserrat',sans-serif; font-weight:400; margin-top:3px; opacity:.85;
+}
+.nav-links { display:flex; align-items:center; gap:4px; list-style:none; }
+.nav-links > li > a {
+  font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase;
+  font-weight:500; color:rgba(255,255,255,.65); transition:color .3s;
+  padding:6px 8px; display:block; position:relative; white-space:nowrap;
+}
+.nav-links > li > a::after {
+  content:''; position:absolute; bottom:2px; left:8px; right:8px;
+  height:1px; background:var(--gold); transform:scaleX(0); transition:transform .3s;
+}
+.nav-links > li > a:hover { color:var(--gold); }
+.nav-links > li > a:hover::after { transform:scaleX(1); }
+.has-dropdown { position:relative; }
+.dropdown-menu {
+  position:absolute; top:calc(100% + 14px); left:50%;
+  transform:translateX(-50%); min-width:220px;
+  background:rgba(18,18,18,.98); border:1px solid var(--border);
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:all .25s ease; list-style:none;
+  backdrop-filter:blur(12px); z-index:100;
+}
+.dropdown-menu::before {
+  content:''; position:absolute; top:-5px; left:50%;
+  width:10px; height:10px; background:rgba(18,18,18,.98);
+  border-left:1px solid var(--border); border-top:1px solid var(--border);
+  transform:translateX(-50%) rotate(45deg);
+}
+.has-dropdown:hover .dropdown-menu {
+  opacity:1; visibility:visible; pointer-events:all;
+}
+.dropdown-menu li a {
+  display:block; padding:11px 18px; font-size:10.5px;
+  letter-spacing:1.3px; text-transform:uppercase;
+  color:rgba(255,255,255,.6); border-bottom:1px solid var(--border-light);
+  transition:all .25s;
+}
+.dropdown-menu li:last-child a { border-bottom:none; }
+.dropdown-menu li a:hover { color:var(--gold); padding-left:24px; background:rgba(200,168,90,.06); }
+.nav-cta {
+  background:transparent !important; border:1px solid var(--gold) !important;
+  color:var(--gold) !important; padding:9px 18px !important;
+  font-size:10px !important; letter-spacing:1.8px !important;
+  font-weight:700 !important; transition:all .3s !important;
+  white-space:nowrap;
+}
+.nav-cta::after { display:none !important; }
+.nav-cta:hover { background:var(--gold) !important; color:var(--black) !important; }
+
+/* Hamburger */
+.menu-toggle {
+  display:none; flex-direction:column; gap:5px; cursor:pointer;
+  width:30px; padding:2px 0; flex-shrink:0;
+}
+.menu-toggle span {
+  display:block; height:1.5px; background:var(--gold);
+  transition:all .35s; border-radius:1px;
+}
+.menu-toggle.open span:nth-child(1) { transform:rotate(45deg) translate(4.5px,4.5px); }
+.menu-toggle.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+.menu-toggle.open span:nth-child(3) { transform:rotate(-45deg) translate(4.5px,-4.5px); }
+
+/* Mobile menu */
+.mobile-menu {
+  position:fixed; top:0; right:-105%; bottom:0; width:min(320px,88vw);
+  background:var(--black-soft); z-index:999;
+  padding:90px 32px 48px; transition:right .45s cubic-bezier(.4,0,.2,1);
+  border-left:1px solid var(--border); overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.mobile-menu.open { right:0; }
+.mobile-menu ul { list-style:none; }
+.mobile-menu > ul > li { border-bottom:1px solid var(--border-light); }
+.mobile-menu > ul > li > a {
+  display:block; padding:15px 0; font-size:11px;
+  letter-spacing:2px; text-transform:uppercase;
+  font-weight:500; color:rgba(255,255,255,.7); transition:color .25s;
+}
+.mobile-menu > ul > li > a:hover { color:var(--gold); }
+.mobile-sub { padding-left:16px; list-style:none; display:none; padding-bottom:8px; }
+.mobile-sub.show { display:block; }
+.mobile-sub li a {
+  display:block; padding:10px 0; font-size:10px;
+  letter-spacing:1.5px; text-transform:uppercase;
+  color:rgba(255,255,255,.45); border-bottom:1px solid var(--border-light);
+  transition:color .25s;
+}
+.mobile-sub li:last-child a { border-bottom:none; }
+.mobile-sub li a:hover { color:var(--gold); }
+.menu-item-with-sub {
+  display:flex; align-items:center; justify-content:space-between;
+  cursor:pointer; padding:15px 0; user-select:none;
+}
+.menu-item-with-sub span { font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:500; color:rgba(255,255,255,.7); }
+.menu-item-with-sub .sub-arrow { color:var(--gold); font-size:11px; transition:transform .3s; }
+.menu-item-with-sub.open .sub-arrow { transform:rotate(180deg); }
+.m-overlay {
+  display:none; position:fixed; inset:0;
+  background:rgba(0,0,0,.75); z-index:998;
+  backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);
+}
+.m-overlay.open { display:block; }
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.svc-hero {
+  position:relative; min-height:80vh; min-height:80svh;
+  display:flex; align-items:flex-end;
+  padding:0 0 clamp(60px,10vw,90px); overflow:hidden;
+}
+.svc-hero-bg { position:absolute; inset:0; z-index:0; }
+.svc-hero-bg img { width:100%; height:100%; object-fit:cover; filter:brightness(.35); }
+.svc-hero-bg::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to top,rgba(8,8,8,.95) 0%,rgba(8,8,8,.4) 60%,transparent 100%);
+}
+.svc-hero-content {
+  position:relative; z-index:2;
+  max-width:1320px; margin:0 auto;
+  padding:0 clamp(20px,5vw,56px); width:100%;
+}
+.svc-hero-pre {
+  font-size:11px; letter-spacing:5px; text-transform:uppercase;
+  color:var(--gold); font-weight:500;
+  display:flex; align-items:center; gap:16px; margin-bottom:22px;
+}
+.svc-hero-pre::before { content:''; width:40px; height:1px; background:var(--gold); opacity:.5; }
+.svc-hero h1 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(38px,8vw,88px); font-weight:300;
+  line-height:1.05; letter-spacing:-1px; margin-bottom:18px;
+}
+.svc-hero h1 em { font-style:italic; color:var(--gold-light); }
+.svc-hero-desc {
+  font-size:clamp(14px,2vw,17px); color:rgba(255,255,255,.75);
+  max-width:620px; line-height:1.85; font-weight:300; margin-bottom:34px;
+}
+.svc-hero-btns { display:flex; gap:12px; flex-wrap:wrap; }
+
+/* ═══════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════ */
+.btn-gold {
+  display:inline-flex; align-items:center; gap:9px;
+  background:var(--gold); color:var(--black);
+  padding:clamp(13px,2vw,16px) clamp(22px,3vw,34px);
+  font-size:clamp(10px,1.5vw,11.5px); letter-spacing:2px; text-transform:uppercase;
+  font-weight:700; transition:all .3s; white-space:nowrap;
+}
+.btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 30px rgba(200,168,90,.3); }
+.btn-outline {
+  display:inline-flex; align-items:center; gap:9px;
+  background:transparent; color:var(--white);
+  padding:clamp(13px,2vw,16px) clamp(22px,3vw,34px);
+  font-size:clamp(10px,1.5vw,11.5px); letter-spacing:2px; text-transform:uppercase;
+  font-weight:600; border:1px solid rgba(255,255,255,.3); transition:all .3s; white-space:nowrap;
+}
+.btn-outline:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-2px); }
+
+/* ═══════════════════════════════════════
+   STATS BAR
+═══════════════════════════════════════ */
+.stats-bar {
+  background:var(--black-soft); border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border); display:flex; flex-wrap:wrap;
+}
+.stat-item {
+  flex:1; text-align:center;
+  padding:clamp(20px,3vw,30px) clamp(12px,2vw,20px);
+  border-right:1px solid var(--border); min-width:120px;
+}
+.stat-item:last-child { border-right:none; }
+.stat-num {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.8rem,4vw,2.4rem); color:var(--gold);
+  display:block; line-height:1;
+}
+.stat-label {
+  font-size:10px; letter-spacing:2px; text-transform:uppercase;
+  color:var(--muted); margin-top:6px; display:block; font-weight:500;
+}
+
+/* ═══════════════════════════════════════
+   SVC-ABOUT (split)
+═══════════════════════════════════════ */
+.svc-about { display:grid; grid-template-columns:1fr 1fr; min-height:560px; }
+.svc-about-img { position:relative; overflow:hidden; min-height:280px; }
+.svc-about-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s ease; }
+.svc-about-img:hover img { transform:scale(1.04); }
+.svc-about-img::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(135deg,rgba(200,168,90,.08),transparent 60%);
+}
+.svc-about-text {
+  background:var(--off-white); color:var(--black);
+  display:flex; align-items:center;
+  padding:clamp(40px,7vw,80px) clamp(28px,6vw,72px);
+}
+.svc-about-inner { max-width:500px; }
+.svc-about-inner h2 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(26px,4vw,46px); font-weight:400;
+  line-height:1.15; color:var(--black); margin-bottom:18px;
+}
+.svc-about-inner h2 em { font-style:italic; color:var(--gold); }
+.svc-about-inner p { font-size:clamp(13px,1.8vw,16px); color:#555; line-height:1.9; font-weight:300; margin-bottom:26px; }
+.svc-checklist { list-style:none; display:flex; flex-direction:column; gap:9px; margin-bottom:32px; }
+.svc-checklist li {
+  display:flex; align-items:flex-start; gap:12px;
+  font-size:clamp(12px,1.6vw,14px); color:#444; font-weight:400;
+}
+.svc-checklist li::before { content:'✦'; color:var(--gold); font-size:.7rem; margin-top:3px; flex-shrink:0; }
+
+/* ═══════════════════════════════════════
+   PROCESS
+═══════════════════════════════════════ */
+.svc-process { background:var(--black-mid); padding:clamp(60px,8vw,90px) clamp(20px,5vw,48px); }
+.svc-process .sec-label {
+  font-size:11px; letter-spacing:4px; text-transform:uppercase;
+  color:var(--gold); font-weight:500; margin-bottom:12px; display:block;
+}
+.svc-process h2 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,4vw,52px); font-weight:300; line-height:1.1; margin-bottom:50px;
+}
+.svc-process h2 em { font-style:italic; color:var(--gold-light); }
+.process-grid {
+  display:grid; grid-template-columns:repeat(5,1fr);
+  gap:0; border:1px solid var(--border); max-width:1320px; margin:0 auto;
+}
+.p-step {
+  padding:clamp(24px,3vw,36px) clamp(16px,2.5vw,28px);
+  border-right:1px solid var(--border); transition:background .3s;
+}
+.p-step:hover { background:rgba(200,168,90,.04); }
+.p-step:last-child { border-right:none; }
+.p-step-num { font-family:'Cormorant Garamond',serif; font-size:3rem; color:rgba(200,168,90,.1); line-height:1; margin-bottom:14px; }
+.p-step-icon { font-size:1.5rem; margin-bottom:12px; }
+.p-step-title { font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:8px; }
+.p-step-desc { font-size:12px; color:rgba(255,255,255,.5); line-height:1.65; font-weight:300; }
+
+/* ═══════════════════════════════════════
+   TYPES
+═══════════════════════════════════════ */
+.svc-types { background:var(--black-soft); padding:clamp(60px,8vw,90px) clamp(20px,5vw,48px); }
+.svc-types .sec-label { font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:12px; display:block; }
+.svc-types h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,52px); font-weight:300; line-height:1.1; margin-bottom:44px; }
+.svc-types h2 em { font-style:italic; color:var(--gold-light); }
+.types-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; max-width:1320px; margin:0 auto; }
+.type-card { background:var(--black-mid); padding:clamp(28px,3vw,40px) clamp(20px,2.5vw,32px); border-bottom:2px solid transparent; transition:all .35s; }
+.type-card:hover { border-color:var(--gold); background:rgba(200,168,90,.04); }
+.type-icon { font-size:2rem; margin-bottom:16px; }
+.type-title { font-family:'Cormorant Garamond',serif; font-size:1.25rem; color:var(--gold); margin-bottom:10px; }
+.type-desc { font-size:13px; color:rgba(255,255,255,.5); line-height:1.65; font-weight:300; }
+
+/* ═══════════════════════════════════════
+   WHY
+═══════════════════════════════════════ */
+.svc-why { display:grid; grid-template-columns:1fr 1fr; min-height:520px; }
+.svc-why-img { position:relative; overflow:hidden; min-height:260px; }
+.svc-why-img img { width:100%; height:100%; object-fit:cover; display:block; }
+.svc-why-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to right,rgba(8,8,8,.3),transparent); }
+.svc-why-text {
+  background:var(--black-soft); display:flex; flex-direction:column;
+  justify-content:center; padding:clamp(40px,7vw,80px) clamp(28px,6vw,72px);
+}
+.svc-why-text h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,52px); font-weight:300; line-height:1.1; margin-bottom:14px; }
+.svc-why-text h2 em { font-style:italic; color:var(--gold); }
+.svc-why-text > p { font-size:clamp(13px,1.8vw,15px); color:rgba(255,255,255,.6); line-height:1.9; margin-bottom:32px; font-weight:300; }
+.why-features { list-style:none; margin-bottom:36px; }
+.why-features li { display:flex; align-items:flex-start; gap:16px; padding:16px 0; border-bottom:1px solid var(--border-light); }
+.why-features li:last-child { border-bottom:none; }
+.wf-icon {
+  width:38px; height:38px; border:1px solid var(--gold); flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--gold); font-size:14px; margin-top:2px;
+}
+.wf-title { font-size:12.5px; letter-spacing:.5px; font-weight:600; margin-bottom:4px; }
+.wf-desc { font-size:12.5px; color:rgba(255,255,255,.48); line-height:1.6; }
+
+/* ═══════════════════════════════════════
+   FAQ
+═══════════════════════════════════════ */
+.svc-faq {
+  background:var(--off-white); color:var(--black);
+  padding:clamp(60px,10vw,100px) clamp(20px,5vw,48px);
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:clamp(40px,8vw,90px); align-items:center;
+}
+.faq-img-wrap { position:relative; }
+.faq-img-wrap img { width:100%; height:clamp(280px,40vw,480px); object-fit:cover; display:block; }
+.faq-gold-frame {
+  position:absolute; top:-18px; left:-18px; width:60%; height:55%;
+  border-top:2.5px solid var(--gold); border-left:2.5px solid var(--gold);
+  pointer-events:none;
+}
+.faq-content h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(26px,3.5vw,44px); font-weight:400; line-height:1.2; color:var(--black); margin-bottom:14px; }
+.faq-content > p { font-size:clamp(13px,1.8vw,15px); color:#666; line-height:1.85; margin-bottom:32px; font-weight:300; }
+.faq-item { border-bottom:1px solid rgba(200,168,90,.2); overflow:hidden; }
+.faq-q { display:flex; align-items:center; justify-content:space-between; padding:17px 0; cursor:pointer; gap:14px; }
+.faq-q span { font-size:clamp(12.5px,1.8vw,14px); font-weight:600; color:var(--black); letter-spacing:.3px; transition:color .25s; }
+.faq-q:hover span { color:var(--gold); }
+.faq-icon {
+  width:26px; height:26px; border:1px solid rgba(200,168,90,.35);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; color:var(--gold); font-size:12px; transition:transform .3s;
+}
+.faq-item.open .faq-icon { transform:rotate(45deg); }
+.faq-a { font-size:clamp(12.5px,1.8vw,14px); color:#666; line-height:1.8; padding-bottom:16px; display:none; font-weight:300; }
+.faq-item.open .faq-a { display:block; }
+
+/* ═══════════════════════════════════════
+   CTA
+═══════════════════════════════════════ */
+.svc-cta { position:relative; padding:clamp(80px,14vw,120px) clamp(20px,5vw,40px); text-align:center; }
+.svc-cta-bg { position:absolute; inset:0; z-index:0; }
+.svc-cta-bg img { width:100%; height:100%; object-fit:cover; display:block; }
+.svc-cta-bg::after { content:''; position:absolute; inset:0; background:rgba(8,8,8,.8); }
+.svc-cta-content { position:relative; z-index:1; max-width:760px; margin:0 auto; }
+.svc-cta-content h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(32px,5.5vw,68px); font-weight:300; line-height:1.1; margin-bottom:14px; }
+.svc-cta-content h2 em { font-style:italic; color:var(--gold); }
+.svc-cta-content p { font-size:clamp(14px,2vw,17px); color:rgba(255,255,255,.7); margin-bottom:38px; line-height:1.8; font-weight:300; }
+.cta-btns { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer {
+  background:var(--black-soft);
+  padding:clamp(56px,9vw,80px) clamp(20px,5vw,48px) clamp(28px,5vw,40px);
+  border-top:1px solid var(--border); position:relative;
+}
+footer::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.footer-grid {
+  display:grid; grid-template-columns:1.2fr 1fr 1.2fr;
+  gap:clamp(36px,6vw,60px); max-width:1320px; margin:0 auto clamp(48px,8vw,60px);
+}
+.footer-brand p { font-size:13px; color:rgba(255,255,255,.42); line-height:1.8; max-width:270px; margin:14px 0 22px; font-weight:300; }
+.social-row { display:flex; gap:10px; flex-wrap:wrap; }
+.social-row a {
+  width:36px; height:36px; border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-size:13px; color:rgba(255,255,255,.5); transition:all .3s;
+}
+.social-row a:hover { border-color:var(--gold); color:var(--gold); }
+.footer-col h4 { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:22px; font-weight:600; }
+.footer-col ul { list-style:none; }
+.footer-col ul li { margin-bottom:10px; }
+.footer-col ul li a, .footer-col ul li span {
+  font-size:13px; color:rgba(255,255,255,.42); font-weight:300; transition:color .25s;
+  display:flex; align-items:center; gap:9px; line-height:1.5;
+}
+.footer-col ul li a:hover { color:var(--gold); }
+.footer-col ul li i { color:var(--gold); width:13px; font-size:11px; flex-shrink:0; }
+.footer-bottom {
+  border-top:1px solid var(--border-light); padding-top:28px;
+  max-width:1320px; margin:0 auto;
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:14px;
+}
+.footer-bottom p { font-size:11.5px; color:rgba(255,255,255,.28); letter-spacing:.3px; font-weight:300; }
+.footer-bottom p a { color:var(--gold); opacity:.8; transition:opacity .2s; }
+.footer-bottom p a:hover { opacity:1; }
+.footer-links-row { display:flex; gap:18px; flex-wrap:wrap; }
+.footer-links-row a { font-size:11px; color:rgba(255,255,255,.32); letter-spacing:.4px; transition:color .25s; }
+.footer-links-row a:hover { color:var(--gold); }
+
+/* ═══════════════════════════════════════
+   REVEAL
+═══════════════════════════════════════ */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity .75s ease,transform .75s ease; }
+.reveal.left  { transform:translateX(-28px); }
+.reveal.right { transform:translateX(28px); }
+.reveal.visible { opacity:1 !important; transform:translate(0,0) !important; }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:1100px) {
+  .process-grid { grid-template-columns:repeat(3,1fr); }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+  .footer-brand { grid-column:1/-1; }
+}
+@media(max-width:900px) {
+  .nav-links { display:none; }
+  .menu-toggle { display:flex; }
+  .svc-about { grid-template-columns:1fr; }
+  .svc-about-img { min-height:320px; }
+  .svc-why { grid-template-columns:1fr; }
+  .svc-why-img { min-height:260px; order:-1; }
+  .svc-faq { grid-template-columns:1fr; }
+  .types-grid { grid-template-columns:1fr 1fr; }
+  .process-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:640px) {
+  .stats-bar { flex-wrap:wrap; }
+  .stat-item { flex:1 1 50%; border-right:none; border-bottom:1px solid var(--border); }
+  .stat-item:nth-child(odd) { border-right:1px solid var(--border); }
+  .stat-item:last-child, .stat-item:nth-last-child(2):nth-child(odd) { border-bottom:none; }
+  .svc-hero-btns { flex-direction:column; }
+  .btn-gold, .btn-outline { width:100%; max-width:270px; justify-content:center; }
+  .cta-btns { flex-direction:column; align-items:center; }
+  .footer-grid { grid-template-columns:1fr; }
+  .footer-bottom { flex-direction:column; text-align:center; }
+  .footer-links-row { justify-content:center; }
+  .faq-gold-frame { display:none; }
+}
+@media(max-width:480px) {
+  .types-grid { grid-template-columns:1fr; }
+  .process-grid { grid-template-columns:1fr; }
+  .p-step { border-right:none; border-bottom:1px solid var(--border); }
+  .p-step:last-child { border-bottom:none; }
+}
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .floating-btns { bottom: calc(clamp(18px,4vw,28px) + env(safe-area-inset-bottom)); }
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating-btns">
+  <a href="https://wa.me/919424430664" target="_blank" rel="noopener" class="float-btn float-btn-wa" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i><span class="tip">WhatsApp Us</span>
+  </a>
+  <a href="tel:+919424430664" class="float-btn float-btn-ph" aria-label="Call Us">
+    <i class="fas fa-phone"></i><span class="tip">+91 94244 30664</span>
+  </a>
+</div>
+
+<div class="m-overlay" id="mOverlay" onclick="closeMenu()"></div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+    <li><a href="aboutus.html" onclick="closeMenu()">About Us</a></li>
+    <li>
+      <div class="menu-item-with-sub" onclick="toggleMobileSub(this)">
+        <span>Services</span><i class="fas fa-chevron-down sub-arrow"></i>
+      </div>
+      <ul class="mobile-sub">
+        <li><a href="sofa-cleaning.html" onclick="closeMenu()">Sofa Cleaning</a></li>
+        <li><a href="carpet-cleaning.html" onclick="closeMenu()">Carpet Cleaning</a></li>
+        <li><a href="chair-cleaning.html" onclick="closeMenu()">Chair Cleaning</a></li>
+        <li><a href="mattress-cleaning.html" onclick="closeMenu()">Mattress Cleaning</a></li>
+        <li><a href="blinds-cleaning.html" onclick="closeMenu()">Window Blinds Cleaning</a></li>
+        <li><a href="curtain-cleaning.html" onclick="closeMenu()">Curtain Cleaning</a></li>
+        <li><a href="post-construction-cleaning.html" onclick="closeMenu()">Post-Construction Cleaning</a></li>
+        <li><a href="occupied-house-cleaning.html" onclick="closeMenu()">Occupied House Cleaning</a></li>
+        <li><a href="apartment-cleaning.html" onclick="closeMenu()">Flat &amp; Apartment Cleaning</a></li>
+        <li><a href="kitchen-cleaning.html" onclick="closeMenu()">Kitchen Deep Cleaning</a></li>
+        <li><a href="bathroom-cleaning.html" onclick="closeMenu()">Bathroom Deep Cleaning</a></li>
+        <li><a href="floor-cleaning.html" onclick="closeMenu()">Floor Cleaning</a></li>
+        <li><a href="water-tank-cleaning.html" onclick="closeMenu()">Water Tank Cleaning</a></li>
+        <li><a href="glass-cleaning.html" onclick="closeMenu()">Glass Cleaning</a></li>
+      </ul>
+    </li>
+    <li><a href="contactus.html" onclick="closeMenu()">Contact Us</a></li>
+    <li><a href="EmergencyFloorCleaningService.html" onclick="closeMenu()">Emergency Service</a></li>
+    <li><a href="house-cleaning.html" onclick="closeMenu()">House Cleaning</a></li>
+    <li><a href="CommercialCleaning.html" onclick="closeMenu()">Commercial Cleaning</a></li>
+    <li><a href="gallery.html" onclick="closeMenu()">Gallery</a></li>
+    <li><a href="contactus.html" onclick="closeMenu()" style="color:var(--gold);font-weight:700">Get a Free Quote →</a></li>
+  </ul>
+</div>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo-link">
+      <img src="images/Logo.jpeg" alt="GOODWILL BHARAT™" class="logo-img" onerror="this.style.display='none'">
+      <div class="logo-text">GOODWILL BHARAT™<em>Sofa, Carpet &amp; Tile Cleaning</em></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About</a></li>
+      <li class="has-dropdown">
+        <a href="#" class="active">Services <i class="fas fa-chevron-down" style="font-size:8px;margin-left:3px;opacity:.7"></i></a>
+        <ul class="dropdown-menu">
+            <li><a href="sofa-cleaning.html" onclick="closeMenu()">Sofa Cleaning</a></li>
+        <li><a href="carpet-cleaning.html" onclick="closeMenu()">Carpet Cleaning</a></li>
+        <li><a href="chair-cleaning.html" onclick="closeMenu()">Chair Cleaning</a></li>
+        <li><a href="mattress-cleaning.html" onclick="closeMenu()">Mattress Cleaning</a></li>
+        <li><a href="blinds-cleaning.html" onclick="closeMenu()">Window Blinds Cleaning</a></li>
+        <li><a href="curtain-cleaning.html" onclick="closeMenu()">Curtain Cleaning</a></li>
+        <li><a href="post-construction-cleaning.html" onclick="closeMenu()">Post-Construction Cleaning</a></li>
+        <li><a href="occupied-house-cleaning.html" onclick="closeMenu()">Occupied House Cleaning</a></li>
+        <li><a href="apartment-cleaning.html" onclick="closeMenu()">Flat &amp; Apartment Cleaning</a></li>
+        <li><a href="kitchen-cleaning.html" onclick="closeMenu()">Kitchen Deep Cleaning</a></li>
+        <li><a href="bathroom-cleaning.html" onclick="closeMenu()">Bathroom Deep Cleaning</a></li>
+        <li><a href="floor-cleaning.html" onclick="closeMenu()">Floor Cleaning</a></li>
+        <li><a href="water-tank-cleaning.html" onclick="closeMenu()">Water Tank Cleaning</a></li>
+        <li><a href="glass-cleaning.html" onclick="closeMenu()">Glass Cleaning</a></li>
+         
+         
+        </ul>
+      </li>
+      <li><a href="contactus.html">Contact Us</a></li>
+      <li><a href="EmergencyFloorCleaningService.html">Emergency</a></li>
+      <li><a href="house-cleaning.html">House</a></li>
+      <li><a href="CommercialCleaning.html">Commercial</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contactus.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="svc-hero-bg">
+    <img src="images/carpet.jpeg" alt="Professional Carpet Cleaning" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80'">
+  </div>
+  <div class="svc-hero-content">
+    <div class="svc-hero-pre">Premium Carpet Care</div>
+    <h1>Professional <em>Carpet</em> Cleaning</h1>
+    <p class="svc-hero-desc">Revitalize your carpets with expert deep cleaning. We remove embedded dirt, stubborn stains, and harmful allergens — restoring your carpet's original beauty and freshness.</p>
+    <div class="svc-hero-btns">
+      <a href="contactus.html" class="btn-gold"><i class="fas fa-file-invoice"></i> Get a Free Quote</a>
+      <a href="tel:+919424430664" class="btn-outline"><i class="fas fa-phone"></i> Call Now</a>
+      <a href="index.html" class="btn-outline"><i class="fas fa-th-large"></i> All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-num">600+</span><span class="stat-label">Carpets Cleaned</span></div>
+  <div class="stat-item"><span class="stat-num">4.8★</span><span class="stat-label">Google Rating</span></div>
+  <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Satisfaction</span></div>
+  <div class="stat-item"><span class="stat-num">Same Day</span><span class="stat-label">Available</span></div>
+</div>
+
+<!-- ABOUT -->
+<section class="svc-about">
+  <div class="svc-about-img reveal left">
+    <img src="images/carpet.jpeg" alt="Deep Carpet Cleaning" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80'">
+  </div>
+  <div class="svc-about-text reveal right">
+    <div class="svc-about-inner">
+      <div class="gold-line"></div>
+      <h2>Why Your Carpet Needs <em>Professional Care</em></h2>
+      <p>Carpets trap dust mites, allergens, bacteria, pet dander and deep-set stains that regular vacuuming simply cannot remove. Our hot water extraction technology penetrates deep into carpet fibres, eliminating hidden contaminants and restoring the original texture and colour.</p>
+      <ul class="svc-checklist">
+        <li>Hot water extraction for deep-fibre cleaning</li>
+        <li>Eco-friendly, fabric-safe cleaning solutions</li>
+        <li>Stain removal — tea, wine, oil, ink &amp; more</li>
+        <li>Pet hair and odour neutralisation treatment</li>
+        <li>Allergen and dust mite elimination</li>
+        <li>Carpet dries within 2–4 hours</li>
+      </ul>
+      <a href="contactus.html" class="btn-gold"><i class="fas fa-file-invoice"></i> Book This Service</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="svc-process">
+  <span class="sec-label">How We Work</span>
+  <h2>Our <em>5-Step</em> Cleaning Process</h2>
+  <div class="process-grid">
+    <div class="p-step reveal"><div class="p-step-num">01</div><div class="p-step-icon">🔍</div><div class="p-step-title">Inspection</div><div class="p-step-desc">Carpet type, fabric, stains and soiling level assessed.</div></div>
+    <div class="p-step reveal"><div class="p-step-num">02</div><div class="p-step-icon">🧹</div><div class="p-step-title">Pre-Vacuum</div><div class="p-step-desc">Dry vacuuming removes all loose dirt and debris.</div></div>
+    <div class="p-step reveal"><div class="p-step-num">03</div><div class="p-step-icon">💧</div><div class="p-step-title">Pre-Treatment</div><div class="p-step-desc">Specialist solutions pre-treat tough stains and spots.</div></div>
+    <div class="p-step reveal"><div class="p-step-num">04</div><div class="p-step-icon">🌊</div><div class="p-step-title">Hot Extraction</div><div class="p-step-desc">Hot water extraction pulls deep-seated dirt from fibres.</div></div>
+    <div class="p-step reveal"><div class="p-step-num">05</div><div class="p-step-icon">✨</div><div class="p-step-title">Groom &amp; Dry</div><div class="p-step-desc">Carpet groomed, protection coating applied, dried fast.</div></div>
+  </div>
+</section>
+
+<!-- TYPES -->
+<section class="svc-types">
+  <span class="sec-label">What We Cover</span>
+  <h2>Types of <em>Carpet Cleaning</em> We Offer</h2>
+  <div class="types-grid">
+    <div class="type-card reveal"><div class="type-icon">🪭</div><div class="type-title">Wall-to-Wall Carpets</div><div class="type-desc">Full-room fitted carpet deep cleaning with hot water extraction.</div></div>
+    <div class="type-card reveal" style="transition-delay:.1s"><div class="type-icon">🛋️</div><div class="type-title">Area Rugs &amp; Dhurries</div><div class="type-desc">Handmade rugs, dhurries and decorative carpet cleaning.</div></div>
+    <div class="type-card reveal" style="transition-delay:.2s"><div class="type-icon">🐾</div><div class="type-title">Pet Stain &amp; Odour</div><div class="type-desc">Enzyme treatment to fully eliminate pet stains and odours.</div></div>
+    <div class="type-card reveal"><div class="type-icon">🍷</div><div class="type-title">Stain Removal</div><div class="type-desc">Targeted removal of wine, tea, oil, ink and food stains.</div></div>
+    <div class="type-card reveal" style="transition-delay:.1s"><div class="type-icon">🌿</div><div class="type-title">Allergen Treatment</div><div class="type-desc">Specialist cleaning to remove dust mites and allergens.</div></div>
+    <div class="type-card reveal" style="transition-delay:.2s"><div class="type-icon">🏢</div><div class="type-title">Commercial Carpets</div><div class="type-desc">Office and commercial carpet bulk cleaning packages.</div></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="svc-why">
+  <div class="svc-why-img reveal right">
+    <img src="images\bhopal1.jpeg" alt="Why Choose Us" loading="lazy">
+  </div>
+  <div class="svc-why-text reveal left">
+    <div class="gold-line"></div>
+    <h2>Why Choose <em>Us</em></h2>
+    <p>GOODWILL BHARAT™ is an ISO 9001:2015 Certified Company, Choose us for our eco-friendly approach, certified technicians, and unwavering dedication to your satisfaction.</p>
+    <ul class="why-features">
+      <li>
+        <div class="wf-icon"><i class="fas fa-leaf"></i></div>
+        <div><div class="wf-title">Eco-Friendly Products</div><div class="wf-desc">Safe for your family, pets, and the environment — always.</div></div>
+      </li>
+      <li>
+        <div class="wf-icon"><i class="fas fa-award"></i></div>
+        <div><div class="wf-title">Certified Professionals</div><div class="wf-desc">Trained, background-checked technicians with years of experience.</div></div>
+      </li>
+      <li>
+        <div class="wf-icon"><i class="fas fa-clock"></i></div>
+        <div><div class="wf-title">Same-Day Available</div><div class="wf-desc">Book in the morning, carpets cleaned by evening.</div></div>
+      </li>
+    </ul>
+    <a href="contactus.html" class="btn-gold">Schedule a Cleaning <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="svc-faq">
+  <div class="faq-img-wrap reveal left">
+    <img src="images/carpet.jpeg" alt="FAQ about Carpet Cleaning" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80'">
+    <div class="faq-gold-frame"></div>
+  </div>
+  <div class="faq-content reveal right">
+    <div class="gold-line"></div>
+    <h2>Frequently Asked<br>Questions</h2>
+    <p>Everything you need to know about our carpet cleaning service.</p>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>What carpet types do you clean?</span><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-a">We clean all types — wool, nylon, polyester, jute, sisal, dhurrie, and handmade area rugs.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>How long does carpet cleaning take?</span><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-a">Most rooms take 30–60 minutes. Carpets are fully dry within 2–4 hours.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Are your products safe for kids and pets?</span><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-a">Yes — all our solutions are non-toxic, eco-friendly, and completely safe for children and pets.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Can you remove old or set-in stains?</span><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-a">Yes — our pre-treatment and hot extraction process removes most old stains including wine, tea, oil, and ink.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>How often should carpets be professionally cleaned?</span><div class="faq-icon"><i class="fas fa-plus"></i></div></div>
+        <div class="faq-a">We recommend every 6–12 months for most homes, more frequently if you have pets or children.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="svc-cta">
+  <div class="svc-cta-bg">
+    <img src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?w=1600&q=80" alt="CTA" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80'">
+  </div>
+  <div class="svc-cta-content reveal">
+    <div class="gold-line gold-line-center"></div>
+    <h2>Ready for a <em>Spotless</em> Carpet?</h2>
+    <p>We guarantee complete satisfaction. Experience the luxury of truly clean carpets today.</p>
+    <div class="cta-btns">
+      <a href="contactus.html" class="btn-gold"><i class="fas fa-file-invoice"></i> Get a Free Quote</a>
+      <a href="tel:+919424430664" class="btn-outline"><i class="fas fa-phone"></i> Call to Schedule</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand reveal">
+      <a href="index.html" class="logo-link" style="margin-bottom:12px;display:inline-flex;">
+        <img src="images/Logo.jpeg" alt="GOODWILL BHARAT™" class="logo-img" onerror="this.style.display='none'">
+        <div class="logo-text">GOODWILL BHARAT™<em>Sofa, Carpet &amp; Tile Cleaning</em></div>
+      </a>
+      <p>Creating cleaner, healthier spaces with eco-friendly techniques and unmatched attention to detail in Bhopal, Madhya Pradesh.</p>
+      <div class="social-row">
+        <a href="https://wa.me/919424430664" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:.1s">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+        <li><a href="sofa-cleaning.html"><i class="fas fa-chevron-right"></i> Sofa Cleaning</a></li>
+        <li><a href="carpet-cleaning.html"><i class="fas fa-chevron-right"></i> Carpet Cleaning</a></li>
+        <li><a href="kitchen-cleaning.html"><i class="fas fa-chevron-right"></i> Kitchen Cleaning</a></li>
+        <li><a href="bathroom-cleaning.html"><i class="fas fa-chevron-right"></i> Bathroom Cleaning</a></li>
+        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+        <li><a href="contactus.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:.2s">
+      <h4>Contact &amp; Hours</h4>
+      <ul>
+        <li><a href="tel:+919424430664"><i class="fas fa-phone"></i> +91 94244 30664</a></li>
+        <li><a href="https://wa.me/919424430664" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></li>
+        <li><span><i class="fas fa-map-marker-alt"></i> Bhopal, Madhya Pradesh</span></li>
+        <li><span><i class="fas fa-envelope"></i> info@goodwillbharat.com</span></li>
+        <li><span><i class="fas fa-clock"></i> Mon – Sun: Open 24 Hours</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <a href="https://www.webcraftagency.com/" target="_blank" rel="noopener">WebCraft Agency</a> — All rights reserved.</p>
+    <div class="footer-links-row">
+      <a href="index.html">Home</a>
+      <a href="contactus.html">Free Quote</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="contactus.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Scroll header */
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60);
+}, { passive:true });
+
+/* Mobile menu */
+function toggleMenu() {
+  const m = document.getElementById('mobileMenu');
+  const o = document.getElementById('mOverlay');
+  const t = document.getElementById('menuToggle');
+  const isOpen = m.classList.contains('open');
+  m.classList.toggle('open', !isOpen);
+  o.classList.toggle('open', !isOpen);
+  t.classList.toggle('open', !isOpen);
+  t.setAttribute('aria-expanded', String(!isOpen));
+  document.body.style.overflow = isOpen ? '' : 'hidden';
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('mOverlay').classList.remove('open');
+  document.getElementById('menuToggle').classList.remove('open');
+  document.getElementById('menuToggle').setAttribute('aria-expanded','false');
+  document.body.style.overflow = '';
+}
+window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMenu(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+/* Mobile sub-menu */
+function toggleMobileSub(el) {
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.menu-item-with-sub.open').forEach(item => {
+    item.classList.remove('open');
+    item.nextElementSibling.classList.remove('show');
+  });
+  if (!isOpen) {
+    el.classList.add('open');
+    el.nextElementSibling.classList.add('show');
+  }
+}
+
+/* FAQ */
+function toggleFaq(qEl) {
+  const item = qEl.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+/* Reveal on scroll */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
+  });
+}, { threshold:0.08, rootMargin:'0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>

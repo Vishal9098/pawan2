@@ -1,0 +1,1212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>Emergency Floor Cleaning — 24/7 Rapid Response | GOODWILL BHARAT™</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --black: #080808;
+  --black-mid: #111111;
+  --black-soft: #1a1a1a;
+  --charcoal: #222222;
+  --gold: #c8a85a;
+  --gold-light: #e4c97a;
+  --gold-pale: #f2e0a8;
+  --white: #ffffff;
+  --off-white: #f9f5ee;
+  --cream: #f2ead8;
+  --muted: #888888;
+  --border: rgba(200,168,90,0.2);
+  --border-light: rgba(200,168,90,0.08);
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.gold-line {
+  width: 56px;
+  height: 1px;
+  background: var(--gold);
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.gold-line-center {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* ========== FLOATING BUTTONS ========== */
+.floating-btns {
+  position: fixed;
+  bottom: 28px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.float-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.45);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  text-decoration: none;
+}
+.float-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.55);
+}
+.float-btn-wa {
+  background: #25D366;
+}
+.float-btn-ph {
+  background: var(--gold);
+}
+.float-btn-wa::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: pulse-ring 2s ease-out infinite;
+  opacity: 0;
+}
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+.float-btn .tip {
+  position: absolute;
+  right: 66px;
+  background: rgba(0,0,0,0.88);
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  font-family: 'Montserrat', sans-serif;
+}
+.float-btn:hover .tip {
+  opacity: 1;
+}
+
+/* ========== HEADER / NAV ========== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.5s ease;
+}
+header.scrolled {
+  background: rgba(8,8,8,0.96);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 48px;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+.logo-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+}
+.logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.logo-text em {
+  font-style: normal;
+  color: var(--gold);
+  display: block;
+  font-size: 9px;
+  letter-spacing: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  margin-top: 2px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+}
+.nav-links > li > a {
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  transition: color 0.3s;
+  position: relative;
+  padding: 4px 0;
+  white-space: nowrap;
+}
+.nav-links > li > a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s;
+}
+.nav-links > li > a:hover,
+.nav-links > li > a.active {
+  color: var(--gold);
+}
+.nav-links > li > a:hover::after,
+.nav-links > li > a.active::after {
+  width: 100%;
+}
+.has-dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 230px;
+  background: var(--black-soft);
+  border: 1px solid var(--border);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  list-style: none;
+  z-index: 100;
+}
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: var(--black-soft);
+  border-left: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  transform: translateX(-50%) rotate(45deg);
+}
+.has-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  top: calc(100% + 14px);
+}
+.dropdown-menu li a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  border-bottom: 1px solid var(--border-light);
+  transition: all 0.3s;
+}
+.dropdown-menu li:last-child a {
+  border-bottom: none;
+}
+.dropdown-menu li a:hover {
+  color: var(--gold);
+  padding-left: 26px;
+}
+.nav-cta {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 11px 22px;
+  border: 1px solid var(--gold);
+  color: var(--gold) !important;
+  transition: all 0.35s !important;
+}
+.nav-cta::after {
+  display: none !important;
+}
+.nav-cta:hover {
+  background: var(--gold) !important;
+  color: var(--black) !important;
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  width: 36px;
+  padding: 4px 0;
+}
+.menu-toggle span {
+  display: block;
+  height: 1px;
+  background: var(--gold);
+  transition: all 0.4s ease;
+}
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  width: min(340px, 90vw);
+  background: var(--black-soft);
+  z-index: 999;
+  padding: 100px 40px 60px;
+  transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+}
+.mobile-menu.open {
+  right: 0;
+}
+.mobile-menu ul {
+  list-style: none;
+}
+.mobile-menu > ul > li {
+  border-bottom: 1px solid var(--border-light);
+}
+.mobile-menu > ul > li > a {
+  display: block;
+  padding: 16px 0;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  transition: color 0.3s;
+}
+.mobile-menu > ul > li > a:hover {
+  color: var(--gold);
+}
+.menu-item-with-sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 16px 0;
+}
+.menu-item-with-sub span {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+}
+.menu-item-with-sub .sub-arrow {
+  color: var(--gold);
+  font-size: 12px;
+  transition: transform 0.3s;
+}
+.menu-item-with-sub.open .sub-arrow {
+  transform: rotate(180deg);
+}
+.mobile-sub {
+  padding-left: 18px;
+  list-style: none;
+  display: none;
+}
+.mobile-sub.show {
+  display: block;
+}
+.mobile-sub li a {
+  display: block;
+  padding: 12px 0;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  border-bottom: 1px solid var(--border-light);
+}
+.mobile-sub li:last-child a {
+  border-bottom: none;
+}
+.mobile-sub li a:hover {
+  color: var(--gold);
+}
+.m-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 998;
+  backdrop-filter: blur(4px);
+}
+.m-overlay.open {
+  display: block;
+}
+
+/* ========== HERO ========== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1600&q=80') center/cover no-repeat;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(8,8,8,0.78) 0%, rgba(8,8,8,0.5) 40%, rgba(8,8,8,0.85) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  padding: 0 24px;
+}
+.emergency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(200,168,90,0.5);
+  padding: 10px 24px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 30px;
+  font-weight: 600;
+  background: rgba(8,8,8,0.5);
+  backdrop-filter: blur(4px);
+}
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse-emergency 1.5s ease-in-out infinite;
+}
+@keyframes pulse-emergency {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(200,168,90,0.7); }
+  50% { opacity: 0.7; transform: scale(1.2); box-shadow: 0 0 0 6px rgba(200,168,90,0); }
+}
+.hero-pre {
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.hero-pre::before,
+.hero-pre::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 8vw, 88px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+.hero p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.75);
+  max-width: 580px;
+  margin: 0 auto 44px;
+  line-height: 1.85;
+  font-weight: 300;
+}
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--black);
+  padding: 16px 34px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 0.35s;
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--white);
+  padding: 16px 34px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.35);
+  transition: all 0.35s;
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(200,168,90,0.8), transparent);
+  animation: scrollDown 2s ease-in-out infinite;
+}
+@keyframes scrollDown {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ========== SPLIT SECTIONS ========== */
+.split-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+.split-section.reverse .split-img {
+  order: 2;
+}
+.split-section.reverse .split-text {
+  order: 1;
+}
+.split-img {
+  position: relative;
+  overflow: hidden;
+}
+.split-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s;
+}
+.split-section:hover .split-img img {
+  transform: scale(1.04);
+}
+.split-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200,168,90,0.1), transparent 60%);
+  pointer-events: none;
+}
+.split-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 72px;
+}
+.split-text.light {
+  background: var(--off-white);
+  color: var(--black);
+}
+.split-text.dark {
+  background: var(--black-soft);
+  color: var(--white);
+}
+.split-inner {
+  max-width: 500px;
+  width: 100%;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 14px;
+}
+.split-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 3.5vw, 50px);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+.split-text h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.split-text p {
+  font-size: 15px;
+  line-height: 1.9;
+  font-weight: 300;
+  margin-bottom: 36px;
+}
+.split-text.light p {
+  color: #555;
+}
+.split-text.dark p {
+  color: rgba(255,255,255,0.65);
+}
+.feat-list {
+  list-style: none;
+  margin-bottom: 36px;
+}
+.feat-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 14px;
+  font-weight: 300;
+}
+.split-text.light .feat-list li {
+  border-color: rgba(200,168,90,0.15);
+  color: #555;
+}
+.split-text.dark .feat-list li {
+  border-color: rgba(200,168,90,0.1);
+}
+.f-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 13px;
+  background: rgba(200,168,90,0.06);
+  margin-top: 1px;
+}
+
+/* ========== EXPERT CARD SECTION ========== */
+.expert-section {
+  background: var(--black-mid);
+  padding: 110px 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.expert-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.expert-card {
+  background: var(--off-white);
+  color: var(--black);
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  padding: 72px 72px;
+  position: relative;
+}
+.expert-card::before,
+.expert-card::after {
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.expert-card::before {
+  top: -2px;
+}
+.expert-card::after {
+  bottom: -2px;
+}
+.expert-card .eyebrow {
+  display: block;
+  margin-bottom: 14px;
+}
+.expert-card h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.15;
+  margin-bottom: 22px;
+}
+.expert-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.9;
+  font-weight: 300;
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+
+/* ========== CTA SECTION ========== */
+.cta-section {
+  position: relative;
+  padding: 130px 20px;
+  text-align: center;
+  background: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80') center/cover no-repeat;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(8,8,8,0.82);
+}
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.cta-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 6vw, 70px);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.cta-content h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.cta-content p {
+  font-size: 17px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 44px;
+  line-height: 1.85;
+  font-weight: 300;
+}
+.cta-btns {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-emergency {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--gold);
+  padding: 16px 34px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 1px solid var(--gold);
+  transition: all 0.35s;
+}
+.btn-emergency:hover {
+  background: var(--gold);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--black-soft);
+  padding: 80px 48px 40px;
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.2fr;
+  gap: 60px;
+  max-width: 1320px;
+  margin: 0 auto 60px;
+}
+.footer-brand p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.8;
+  max-width: 280px;
+  margin: 16px 0 24px;
+  font-weight: 300;
+}
+.social-row {
+  display: flex;
+  gap: 12px;
+}
+.social-row a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  transition: all 0.3s;
+}
+.social-row a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.footer-col h4 {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+.footer-col ul li a,
+.footer-col ul li span {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 300;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer-col ul li a:hover {
+  color: var(--gold);
+}
+.footer-col ul li i {
+  color: var(--gold);
+  width: 14px;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.footer-bottom {
+  border-top: 1px solid var(--border-light);
+  padding-top: 32px;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-bottom p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.5px;
+  font-weight: 300;
+}
+.footer-links-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-links-row a {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+.footer-links-row a:hover {
+  color: var(--gold);
+}
+
+/* ========== REVEAL ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.left {
+  transform: translateX(-32px);
+}
+.reveal.right {
+  transform: translateX(32px);
+}
+.reveal.visible {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1100px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 900px) {
+  .nav-wrap { padding: 12px 24px; }
+  .nav-links { display: none; }
+  .menu-toggle { display: flex; }
+  .split-section { grid-template-columns: 1fr; }
+  .split-section.reverse .split-img { order: 0; }
+  .split-section.reverse .split-text { order: 1; }
+  .split-img { height: 380px; }
+  .split-text { padding: 56px 36px; }
+  .expert-card { padding: 52px 36px; }
+  .expert-section { padding: 80px 24px; }
+}
+@media (max-width: 768px) {
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .btn-gold, .btn-outline, .btn-emergency { width: 100%; max-width: 280px; justify-content: center; }
+  .cta-btns { flex-direction: column; align-items: center; }
+  footer { padding: 60px 24px 32px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .floating-btns { bottom: 18px; right: 14px; }
+  .float-btn { width: 50px; height: 50px; font-size: 20px; }
+}
+@media (max-width: 480px) {
+  .split-text { padding: 44px 24px; }
+  .split-img { height: 280px; }
+  .expert-card { padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating-btns">
+  <a href="https://wa.me/919424430664" target="_blank" class="float-btn float-btn-wa" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tip">WhatsApp Us</span>
+  </a>
+  <a href="tel:+919424430664" class="float-btn float-btn-ph" aria-label="Call Us">
+    <i class="fas fa-phone"></i>
+    <span class="tip">+91 94244 30664</span>
+  </a>
+</div>
+
+<div class="m-overlay" id="mOverlay" onclick="closeMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+    <li><a href="aboutus.html" onclick="closeMenu()">About Us</a></li>
+    <li>
+      <div class="menu-item-with-sub" onclick="toggleMobileSub(this)">
+        <span>Services</span><i class="fas fa-chevron-down sub-arrow"></i>
+      </div>
+      <ul class="mobile-sub">
+        <li><a href="sofa-cleaning.html" onclick="closeMenu()">Sofa Cleaning</a></li>
+        <li><a href="carpet-cleaning.html" onclick="closeMenu()">Carpet Cleaning</a></li>
+        <li><a href="chair-cleaning.html" onclick="closeMenu()">Chair Cleaning</a></li>
+        <li><a href="mattress-cleaning.html" onclick="closeMenu()">Mattress Cleaning</a></li>
+        <li><a href="blinds-cleaning.html" onclick="closeMenu()">Window Blinds Cleaning</a></li>
+        <li><a href="curtain-cleaning.html" onclick="closeMenu()">Curtain Cleaning</a></li>
+        <li><a href="post-construction-cleaning.html" onclick="closeMenu()">Post-Construction Cleaning</a></li>
+        <li><a href="occupied-house-cleaning.html" onclick="closeMenu()">Occupied House Cleaning</a></li>
+        <li><a href="apartment-cleaning.html" onclick="closeMenu()">Flat &amp; Apartment Cleaning</a></li>
+        <li><a href="kitchen-cleaning.html" onclick="closeMenu()">Kitchen Deep Cleaning</a></li>
+        <li><a href="bathroom-cleaning.html" onclick="closeMenu()">Bathroom Deep Cleaning</a></li>
+        <li><a href="floor-cleaning.html" onclick="closeMenu()">Floor Cleaning</a></li>
+        <li><a href="water-tank-cleaning.html" onclick="closeMenu()">Water Tank Cleaning</a></li>
+        <li><a href="glass-cleaning.html" onclick="closeMenu()">Glass Cleaning</a></li>
+      </ul>
+    </li>
+    <li><a href="contactus.html" onclick="closeMenu()">Contact Us</a></li>
+    <li><a href="EmergencyFloorCleaningService.html" onclick="closeMenu()" class="active">Emergency</a></li>
+    <li><a href="house-cleaning.html" onclick="closeMenu()">House</a></li>
+    <li><a href="CommercialCleaning.html" onclick="closeMenu()">Commercial</a></li>
+    <li><a href="gallery.html" onclick="closeMenu()">Gallery</a></li>
+  </ul>
+</div>
+
+<header id="header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo-link">
+      <img src="images/Logo.jpeg" alt="GOODWILL BHARAT™" class="logo-img" onerror="this.style.display='none'">
+      <div class="logo-text">GOODWILL BHARAT™<em>Sofa, Carpet &amp; Tile Cleaning</em></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About</a></li>
+      <li class="has-dropdown">
+        <a href="#">Services <i class="fas fa-chevron-down" style="font-size:9px;margin-left:4px"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="sofa-cleaning.html" onclick="closeMenu()">Sofa Cleaning</a></li>
+        <li><a href="carpet-cleaning.html" onclick="closeMenu()">Carpet Cleaning</a></li>
+        <li><a href="chair-cleaning.html" onclick="closeMenu()">Chair Cleaning</a></li>
+        <li><a href="mattress-cleaning.html" onclick="closeMenu()">Mattress Cleaning</a></li>
+        <li><a href="blinds-cleaning.html" onclick="closeMenu()">Window Blinds Cleaning</a></li>
+        <li><a href="curtain-cleaning.html" onclick="closeMenu()">Curtain Cleaning</a></li>
+        <li><a href="post-construction-cleaning.html" onclick="closeMenu()">Post-Construction Cleaning</a></li>
+        <li><a href="occupied-house-cleaning.html" onclick="closeMenu()">Occupied House Cleaning</a></li>
+        <li><a href="apartment-cleaning.html" onclick="closeMenu()">Flat &amp; Apartment Cleaning</a></li>
+        <li><a href="kitchen-cleaning.html" onclick="closeMenu()">Kitchen Deep Cleaning</a></li>
+        <li><a href="bathroom-cleaning.html" onclick="closeMenu()">Bathroom Deep Cleaning</a></li>
+        <li><a href="floor-cleaning.html" onclick="closeMenu()">Floor Cleaning</a></li>
+        <li><a href="water-tank-cleaning.html" onclick="closeMenu()">Water Tank Cleaning</a></li>
+        <li><a href="glass-cleaning.html" onclick="closeMenu()">Glass Cleaning</a></li>
+         
+        </ul>
+      </li>
+      <li><a href="contactus.html">Contact Us</a></li>
+      <li><a href="EmergencyFloorCleaningService.html" class="active">Emergency</a></li>
+      <li><a href="house-cleaning.html">House</a></li>
+      <li><a href="CommercialCleaning.html">Commercial</a></li>
+      <li class="has-dropdown">
+        <a href="#">Gallery <i class="fas fa-chevron-down" style="font-size:9px;margin-left:4px"></i></a>
+        <ul class="dropdown-menu"><li><a href="gallery.html">Our Work Videos</a></li></ul>
+      </li>
+      <li><a href="contactus.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="emergency-badge"><div class="pulse-dot"></div>AVAILABLE 24/7 — RAPID RESPONSE</div>
+    <div class="hero-pre">Emergency Floor Cleaning</div>
+    <h1>Emergency<br>Floor Cleaning<br><em>Near You</em></h1>
+    <p>Rapid response across Bhopal, Madhya Pradesh. We extract water, sanitize, and restore your floors within hours — minimizing damage and preventing mold before it starts.</p>
+    <div class="hero-buttons">
+      <a href="tel:+919424430664" class="btn-gold"><i class="fas fa-phone"></i> Call Now — Immediate Help</a>
+      <a href="contactus.html" class="btn-outline"><i class="fas fa-file-invoice"></i> Get a Free Quote</a>
+      <a href="tel:+919424430664" class="btn-outline"><i class="fas fa-bolt"></i> Emergency Service Now</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<section class="split-section reveal">
+  <div class="split-img">
+    <img src="images/flordeep.jpeg" alt="Professional Emergency Team">
+  </div>
+  <div class="split-text light">
+    <div class="split-inner">
+      <span class="eyebrow">01 — Our Team</span>
+      <div class="gold-line"></div>
+      <h2>Professional Team Ready to <em>Assist You</em></h2>
+      <p>Our dedicated team at GOODWILL BHARAT™ Upholstery Cleaners is committed to providing prompt and professional emergency floor cleaning services when you need them most. We understand the importance of acting quickly to minimize damage and ensure the safety of your property.</p>
+      <ul class="feat-list">
+        <li><div class="f-icon"><i class="fas fa-clock"></i></div>Rapid on-site response within hours</li>
+        <li><div class="f-icon"><i class="fas fa-shield-alt"></i></div>Certified technicians, fully equipped</li>
+        <li><div class="f-icon"><i class="fas fa-phone"></i></div>24/7 emergency hotline — always available</li>
+      </ul>
+      <a href="tel:+919424430664" class="btn-gold"><i class="fas fa-phone"></i> Call Us Today</a>
+    </div>
+  </div>
+</section>
+
+<section class="split-section reverse reveal">
+  <div class="split-img">
+    <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?w=900&q=80" alt="Emergency Solutions">
+  </div>
+  <div class="split-text dark">
+    <div class="split-inner">
+      <span class="eyebrow">02 — Solutions</span>
+      <div class="gold-line"></div>
+      <h2>Comprehensive Emergency <em>Floor Solutions</em></h2>
+      <p>From water extraction and drying to sanitization and deodorization, our emergency floor cleaning services cover all aspects of restoring your space after a flooding incident. We use advanced equipment and techniques to remove excess water, dry affected areas, and prevent mold growth.</p>
+      <ul class="feat-list">
+        <li><div class="f-icon"><i class="fas fa-tint"></i></div>Industrial-grade water extraction</li>
+        <li><div class="f-icon"><i class="fas fa-wind"></i></div>Rapid drying with commercial air movers</li>
+        <li><div class="f-icon"><i class="fas fa-spray-can"></i></div>Full sanitization &amp; deodorization</li>
+        <li><div class="f-icon"><i class="fas fa-ban"></i></div>Mold prevention treatment</li>
+      </ul>
+      <a href="contactus.html" class="btn-gold"><i class="fas fa-file-invoice"></i> Get a Quote</a>
+    </div>
+  </div>
+</section>
+
+<section class="expert-section">
+  <div class="expert-card reveal">
+    <span class="eyebrow">03 — Why Us</span>
+    <div class="gold-line gold-line-center"></div>
+    <h2>Emergency Floor Cleaning Experts You Can Depend On</h2>
+    <p>At GOODWILL BHARAT™ Upholstery Cleaners Carpet &amp; Tile, we take pride in our ability to provide reliable and efficient emergency floor cleaning services 24/7 across Bhopal, Madhya Pradesh. Our team is dedicated to delivering exceptional results and peace of mind during the most challenging times.</p>
+    <a href="tel:+919424430664" class="btn-gold"><i class="fas fa-phone"></i> Call Us Today</a>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-content reveal">
+    <div class="gold-line gold-line-center"></div>
+    <h2>Contact Us for <em>Immediate</em> Assistance</h2>
+    <p>Don't wait until it's too late. Contact GOODWILL BHARAT™ Upholstery Cleaners today for immediate assistance and professional solutions to restore your space after any flooding incident.</p>
+    <div class="cta-btns">
+      <a href="tel:+919424430664" class="btn-emergency"><i class="fas fa-phone"></i> Call Now: +91 94244 30664</a>
+      <a href="contactus.html" class="btn-gold"><i class="fas fa-file-invoice"></i> Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand reveal">
+      <a href="index.html" class="logo-link" style="margin-bottom:12px; display:inline-flex;">
+        <img src="images/Logo.jpeg" alt="GOODWILL BHARAT™" class="logo-img" onerror="this.style.display='none'">
+        <div class="logo-text">GOODWILL BHARAT™<em>Sofa, Carpet &amp; Tile Cleaning</em></div>
+      </a>
+      <p>Creating cleaner, healthier spaces with eco-friendly techniques and unmatched attention to detail in Bhopal, Madhya Pradesh.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/919424430664" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:.1s">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+        <li><a href="sofa-cleaning.html"><i class="fas fa-chevron-right"></i> Sofa Cleaning</a></li>
+        <li><a href="carpet-cleaning.html"><i class="fas fa-chevron-right"></i> Carpet Cleaning</a></li>
+        <li><a href="contactus.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:.2s">
+      <h4>Contact &amp; Hours</h4>
+      <ul>
+        <li><a href="tel:+919424430664"><i class="fas fa-phone"></i> +91 94244 30664</a></li>
+        <li><a href="https://wa.me/919424430664" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></li>
+        <li><span><i class="fas fa-map-marker-alt"></i> Bhopal, Madhya Pradesh</span></li>
+        <li><span><i class="fas fa-clock"></i> Mon – Sun: 24 Hours / 7 Days</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 GOODWILL BHARAT™ Upholstery Cleaners Carpet &amp; Tile® — All rights reserved.</p>
+    <div class="footer-links-row">
+      <a href="index.html">Home</a>
+      <a href="contactus.html">Free Quote</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => { document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60); });
+function toggleMenu() { const m = document.getElementById('mobileMenu'), o = document.getElementById('mOverlay'), t = document.getElementById('menuToggle'); const open = m.classList.contains('open'); m.classList.toggle('open', !open); o.classList.toggle('open', !open); t.classList.toggle('open', !open); document.body.style.overflow = open ? '' : 'hidden'; }
+function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.getElementById('mOverlay').classList.remove('open'); document.getElementById('menuToggle').classList.remove('open'); document.body.style.overflow = ''; }
+function toggleMobileSub(el) { el.classList.toggle('open'); el.nextElementSibling.classList.toggle('show'); }
+window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMenu(); });
+const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
+```
