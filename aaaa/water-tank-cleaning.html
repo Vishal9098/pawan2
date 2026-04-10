@@ -1,41 +1,64 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Water Tank Cleaning — GOODWILL BHARAT™
-Sofa, Carpet & Tile Cleaning Cleaners</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>Water Tank Cleaning — GOODWILL BHARAT™ | Sofa, Carpet & Tile Cleaning</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-:root{--black:#080808;--black-mid:#111111;--black-soft:#1a1a1a;--charcoal:#222222;--gold:#c8a85a;--gold-light:#e4c97a;--gold-pale:#f2e0a8;--white:#ffffff;--off-white:#f9f5ee;--cream:#f2ead8;--muted:#888888;--border:rgba(200,168,90,0.2);--border-light:rgba(200,168,90,0.08);}
+:root {
+  --black:#080808; --black-mid:#111111; --black-soft:#1a1a1a; --charcoal:#222222;
+  --gold:#c8a85a; --gold-light:#e4c97a; --gold-pale:#f2e0a8;
+  --white:#ffffff; --off-white:#f9f5ee; --cream:#f2ead8; --muted:#888888;
+  --border:rgba(200,168,90,0.2); --border-light:rgba(200,168,90,0.08);
+}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:'Montserrat',sans-serif;overflow-x:hidden;line-height:1.6;}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");}
-img{display:block;}a{text-decoration:none;color:inherit;}
+img{display:block;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:1320px;margin:0 auto;padding:0 48px;}
 .gold-line{width:60px;height:1px;background:var(--gold);display:inline-block;margin-bottom:20px;}
 .gold-line-center{display:block;margin:0 auto 20px;}
 
-/* NAV */
+/* ══ FLOATING BUTTONS (LEFT SIDE) ══ */
+.floating-btns{position:fixed;bottom:28px;left:20px;z-index:9999;display:flex;flex-direction:column;gap:12px;align-items:center;}
+.float-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--white);box-shadow:0 4px 20px rgba(0,0,0,.45);transition:transform .3s,box-shadow .3s;position:relative;text-decoration:none;}
+.float-btn:hover{transform:scale(1.12);box-shadow:0 6px 28px rgba(0,0,0,.55);}
+.float-btn-wa{background:#25D366;}
+.float-btn-ph{background:var(--gold);}
+.float-btn-wa::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid #25D366;animation:pulse 2s ease-out infinite;opacity:0;}
+@keyframes pulse{0%{transform:scale(1);opacity:.6;}100%{transform:scale(1.5);opacity:0;}}
+.float-btn .tip{position:absolute;left:66px;background:rgba(0,0,0,.88);color:#fff;font-size:11px;letter-spacing:.5px;padding:6px 12px;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s;font-family:'Montserrat',sans-serif;}
+.float-btn:hover .tip{opacity:1;}
+
+/* ══ NAVBAR ══ */
 header{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:all .5s ease;}
 header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
-.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:22px 48px;max-width:1320px;margin:0 auto;}
-.logo-text{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;line-height:1.1;}
-.logo-text em{font-style:normal;color:var(--gold);display:block;font-size:10px;letter-spacing:4px;font-family:'Montserrat',sans-serif;font-weight:400;margin-top:2px;}
-.nav-links{display:flex;align-items:center;gap:20px;list-style:none;}
-.nav-links>li>a{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500;color:rgba(255,255,255,.7);transition:color .3s;position:relative;padding:4px 0;white-space:nowrap;}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 48px;max-width:1320px;margin:0 auto;}
+
+/* Logo */
+.logo-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;}
+.logo-img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);flex-shrink:0;}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;line-height:1.1;}
+.logo-text em{font-style:normal;color:var(--gold);display:block;font-size:9px;letter-spacing:3px;font-family:'Montserrat',sans-serif;font-weight:400;margin-top:2px;}
+
+.nav-links{display:flex;align-items:center;gap:16px;list-style:none;}
+.nav-links>li>a{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;font-weight:500;color:rgba(255,255,255,.7);transition:color .3s;position:relative;padding:4px 0;white-space:nowrap;}
 .nav-links>li>a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .3s;}
 .nav-links>li>a:hover{color:var(--gold);}
 .nav-links>li>a:hover::after{width:100%;}
 .has-dropdown{position:relative;}
-.dropdown-menu{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);min-width:220px;background:var(--black-soft);border:1px solid var(--border);opacity:0;visibility:hidden;transition:all .3s ease;pointer-events:none;list-style:none;}
+.dropdown-menu{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);min-width:230px;background:var(--black-soft);border:1px solid var(--border);opacity:0;visibility:hidden;transition:all .3s ease;pointer-events:none;list-style:none;}
 .dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;width:12px;height:12px;background:var(--black-soft);border-left:1px solid var(--border);border-top:1px solid var(--border);transform:translateX(-50%) rotate(45deg);}
 .has-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;pointer-events:all;top:calc(100% + 14px);}
-.dropdown-menu li a{display:block;padding:13px 22px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);border-bottom:1px solid var(--border-light);transition:all .3s;}
+.dropdown-menu li a{display:block;padding:12px 20px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6);border-bottom:1px solid var(--border-light);transition:all .3s;}
 .dropdown-menu li:last-child a{border-bottom:none;}
-.dropdown-menu li a:hover{color:var(--gold);padding-left:28px;}
-.nav-cta{font-size:11px!important;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;padding:12px 26px;border:1px solid var(--gold);color:var(--gold)!important;transition:all .35s!important;}
+.dropdown-menu li a:hover{color:var(--gold);padding-left:26px;}
+.nav-cta{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;padding:11px 22px;border:1px solid var(--gold);color:var(--gold)!important;transition:all .35s!important;}
 .nav-cta::after{display:none!important;}
 .nav-cta:hover{background:var(--gold)!important;color:var(--black)!important;}
 .menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;width:36px;padding:4px 0;}
@@ -61,13 +84,7 @@ header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bot
 .m-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:998;backdrop-filter:blur(4px);}
 .m-overlay.open{display:block;}
 
-/* BUTTONS */
-.btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);padding:16px 34px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;transition:all .35s;}
-.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
-.btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);padding:16px 34px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;border:1px solid rgba(255,255,255,.35);transition:all .35s;}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
-
-/* HERO */
+/* ══ HERO (WATER TANK SPECIFIC) ══ */
 .svc-hero{position:relative;min-height:80vh;display:flex;align-items:flex-end;padding:0 0 80px;overflow:hidden;}
 .svc-hero-bg{position:absolute;inset:0;z-index:0;}
 .svc-hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.35);}
@@ -80,14 +97,14 @@ header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bot
 .svc-hero-desc{font-size:17px;color:rgba(255,255,255,.75);max-width:640px;line-height:1.85;font-weight:300;margin-bottom:36px;}
 .svc-hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
 
-/* STATS BAR */
+/* ══ STATS BAR ══ */
 .stats-bar{background:var(--black-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;max-width:100%;}
 .stat-item{flex:1;text-align:center;padding:30px 20px;border-right:1px solid var(--border);}
 .stat-item:last-child{border-right:none;}
 .stat-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--gold);display:block;line-height:1;}
 .stat-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:6px;display:block;font-weight:500;}
 
-/* ABOUT */
+/* ══ ABOUT SECTION ══ */
 .svc-about{display:grid;grid-template-columns:1fr 1fr;min-height:560px;}
 .svc-about-img{position:relative;overflow:hidden;}
 .svc-about-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease;}
@@ -102,7 +119,7 @@ header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bot
 .svc-checklist li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#444;font-weight:400;}
 .svc-checklist li::before{content:'✦';color:var(--gold);font-size:.75rem;margin-top:2px;flex-shrink:0;}
 
-/* PROCESS */
+/* ══ PROCESS STEPS ══ */
 .svc-process{background:var(--black-mid);padding:90px 48px;}
 .svc-process .sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px;}
 .svc-process h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,52px);font-weight:300;line-height:1.1;margin-bottom:60px;}
@@ -116,7 +133,7 @@ header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bot
 .p-step-title{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;}
 .p-step-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;font-weight:300;}
 
-/* TYPES */
+/* ══ TYPES OF WATER TANK CLEANING ══ */
 .svc-types{background:var(--black-soft);padding:90px 48px;}
 .svc-types .sec-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px;}
 .svc-types h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,52px);font-weight:300;line-height:1.1;margin-bottom:50px;}
@@ -128,7 +145,7 @@ header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bot
 .type-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--gold);margin-bottom:10px;}
 .type-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;font-weight:300;}
 
-/* WHY */
+/* ══ WHY CHOOSE US ══ */
 .svc-why{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
 .svc-why-img{position:relative;overflow:hidden;}
 .svc-why-img img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -144,23 +161,24 @@ header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bot
 .wf-title{font-size:13px;letter-spacing:1px;font-weight:600;margin-bottom:5px;}
 .wf-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;}
 
-/* FAQ */
+/* ══ FAQ SECTION ══ */
 .svc-faq{background:var(--off-white);padding:100px 48px;color:var(--black);display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;}
 .faq-img-wrap{position:relative;}
 .faq-img-wrap img{width:100%;height:480px;object-fit:cover;display:block;}
 .faq-gold-frame{position:absolute;top:-24px;left:-24px;width:65%;height:65%;border-top:3px solid var(--gold);border-left:3px solid var(--gold);pointer-events:none;}
 .faq-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;line-height:1.2;color:var(--black);margin-bottom:16px;}
 .faq-content>p{font-size:15px;color:#666;line-height:1.85;margin-bottom:36px;font-weight:300;}
+.faq-list{display:flex;flex-direction:column;gap:0;}
 .faq-item{border-bottom:1px solid rgba(200,168,90,.2);overflow:hidden;}
-.faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 0;cursor:pointer;gap:16px;}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;gap:16px;}
 .faq-q span{font-size:14px;font-weight:600;color:var(--black);letter-spacing:.5px;transition:color .3s;}
 .faq-q:hover span{color:var(--gold);}
-.faq-icon{width:28px;height:28px;border:1px solid rgba(200,168,90,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-size:13px;transition:transform .35s;}
+.faq-icon{width:28px;height:28px;border:1px solid rgba(200,168,90,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-size:14px;transition:transform .35s;}
 .faq-item.open .faq-icon{transform:rotate(45deg);}
-.faq-a{font-size:14px;color:#666;line-height:1.8;padding-bottom:18px;display:none;font-weight:300;}
+.faq-a{font-size:14px;color:#666;line-height:1.8;padding-bottom:20px;display:none;font-weight:300;}
 .faq-item.open .faq-a{display:block;}
 
-/* CTA */
+/* ══ CTA SECTION ══ */
 .svc-cta{position:relative;padding:110px 20px;text-align:center;}
 .svc-cta-bg{position:absolute;inset:0;z-index:0;}
 .svc-cta-bg img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -171,12 +189,11 @@ header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bot
 .svc-cta-content p{font-size:17px;color:rgba(255,255,255,.7);margin-bottom:40px;line-height:1.8;font-weight:300;}
 .cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
 
-/* FOOTER */
+/* ══ FOOTER (exactly as index.html) ══ */
 footer{background:var(--black-soft);padding:80px 48px 40px;border-top:1px solid var(--border);position:relative;}
 footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
 .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1.2fr;gap:60px;max-width:1320px;margin:0 auto 60px;}
-.footer-brand .logo-text{font-size:22px;margin-bottom:20px;display:inline-block;}
-.footer-brand p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.8;max-width:280px;margin-bottom:28px;font-weight:300;}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.8;max-width:280px;margin:16px 0 24px;font-weight:300;}
 .social-row{display:flex;gap:12px;}
 .social-row a{width:38px;height:38px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.5);transition:all .3s;}
 .social-row a:hover{border-color:var(--gold);color:var(--gold);}
@@ -193,20 +210,35 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;back
 .footer-links-row a{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.5px;transition:color .3s;}
 .footer-links-row a:hover{color:var(--gold);}
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease;}
-.reveal.left{transform:translateX(-28px);}
-.reveal.right{transform:translateX(28px);}
+/* ══ REVEAL ANIMATIONS ══ */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s ease;}
+.reveal.left{transform:translateX(-32px);}
+.reveal.right{transform:translateX(32px);}
 .reveal.visible{opacity:1!important;transform:translate(0,0)!important;}
 
-/* RESPONSIVE */
-@media(max-width:1100px){.footer-grid{grid-template-columns:1fr 1fr;}.footer-brand{grid-column:1/-1;}.process-grid{grid-template-columns:repeat(3,1fr);}.nav-links{gap:12px;}}
-@media(max-width:900px){.nav-wrap{padding:18px 24px;}.nav-links{display:none;}.menu-toggle{display:flex;}.svc-about{grid-template-columns:1fr;}.svc-about-img{height:340px;}.svc-about-text{padding:60px 36px;}.svc-why{grid-template-columns:1fr;}.svc-why-img{height:320px;order:-1;}.svc-why-text{padding:60px 36px;}.svc-faq{grid-template-columns:1fr;padding:80px 24px;gap:50px;}.svc-process{padding:80px 24px;}.svc-types{padding:80px 24px;}.types-grid{grid-template-columns:1fr 1fr;}.process-grid{grid-template-columns:repeat(2,1fr);}.svc-hero-content{padding:0 24px;}.svc-hero h1{font-size:clamp(38px,8vw,64px);}}
-@media(max-width:600px){.stats-bar{flex-wrap:wrap;}.stat-item{flex:1 1 50%;border-bottom:1px solid var(--border);}.types-grid{grid-template-columns:1fr;}.process-grid{grid-template-columns:1fr;}.svc-about-text{padding:50px 24px;}.svc-why-text{padding:50px 24px;}.footer-grid{grid-template-columns:1fr;gap:36px;}.footer-bottom{flex-direction:column;text-align:center;}.footer-links-row{justify-content:center;}.cta-btns{flex-direction:column;align-items:center;}.svc-hero-btns{flex-direction:column;}.btn-gold,.btn-outline{justify-content:center;}}
+/* ══ RESPONSIVE ══ */
+@media(max-width:1100px){.process-grid{grid-template-columns:repeat(3,1fr);}.footer-grid{grid-template-columns:1fr 1fr;}.footer-brand{grid-column:1/-1;}}
+@media(max-width:900px){.nav-wrap{padding:12px 24px;}.nav-links{display:none;}.menu-toggle{display:flex;}.svc-about{grid-template-columns:1fr;}.svc-about-img{height:340px;}.svc-about-text{padding:60px 36px;}.svc-why{grid-template-columns:1fr;}.svc-why-img{height:320px;order:-1;}.svc-why-text{padding:60px 36px;}.svc-faq{grid-template-columns:1fr;padding:80px 24px;gap:50px;}.svc-process{padding:80px 24px;}.svc-types{padding:80px 24px;}.types-grid{grid-template-columns:1fr 1fr;}.process-grid{grid-template-columns:repeat(2,1fr);}.svc-hero-content{padding:0 24px;}}
+@media(max-width:600px){.stats-bar{flex-wrap:wrap;}.stat-item{flex:1 1 50%;border-bottom:1px solid var(--border);}.types-grid{grid-template-columns:1fr;}.process-grid{grid-template-columns:1fr;}.svc-about-text{padding:50px 24px;}.svc-why-text{padding:50px 24px;}.footer-grid{grid-template-columns:1fr;gap:36px;}.footer-bottom{flex-direction:column;text-align:center;}.cta-btns{flex-direction:column;align-items:center;}.svc-hero-btns{flex-direction:column;}.btn-gold,.btn-outline{justify-content:center;}}
 </style>
 </head>
 <body>
+
+<!-- ══ FLOATING BUTTONS (LEFT SIDE) ══ -->
+<div class="floating-btns">
+  <a href="https://wa.me/919424430664" target="_blank" class="float-btn float-btn-wa" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tip">WhatsApp Us</span>
+  </a>
+  <a href="tel:+919424430664" class="float-btn float-btn-ph" aria-label="Call Us">
+    <i class="fas fa-phone"></i>
+    <span class="tip">+91 94244 30664</span>
+  </a>
+</div>
+
 <div class="m-overlay" id="mOverlay" onclick="closeMenu()"></div>
+
+<!-- ══ MOBILE MENU ══ -->
 <div class="mobile-menu" id="mobileMenu">
   <ul>
     <li><a href="index.html" onclick="closeMenu()">Home</a></li>
@@ -232,71 +264,45 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;back
         <li><a href="glass-cleaning.html" onclick="closeMenu()">Glass Cleaning</a></li>
       </ul>
     </li>
-    <li><a href="#" onclick="closeMenu()">Locations</a></li>
+    <li><a href="contactus.html" onclick="closeMenu()">Contact Us</a></li>
     <li><a href="EmergencyFloorCleaningService.html" onclick="closeMenu()">Emergency</a></li>
     <li><a href="house-cleaning.html" onclick="closeMenu()">House</a></li>
     <li><a href="CommercialCleaning.html" onclick="closeMenu()">Commercial</a></li>
-    <!-- <li>
-      <div class="menu-item-with-sub" onclick="toggleMobileSub(this)">
-        <span>More</span><i class="fas fa-chevron-down sub-arrow"></i>
-      </div>
-      <ul class="mobile-sub">
-        <li><a href="blog.html" onclick="closeMenu()">Blog</a></li>
-        <li><a href="contactus.html" onclick="closeMenu()">Contact Us</a></li>
-      </ul>
-    </li> -->
-     <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="gallery.html" onclick="closeMenu()">Gallery</a></li>
   </ul>
 </div>
+
+<!-- ══ HEADER ══ -->
 <header id="header">
   <div class="nav-wrap">
-    <a href="index.html" class="logo-text">GOODWILL BHARAT™
-Sofa, Carpet & Tile Cleaning<em>Carpet &amp; Tile Cleaning</em></a>
+    <a href="index.html" class="logo-link">
+      <img src="images/Logo.jpeg" alt="GoodWill Bharat" class="logo-img" onerror="this.style.display='none'">
+      <div class="logo-text">GOODWILL BHARAT™<em>Sofa, Carpet &amp; Tile Cleaning</em></div>
+    </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="aboutus.html">About</a></li>
       <li class="has-dropdown">
         <a href="#">Services <i class="fas fa-chevron-down" style="font-size:9px;margin-left:4px"></i></a>
         <ul class="dropdown-menu">
-          <li><a href="sofa-cleaning.html">Sofa Cleaning</a></li>
-          <li><a href="carpet-cleaning.html">Carpet Cleaning</a></li>
-          <li><a href="chair-cleaning.html">Chair Cleaning</a></li>
-          <li><a href="mattress-cleaning.html">Mattress Cleaning</a></li>
-          <li><a href="blinds-cleaning.html">Window Blinds Cleaning</a></li>
-          <li><a href="curtain-cleaning.html">Curtain Cleaning</a></li>
-          <li><a href="post-construction-cleaning.html">Post-Construction Cleaning</a></li>
-          <li><a href="occupied-house-cleaning.html">Occupied House Cleaning</a></li>
-          <li><a href="apartment-cleaning.html">Flat &amp; Apartment Cleaning</a></li>
-          <li><a href="kitchen-cleaning.html">Kitchen Deep Cleaning</a></li>
-          <li><a href="bathroom-cleaning.html">Bathroom Deep Cleaning</a></li>
-          <li><a href="floor-cleaning.html">Floor Cleaning</a></li>
-          <li><a href="water-tank-cleaning.html">Water Tank Cleaning</a></li>
-          <li><a href="glass-cleaning.html">Glass Cleaning</a></li>
+          <li><a href="sofa-cleaning.html">Sofa Cleaning</a></li><li><a href="carpet-cleaning.html">Carpet Cleaning</a></li><li><a href="chair-cleaning.html">Chair Cleaning</a></li><li><a href="mattress-cleaning.html">Mattress Cleaning</a></li><li><a href="blinds-cleaning.html">Window Blinds Cleaning</a></li><li><a href="curtain-cleaning.html">Curtain Cleaning</a></li><li><a href="post-construction-cleaning.html">Post-Construction Cleaning</a></li><li><a href="occupied-house-cleaning.html">Occupied House Cleaning</a></li><li><a href="apartment-cleaning.html">Flat &amp; Apartment Cleaning</a></li><li><a href="kitchen-cleaning.html">Kitchen Deep Cleaning</a></li><li><a href="bathroom-cleaning.html">Bathroom Deep Cleaning</a></li><li><a href="floor-cleaning.html">Floor Cleaning</a></li><li><a href="water-tank-cleaning.html">Water Tank Cleaning</a></li><li><a href="glass-cleaning.html">Glass Cleaning</a></li>
         </ul>
       </li>
-      <li><a href="#">Locations</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
       <li><a href="EmergencyFloorCleaningService.html">Emergency</a></li>
       <li><a href="house-cleaning.html">House</a></li>
       <li><a href="CommercialCleaning.html">Commercial</a></li>
-      <!-- <li class="has-dropdown">
-        <a href="#">More <i class="fas fa-chevron-down" style="font-size:9px;margin-left:4px"></i></a>
-        <ul class="dropdown-menu">
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contactus.html">Contact Us</a></li>
-        </ul>
-      </li> -->
-       <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contactus.html" class="nav-cta">Get a Quote</a></li>
     </ul>
-    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </div>
 </header>
-<!-- HERO -->
+
+<!-- ══ HERO SECTION ══ -->
 <section class="svc-hero">
   <div class="svc-hero-bg">
-    <img src="images/watertank.jpg" alt="Water Tank Cleaning" onerror="this.src='https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80'">
+    <img src="images/watertank.jpg" alt="Water Tank Cleaning">
   </div>
   <div class="svc-hero-content">
     <div class="svc-hero-pre">Safe Water Specialists</div>
@@ -310,13 +316,13 @@ Sofa, Carpet & Tile Cleaning<em>Carpet &amp; Tile Cleaning</em></a>
   </div>
 </section>
 
-<!-- STATS -->
+<!-- ══ STATS BAR ══ -->
 <div class="stats-bar"><div class="stat-item"><span class="stat-num">400+</span><span class="stat-label">Tanks Cleaned</span></div><div class="stat-item"><span class="stat-num">4.8★</span><span class="stat-label">Google Rating</span></div><div class="stat-item"><span class="stat-num">WHO Compliant</span><span class="stat-label">Standards</span></div><div class="stat-item"><span class="stat-num">Certificate</span><span class="stat-label">Provided</span></div></div>
 
-<!-- ABOUT -->
+<!-- ══ ABOUT / DEEP CLEAN DETAILS ══ -->
 <section class="svc-about">
   <div class="svc-about-img reveal left">
-    <img src="images/watertank.jpg" alt="Water Tank Cleaning" onerror="this.src='images/flordeep.jpeg'">
+    <img src="images/watertank.jpg" alt="Water Tank Cleaning">
   </div>
   <div class="svc-about-text reveal right">
     <div class="svc-about-inner">
@@ -329,39 +335,38 @@ Sofa, Carpet & Tile Cleaning<em>Carpet &amp; Tile Cleaning</em></a>
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- ══ 5-STEP PROCESS ══ -->
 <section class="svc-process">
   <div class="sec-label">How We Work</div>
   <h2>Our <em>5-Step</em> Cleaning Process</h2>
   <div class="process-grid"><div class="p-step reveal"><div class="p-step-num">01</div><div class="p-step-icon">🔍</div><div class="p-step-title">Assess</div><div class="p-step-desc">Tank type, size, access and contamination level assessed.</div></div><div class="p-step reveal"><div class="p-step-num">02</div><div class="p-step-icon">💧</div><div class="p-step-title">Drain</div><div class="p-step-desc">Tank completely drained and all water removed safely.</div></div><div class="p-step reveal"><div class="p-step-num">03</div><div class="p-step-icon">🧹</div><div class="p-step-title">Scrub</div><div class="p-step-desc">Internal walls, floor and fittings jet-washed and scrubbed.</div></div><div class="p-step reveal"><div class="p-step-num">04</div><div class="p-step-icon">☣️</div><div class="p-step-title">Disinfect</div><div class="p-step-desc">WHO-standard chlorination applied and contact time observed.</div></div><div class="p-step reveal"><div class="p-step-num">05</div><div class="p-step-icon">✅</div><div class="p-step-title">Refill & Certify</div><div class="p-step-desc">Tank refilled; cleaning certificate issued to client.</div></div></div>
 </section>
 
-<!-- TYPES -->
+<!-- ══ TYPES OF WATER TANK CLEANING ══ -->
 <section class="svc-types">
   <div class="sec-label">What We Cover</div>
   <h2>Types of <em>Water Tank Cleaning</em> We Offer</h2>
-  <div class="types-grid"><div class="type-card reveal" style="transition-delay:0.0s"><div class="type-icon">🏠</div><div class="type-title">Residential Tanks</div><div class="type-desc">Rooftop and underground residential water tank cleaning.</div></div><div class="type-card reveal" style="transition-delay:0.1s"><div class="type-icon">🏢</div><div class="type-title">Commercial Tanks</div><div class="type-desc">Large-capacity commercial, office and industrial tank cleaning.</div></div><div class="type-card reveal" style="transition-delay:0.2s"><div class="type-icon">🏗️</div><div class="type-title">Sump Tank Cleaning</div><div class="type-desc">Underground sump and collection tank desilting and disinfection.</div></div><div class="type-card reveal" style="transition-delay:0.30000000000000004s"><div class="type-icon">🏨</div><div class="type-title">Hotel & Hospital</div><div class="type-desc">High-frequency cleaning for hotels, hospitals and institutions.</div></div><div class="type-card reveal" style="transition-delay:0.4s"><div class="type-icon">🔬</div><div class="type-title">Bacterial Testing</div><div class="type-desc">Post-cleaning water sample testing for complete assurance.</div></div><div class="type-card reveal" style="transition-delay:0.5s"><div class="type-icon">📋</div><div class="type-title">Compliance Cert</div><div class="type-desc">Cleaning compliance certificates for regulatory requirements.</div></div></div>
+  <div class="types-grid"><div class="type-card reveal"><div class="type-icon">🏠</div><div class="type-title">Residential Tanks</div><div class="type-desc">Rooftop and underground residential water tank cleaning.</div></div><div class="type-card reveal"><div class="type-icon">🏢</div><div class="type-title">Commercial Tanks</div><div class="type-desc">Large-capacity commercial, office and industrial tank cleaning.</div></div><div class="type-card reveal"><div class="type-icon">🏗️</div><div class="type-title">Sump Tank Cleaning</div><div class="type-desc">Underground sump and collection tank desilting and disinfection.</div></div><div class="type-card reveal"><div class="type-icon">🏨</div><div class="type-title">Hotel & Hospital</div><div class="type-desc">High-frequency cleaning for hotels, hospitals and institutions.</div></div><div class="type-card reveal"><div class="type-icon">🔬</div><div class="type-title">Bacterial Testing</div><div class="type-desc">Post-cleaning water sample testing for complete assurance.</div></div><div class="type-card reveal"><div class="type-icon">📋</div><div class="type-title">Compliance Cert</div><div class="type-desc">Cleaning compliance certificates for regulatory requirements.</div></div></div>
 </section>
 
-<!-- WHY -->
+<!-- ══ WHY CHOOSE US ══ -->
 <section class="svc-why">
   <div class="svc-why-img reveal right">
-    <img src="images/watertank.jpg" alt="Why Choose Us" onerror="this.src='images\bhopal1.jpeg'">
+    <img src="images/watertank.jpg" alt="Why Choose Us">
   </div>
   <div class="svc-why-text reveal left">
     <div class="gold-line"></div>
     <h2>Why Choose <em>Us</em></h2>
-    <p>Choose GOODWILL BHARAT™
-Sofa, Carpet & Tile Cleaning Cleaners for our eco-friendly approach, certified technicians, and unmatched dedication to your satisfaction.</p>
+    <p>Choose GOODWILL BHARAT™ for our eco-friendly approach, certified technicians, and unmatched dedication to your satisfaction.</p>
     <ul class="why-features"><li><div class="wf-icon"><i class="fas fa-tint"></i></div><div><div class="wf-title">WHO Standards</div><div class="wf-desc">Disinfection follows World Health Organization protocols.</div></div></li><li><div class="wf-icon"><i class="fas fa-certificate"></i></div><div><div class="wf-title">Certificate Issued</div><div class="wf-desc">Written cleaning certificate provided after every service.</div></div></li><li><div class="wf-icon"><i class="fas fa-award"></i></div><div><div class="wf-title">Safe Water</div><div class="wf-desc">Eliminates bacteria, algae and all biological contamination.</div></div></li></ul>
     <a href="contactus.html" class="btn-gold" style="margin-top:36px">Schedule a Cleaning <i class="fas fa-arrow-right"></i></a>
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- ══ FAQ SECTION ══ -->
 <section class="svc-faq">
   <div class="faq-img-wrap reveal left">
-    <img src="images/watertank.jpg" alt="FAQ" onerror="this.src='images/flordeep.jpeg'">
+    <img src="images/watertank.jpg" alt="FAQ">
     <div class="faq-gold-frame"></div>
   </div>
   <div class="faq-content reveal right">
@@ -372,10 +377,10 @@ Sofa, Carpet & Tile Cleaning Cleaners for our eco-friendly approach, certified t
   </div>
 </section>
 
-<!-- CTA -->
+<!-- ══ CTA SECTION ══ -->
 <section class="svc-cta">
   <div class="svc-cta-bg">
-    <img src="images/watertank.jpg" alt="CTA" onerror="this.src='https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80'">
+    <img src="images/watertank.jpg" alt="CTA">
   </div>
   <div class="svc-cta-content reveal">
     <div class="gold-line gold-line-center"></div>
@@ -387,17 +392,21 @@ Sofa, Carpet & Tile Cleaning Cleaners for our eco-friendly approach, certified t
     </div>
   </div>
 </section>
+
+<!-- ══ FOOTER (EXACT MATCH WITH INDEX) ══ -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand reveal">
-      <div class="logo-text">GOODWILL BHARAT™
-Sofa, Carpet & Tile Cleaning<em>Carpet &amp; Tile Cleaning</em></div>
-      <p>Creating cleaner, healthier spaces with eco-friendly techniques and unmatched attention to detail in MP, Bhopal.</p>
+      <a href="index.html" class="logo-link">
+        <img src="images/Logo.jpeg" alt="GOODWILL BHARAT™" class="logo-img" onerror="this.style.display='none'">
+        <div class="logo-text">GOODWILL BHARAT™<em>Sofa, Carpet &amp; Tile Cleaning</em></div>
+      </a>
+      <p>Creating cleaner, healthier spaces with eco-friendly techniques and unmatched attention to detail in Bhopal, Madhya Pradesh.</p>
       <div class="social-row">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/919424430664" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://facebook.com/profile.php?id=61551628286013&mibextid=ZbWKwL" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/goodwillbharat.in?igsh=MmVlMjlkMTBhMg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="www.youtube.com/@Goodwillbharat" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
     <div class="footer-col reveal" style="transition-delay:.1s">
@@ -409,14 +418,15 @@ Sofa, Carpet & Tile Cleaning<em>Carpet &amp; Tile Cleaning</em></div>
         <li><a href="carpet-cleaning.html"><i class="fas fa-chevron-right"></i> Carpet Cleaning</a></li>
         <li><a href="kitchen-cleaning.html"><i class="fas fa-chevron-right"></i> Kitchen Cleaning</a></li>
         <li><a href="bathroom-cleaning.html"><i class="fas fa-chevron-right"></i> Bathroom Cleaning</a></li>
-        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
         <li><a href="contactus.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
       </ul>
     </div>
     <div class="footer-col reveal" style="transition-delay:.2s">
       <h4>Contact &amp; Hours</h4>
       <ul>
-        <li><span><i class="fas fa-phone"></i> +91 94244 30664</span></li>
+        <li><a href="tel:+919424430664"><i class="fas fa-phone"></i> +91 94244 30664</a></li>
+        <li><a href="https://wa.me/919424430664" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></li>
         <li><span><i class="fas fa-map-marker-alt"></i> Bhopal, Madhya Pradesh</span></li>
         <li><span><i class="fas fa-envelope"></i> info@goodwillbharat.com</span></li>
       </ul>
@@ -427,8 +437,7 @@ Sofa, Carpet & Tile Cleaning<em>Carpet &amp; Tile Cleaning</em></div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 GOODWILL BHARAT™
-Sofa, Carpet & Tile Cleaning Cleaners Carpet &amp; Tile® — All rights reserved.</p>
+    <p>© 2026 <a href="https://www.webcraftagency.com/" target="_blank">WebCraft Agency</a> — All rights reserved.</p>
     <div class="footer-links-row">
       <a href="index.html">Home</a>
       <a href="contactus.html">Free Quote</a>
@@ -437,10 +446,11 @@ Sofa, Carpet & Tile Cleaning Cleaners Carpet &amp; Tile® — All rights reserve
       <a href="contactus.html">Contact</a>
     </div>
   </div>
-</footer><script>
-window.addEventListener('scroll',()=>{
-  document.getElementById('header').classList.toggle('scrolled',window.scrollY>60);
-});
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',window.scrollY>60);});
+
 function toggleMenu(){
   const m=document.getElementById('mobileMenu'),o=document.getElementById('mOverlay'),t=document.getElementById('menuToggle');
   const open=m.classList.contains('open');
@@ -455,14 +465,17 @@ function closeMenu(){
 }
 window.addEventListener('resize',()=>{if(window.innerWidth>900)closeMenu();});
 function toggleMobileSub(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('show');}
+
 function toggleFaq(qEl){
   const item=qEl.closest('.faq-item'),isOpen=item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
   if(!isOpen)item.classList.add('open');
 }
+
 const ro=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});
 },{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 </script>
-</body></html>
+</body>
+</html>
