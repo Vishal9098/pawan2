@@ -1,5 +1,4 @@
-Here is the `bathroom-cleaning.html` file, converted to match the exact design, structure, and branding of your `index.html` file.
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,6 +84,12 @@ header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bot
 .m-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:998;backdrop-filter:blur(4px);}
 .m-overlay.open{display:block;}
 
+/* ══ BUTTONS ══ */
+.btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);padding:16px 34px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;transition:all .35s;border:none;cursor:pointer;}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);padding:16px 34px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;border:1px solid rgba(255,255,255,.35);transition:all .35s;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+
 /* ══ HERO (BATHROOM SPECIFIC) ══ */
 .svc-hero{position:relative;min-height:80vh;display:flex;align-items:flex-end;padding:0 0 80px;overflow:hidden;}
 .svc-hero-bg{position:absolute;inset:0;z-index:0;}
@@ -105,7 +110,7 @@ header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bot
 .stat-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--gold);display:block;line-height:1;}
 .stat-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:6px;display:block;font-weight:500;}
 
-/* ══ ABOUT SECTION (BATHROOM DEEP CLEAN) ══ */
+/* ══ ABOUT SECTION ══ */
 .svc-about{display:grid;grid-template-columns:1fr 1fr;min-height:560px;}
 .svc-about-img{position:relative;overflow:hidden;}
 .svc-about-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease;}
@@ -146,7 +151,7 @@ header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bot
 .type-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--gold);margin-bottom:10px;}
 .type-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;font-weight:300;}
 
-/* ══ WHY CHOOSE US (BATHROOM) ══ */
+/* ══ WHY CHOOSE US ══ */
 .svc-why{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
 .svc-why-img{position:relative;overflow:hidden;}
 .svc-why-img img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -190,7 +195,7 @@ header.scrolled{background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bot
 .svc-cta-content p{font-size:17px;color:rgba(255,255,255,.7);margin-bottom:40px;line-height:1.8;font-weight:300;}
 .cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
 
-/* ══ FOOTER (exactly as index.html) ══ */
+/* ══ FOOTER ══ */
 footer{background:var(--black-soft);padding:80px 48px 40px;border-top:1px solid var(--border);position:relative;}
 footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
 .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1.2fr;gap:60px;max-width:1320px;margin:0 auto 60px;}
@@ -286,7 +291,20 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;back
       <li class="has-dropdown">
         <a href="#">Services <i class="fas fa-chevron-down" style="font-size:9px;margin-left:4px"></i></a>
         <ul class="dropdown-menu">
-          <li><a href="sofa-cleaning.html">Sofa Cleaning</a></li><li><a href="carpet-cleaning.html">Carpet Cleaning</a></li><li><a href="chair-cleaning.html">Chair Cleaning</a></li><li><a href="mattress-cleaning.html">Mattress Cleaning</a></li><li><a href="blinds-cleaning.html">Window Blinds Cleaning</a></li><li><a href="curtain-cleaning.html">Curtain Cleaning</a></li><li><a href="post-construction-cleaning.html">Post-Construction Cleaning</a></li><li><a href="occupied-house-cleaning.html">Occupied House Cleaning</a></li><li><a href="apartment-cleaning.html">Flat &amp; Apartment Cleaning</a></li><li><a href="kitchen-cleaning.html">Kitchen Deep Cleaning</a></li><li><a href="bathroom-cleaning.html">Bathroom Deep Cleaning</a></li><li><a href="floor-cleaning.html">Floor Cleaning</a></li><li><a href="water-tank-cleaning.html">Water Tank Cleaning</a></li><li><a href="glass-cleaning.html">Glass Cleaning</a></li>
+          <li><a href="sofa-cleaning.html">Sofa Cleaning</a></li>
+          <li><a href="carpet-cleaning.html">Carpet Cleaning</a></li>
+          <li><a href="chair-cleaning.html">Chair Cleaning</a></li>
+          <li><a href="mattress-cleaning.html">Mattress Cleaning</a></li>
+          <li><a href="blinds-cleaning.html">Window Blinds Cleaning</a></li>
+          <li><a href="curtain-cleaning.html">Curtain Cleaning</a></li>
+          <li><a href="post-construction-cleaning.html">Post-Construction Cleaning</a></li>
+          <li><a href="occupied-house-cleaning.html">Occupied House Cleaning</a></li>
+          <li><a href="apartment-cleaning.html">Flat &amp; Apartment Cleaning</a></li>
+          <li><a href="kitchen-cleaning.html">Kitchen Deep Cleaning</a></li>
+          <li><a href="bathroom-cleaning.html">Bathroom Deep Cleaning</a></li>
+          <li><a href="floor-cleaning.html">Floor Cleaning</a></li>
+          <li><a href="water-tank-cleaning.html">Water Tank Cleaning</a></li>
+          <li><a href="glass-cleaning.html">Glass Cleaning</a></li>
         </ul>
       </li>
       <li><a href="contactus.html">Contact Us</a></li>
@@ -394,7 +412,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;back
   </div>
 </section>
 
-<!-- ══ FOOTER (EXACT MATCH WITH INDEX) ══ -->
+<!-- ══ FOOTER ══ -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand reveal">
@@ -450,49 +468,58 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;back
 </footer>
 
 <script>
-window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',window.scrollY>60);});
+window.addEventListener('scroll', function() {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60);
+});
 
-function toggleMenu(){
-  const m=document.getElementById('mobileMenu'),o=document.getElementById('mOverlay'),t=document.getElementById('menuToggle');
-  const open=m.classList.contains('open');
-  m.classList.toggle('open',!open);o.classList.toggle('open',!open);t.classList.toggle('open',!open);
-  document.body.style.overflow=open?'':'hidden';
+function toggleMenu() {
+  var m = document.getElementById('mobileMenu');
+  var o = document.getElementById('mOverlay');
+  var t = document.getElementById('menuToggle');
+  var open = m.classList.contains('open');
+  m.classList.toggle('open', !open);
+  o.classList.toggle('open', !open);
+  t.classList.toggle('open', !open);
+  document.body.style.overflow = open ? '' : 'hidden';
 }
-function closeMenu(){
+
+function closeMenu() {
   document.getElementById('mobileMenu').classList.remove('open');
   document.getElementById('mOverlay').classList.remove('open');
   document.getElementById('menuToggle').classList.remove('open');
-  document.body.style.overflow='';
-}
-window.addEventListener('resize',()=>{if(window.innerWidth>900)closeMenu();});
-function toggleMobileSub(el){el.classList.toggle('oggle('open');open');el.nextel.nextElementSElementSibling.classListibling.classList.toggle.toggle('show('show');}
-
-function toggleFaq');}
-
-function toggleFaq(qEl){
-  const item(qEl){
-  const item=qEl=qEl.closest.closest('.fa('.faq-item'),isq-item'),isOpen=Open=item.classListitem.classList.contains('.contains('open');
-open');
-  document  document.querySelectorAll.querySelectorAll('.fa('.faq-item.open').q-item.open').forEach(iforEach(i=>i=>i.classList.remove.classList.remove('open('open'));
- '));
-  if(! if(!isOpen)itemisOpen)item.classList.add.classList.add('open('open');
+  document.body.style.overflow = '';
 }
 
-');
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 900) closeMenu();
+});
+
+function toggleMobileSub(el) {
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('show');
 }
 
-const roconst ro=new Inters=new IntersectionObserverectionObserver(entries(entries=>{
-  entries.forEach(e=>{=>{
-  entries.forEach(e=>{if(eif(e.isInters.isIntersecting){ecting){e.targete.target.classList.add.classList.add('visible');ro.unobserve(e('visible');ro.unobserve(e.target);.target);}});
-},{threshold}});
-},{threshold:0:0.1});
-document.querySelectorAll.1});
-document.querySelectorAll('.reve('.reveal').forEach(el=>roal').forEach(el=>ro.ob.observe(elserve(el));
-</script));
+function toggleFaq(qEl) {
+  var item = qEl.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i) {
+    i.classList.remove('open');
+  });
+  if (!isOpen) item.classList.add('open');
+}
+
+var ro = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      ro.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(function(el) {
+  ro.observe(el);
+});
 </script>
 </body>
 </html>
->
-</body>
-</html>
-``````

@@ -227,7 +227,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;back
 .reveal.visible{opacity:1!important;transform:translate(0,0)!important;}
 
 /* ══ RESPONSIVE ══ */
-@media(max-width:1200px){.nav-links{gap:12px;}}
+/* @media(max-width:1200px){.nav-links{gap:12px;}}
 @media(max-width:1100px){
   .cards-grid{grid-template-columns:repeat(2,1fr);}
   .footer-grid{grid-template-columns:1fr 1fr;}
@@ -267,6 +267,106 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;back
   .faq-section{padding:60px 20px;}
   .service-cards-section{padding:60px 0;}
   .gallery-section{padding:60px 16px;}
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* YEH PURANI @media QUERIES KO REPLACE KARDO INSE */
+
+@media(max-width:1200px){.nav-links{gap:12px;}}
+@media(max-width:1100px){
+  .cards-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .footer-grid .footer-brand{grid-column:1/-1;}
+  .nav-links{gap:8px;}
+  .video-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:900px){
+  .nav-wrap{padding:12px 20px;}
+  .nav-links{display:none;}
+  .menu-toggle{display:flex;}
+  .about-section,.why-section{grid-template-columns:1fr;}
+  .about-img-wrap{height:300px;}
+  .about-text{padding:40px 24px;}
+  .why-img{height:280px;order:-1;}
+  .why-text{padding:40px 24px;}
+  .faq-section{grid-template-columns:1fr;padding:60px 20px;gap:40px;}
+  .faq-img-wrap img{height:300px;}
+  .service-cards-section,.gallery-section{padding:60px 20px;}
+  .container{padding:0 20px;}
+  /* Hero fix */
+  .hero-content{padding:0 20px;}
+  .hero h1{font-size:clamp(36px,8vw,64px);}
+  .hero p{font-size:14px;margin-bottom:30px;}
+  .hero-buttons{gap:12px;}
+}
+@media(max-width:768px){
+  .cards-grid{grid-template-columns:1fr;gap:12px;}
+  .s-card{height:320px;}  /* 460px se kam kiya */
+  .hero-buttons{flex-direction:column;align-items:center;}
+  .btn-gold,.btn-outline{width:100%;max-width:260px;justify-content:center;padding:12px 20px;font-size:10px;}
+  .cta-btns{flex-direction:column;align-items:center;}
+  footer{padding:50px 20px 30px;}
+  .footer-grid{grid-template-columns:1fr;gap:30px;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .video-grid{grid-template-columns:1fr;}
+  .floating-btns{bottom:15px;left:12px;}
+  .float-btn{width:45px;height:45px;font-size:18px;}
+  /* Service intro fix */
+  .services-intro{padding:60px 16px;}
+  .services-intro h2{font-size:clamp(28px,6vw,42px);}
+  .services-intro p{font-size:15px;}
+  /* Why section fix */
+  .why-text h2{font-size:clamp(30px,5vw,48px);}
+  .why-text>p{font-size:14px;}
+  /* FAQ fix */
+  .faq-content h2{font-size:clamp(28px,5vw,38px);}
+  .faq-q span{font-size:13px;}
+  /* Gallery fix */
+  .gallery-section{padding:50px 16px;}
+  .gallery-section .sec-head h2{font-size:clamp(28px,5vw,42px);}
+  /* CTA fix */
+  .cta-section{padding:80px 16px;}
+  .cta-content h2{font-size:clamp(32px,6vw,52px);}
+  .cta-content p{font-size:15px;}
+}
+@media(max-width:480px){
+  .about-text,.why-text{padding:30px 20px;}
+  .faq-section{padding:40px 16px;}
+  .service-cards-section{padding:40px 0;}
+  .gallery-section{padding:40px 12px;}
+  .s-card{height:280px;}
+  .s-card-content{padding:20px;}
+  .s-card-title{font-size:20px;}
+  .hero h1{font-size:clamp(28px,7vw,48px);}
+  .hero-pre{font-size:9px;letter-spacing:3px;}
+  .hero-pre::before,.hero-pre::after{max-width:30px;}
+  .hero-scroll{bottom:20px;}
+  .stats-bar{flex-wrap:wrap;}
+  .stat-item{flex:1 1 50%;padding:15px 10px;}
+  .stat-num{font-size:1.8rem;}
+  .stat-label{font-size:9px;}
 }
 </style>
 </head>
