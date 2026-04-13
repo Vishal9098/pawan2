@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,15 @@
 <title>Contact Us — GOODWILL BHARAT™ | Upholstery & Carpet Cleaning Bhopal</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // 👈 Yahan apna EmailJS Public Key daalo
+  })();
+</script>
+
 <style>
 :root {
   --black: #080808;
@@ -620,6 +628,11 @@ header.scrolled {
   background: var(--gold-light);
   transform: translateY(-2px);
 }
+.form-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
 .form-note {
   font-size: 11px;
   color: #999;
@@ -637,6 +650,19 @@ header.scrolled {
   text-align: center;
 }
 .form-success.show {
+  display: block;
+}
+.form-error {
+  display: none;
+  background: rgba(220,50,50,0.1);
+  border: 1px solid #dc3232;
+  padding: 16px 20px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: #ff6b6b;
+  text-align: center;
+}
+.form-error.show {
   display: block;
 }
 .contact-info-wrap {
@@ -735,16 +761,6 @@ header.scrolled {
   color: var(--gold);
   font-weight: 600;
 }
-.map-embed {
-  margin-top: 4px;
-}
-.map-embed iframe {
-  width: 100%;
-  height: 220px;
-  border: 1px solid var(--border);
-  filter: grayscale(1) invert(1) contrast(0.85) brightness(0.8);
-  display: block;
-}
 
 /* ========== SERVICES QUICK LIST ========== */
 .services-section {
@@ -812,8 +828,6 @@ header.scrolled {
   padding: 110px 20px;
   text-align: center;
   background: url('https://images.unsplash.com/photo-1604147706283-d7119b5b822c?w=1600&q=80') center/cover no-repeat;
-  /* background: url('images/con.jpg') center/cover no-repeat; */
-
 }
 .cta-section::before {
   content: '';
@@ -1097,7 +1111,6 @@ footer::before {
         <li><a href="floor-cleaning.html" onclick="closeMenu()">Floor Cleaning</a></li>
         <li><a href="water-tank-cleaning.html" onclick="closeMenu()">Water Tank Cleaning</a></li>
         <li><a href="glass-cleaning.html" onclick="closeMenu()">Glass Cleaning</a></li>
-        
       </ul>
     </li>
     <li><a href="contactus.html" onclick="closeMenu()">Contact Us</a></li>
@@ -1120,22 +1133,20 @@ footer::before {
       <li class="has-dropdown">
         <a href="#">Services <i class="fas fa-chevron-down" style="font-size:9px;margin-left:4px"></i></a>
         <ul class="dropdown-menu">
-
-          <li><a href="sofa-cleaning.html" onclick="closeMenu()">Sofa Cleaning</a></li>
-        <li><a href="carpet-cleaning.html" onclick="closeMenu()">Carpet Cleaning</a></li>
-        <li><a href="chair-cleaning.html" onclick="closeMenu()">Chair Cleaning</a></li>
-        <li><a href="mattress-cleaning.html" onclick="closeMenu()">Mattress Cleaning</a></li>
-        <li><a href="blinds-cleaning.html" onclick="closeMenu()">Window Blinds Cleaning</a></li>
-        <li><a href="curtain-cleaning.html" onclick="closeMenu()">Curtain Cleaning</a></li>
-        <li><a href="post-construction-cleaning.html" onclick="closeMenu()">Post-Construction Cleaning</a></li>
-        <li><a href="occupied-house-cleaning.html" onclick="closeMenu()">Occupied House Cleaning</a></li>
-        <li><a href="apartment-cleaning.html" onclick="closeMenu()">Flat &amp; Apartment Cleaning</a></li>
-        <li><a href="kitchen-cleaning.html" onclick="closeMenu()">Kitchen Deep Cleaning</a></li>
-        <li><a href="bathroom-cleaning.html" onclick="closeMenu()">Bathroom Deep Cleaning</a></li>
-        <li><a href="floor-cleaning.html" onclick="closeMenu()">Floor Cleaning</a></li>
-        <li><a href="water-tank-cleaning.html" onclick="closeMenu()">Water Tank Cleaning</a></li>
-        <li><a href="glass-cleaning.html" onclick="closeMenu()">Glass Cleaning</a></li>
-         
+          <li><a href="sofa-cleaning.html">Sofa Cleaning</a></li>
+          <li><a href="carpet-cleaning.html">Carpet Cleaning</a></li>
+          <li><a href="chair-cleaning.html">Chair Cleaning</a></li>
+          <li><a href="mattress-cleaning.html">Mattress Cleaning</a></li>
+          <li><a href="blinds-cleaning.html">Window Blinds Cleaning</a></li>
+          <li><a href="curtain-cleaning.html">Curtain Cleaning</a></li>
+          <li><a href="post-construction-cleaning.html">Post-Construction Cleaning</a></li>
+          <li><a href="occupied-house-cleaning.html">Occupied House Cleaning</a></li>
+          <li><a href="apartment-cleaning.html">Flat &amp; Apartment Cleaning</a></li>
+          <li><a href="kitchen-cleaning.html">Kitchen Deep Cleaning</a></li>
+          <li><a href="bathroom-cleaning.html">Bathroom Deep Cleaning</a></li>
+          <li><a href="floor-cleaning.html">Floor Cleaning</a></li>
+          <li><a href="water-tank-cleaning.html">Water Tank Cleaning</a></li>
+          <li><a href="glass-cleaning.html">Glass Cleaning</a></li>
         </ul>
       </li>
       <li><a href="contactus.html">Contact Us</a></li>
@@ -1162,7 +1173,7 @@ footer::before {
 
 <div class="info-bar reveal">
   <div class="info-item"><div class="info-icon"><i class="fas fa-phone"></i></div><div><div class="info-label">Call Us</div><div class="info-value"><a href="tel:+919424430664">+91 94244 30664</a></div></div></div>
-  <div class="info-item"><div class="info-icon"><i class="fas fa-envelope"></i></div><div><div class="info-label">Email Us</div><div class="info-value"><a href="mailto:info@goodwillbharat.com">info@goodwillbharat.com</a></div></div></div>
+  <div class="info-item"><div class="info-icon"><i class="fas fa-envelope"></i></div><div><div class="info-label">Email Us</div><div class="info-value"><a href="mailto:Help.goodwillhome@gmail.com">Help.goodwillhome@gmail.com</a></div></div></div>
   <div class="info-item"><div class="info-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="info-label">Service Area</div><div class="info-value">Bhopal, Madhya Pradesh</div></div></div>
   <div class="info-item"><div class="info-icon"><i class="fas fa-clock"></i></div><div><div class="info-label">Working Hours</div><div class="info-value">Mon – Sun: 24 Hours / 7 Days</div></div></div>
 </div>
@@ -1174,33 +1185,101 @@ footer::before {
     <p>Fill in the form and our team will get back to you within a few hours. For urgent needs, call us directly.</p>
     <form id="contactForm" onsubmit="handleSubmit(event)">
       <div class="form-row">
-        <div class="form-group"><label>Your Name *</label><input type="text" placeholder="e.g. Rahul Sharma" required></div>
-        <div class="form-group"><label>Phone Number *</label><input type="tel" placeholder="+91 98765 43210" required></div>
+        <div class="form-group"><label>Your Name *</label><input type="text" id="user_name" name="user_name" placeholder="e.g. Rahul Sharma" required></div>
+        <div class="form-group"><label>Phone Number *</label><input type="tel" id="user_phone" name="user_phone" placeholder="+91 98765 43210" required></div>
       </div>
-      <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@example.com"></div>
-      <div class="form-group"><label>Service Required *</label><select required><option value="" disabled selected>Select a service...</option><option>Sofa Cleaning</option><option>Carpet Cleaning</option><option>Mattress Cleaning</option><option>Curtain Cleaning</option><option>Floor Cleaning</option><option>Kitchen Deep Cleaning</option><option>Bathroom Deep Cleaning</option><option>Emergency Service</option><option>Other / Multiple Services</option></select></div>
+      <div class="form-group"><label>Email Address</label><input type="email" id="user_email" name="user_email" placeholder="you@example.com"></div>
+      <div class="form-group"><label>Service Required *</label>
+        <select id="service_required" name="service_required" required>
+          <option value="" disabled selected>Select a service...</option>
+          <option>Sofa Cleaning</option>
+          <option>Carpet Cleaning</option>
+          <option>Mattress Cleaning</option>
+          <option>Curtain Cleaning</option>
+          <option>Floor Cleaning</option>
+          <option>Kitchen Deep Cleaning</option>
+          <option>Bathroom Deep Cleaning</option>
+          <option>Emergency Service</option>
+          <option>Other / Multiple Services</option>
+        </select>
+      </div>
       <div class="form-row">
-        <div class="form-group"><label>Preferred Date</label><input type="date"></div>
-        <div class="form-group"><label>Preferred Time</label><select><option value="" disabled selected>Select time slot...</option><option>Morning (8 AM – 12 PM)</option><option>Afternoon (12 PM – 4 PM)</option><option>Evening (4 PM – 8 PM)</option><option>Flexible / Any Time</option></select></div>
+        <div class="form-group"><label>Preferred Date</label><input type="date" id="preferred_date" name="preferred_date"></div>
+        <div class="form-group"><label>Preferred Time</label>
+          <select id="preferred_time" name="preferred_time">
+            <option value="" disabled selected>Select time slot...</option>
+            <option>Morning (8 AM – 12 PM)</option>
+            <option>Afternoon (12 PM – 4 PM)</option>
+            <option>Evening (4 PM – 8 PM)</option>
+            <option>Flexible / Any Time</option>
+          </select>
+        </div>
       </div>
-      <div class="form-group"><label>Your Address / Area in Bhopal</label><input type="text" placeholder="e.g. Arera Colony, Bhopal"></div>
-      <div class="form-group"><label>Message / Special Requirements</label><textarea placeholder="Tell us about your cleaning requirements..."></textarea></div>
-      <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-      <p class="form-note">* We will call you back within an hours to confirm your booking.</p>
+      <div class="form-group"><label>Your Address / Area in Bhopal</label><input type="text" id="user_address" name="user_address" placeholder="e.g. Arera Colony, Bhopal"></div>
+      <div class="form-group"><label>Message / Special Requirements</label><textarea id="message" name="message" placeholder="Tell us about your cleaning requirements..."></textarea></div>
+      <button type="submit" class="form-submit" id="submitBtn"><i class="fas fa-paper-plane"></i> Send Message</button>
+      <p class="form-note">* We will call you back within an hour to confirm your booking.</p>
     </form>
-    <div class="form-success" id="formSuccess"><i class="fas fa-check-circle" style="margin-right:8px"></i> Thank you! We've received your message and will call you back within 1 hours.</div>
+    <div class="form-success" id="formSuccess"><i class="fas fa-check-circle" style="margin-right:8px"></i> Thank you! We've received your message and will contact you within 1 hour.</div>
+    <div class="form-error" id="formError"><i class="fas fa-exclamation-circle" style="margin-right:8px"></i> Something went wrong. Please call us directly at <a href="tel:+919424430664" style="color:#ff6b6b">+91 94244 30664</a>.</div>
   </div>
+
   <div class="contact-info-wrap reveal right">
-    <div><div class="gold-line"></div><h2>Our <em>Details</em></h2><p>We're always ready to help. Reach us by phone, email, or visit us in Bhopal.</p></div>
+    <div><div class="gold-line"></div><h2>Our <em>Details</em></h2><p>We're always ready to help. Reach us by phone, email, or WhatsApp anytime.</p></div>
     <ul class="contact-detail-list">
-      <li><div class="cd-icon"><i class="fas fa-phone"></i></div><div><div class="cd-label">Phone / WhatsApp</div><div class="cd-value"><a href="tel:+919424430664">+91 94244 30664</a><br><a href="https://wa.me/919424430664" target="_blank" style="font-size:12px;color:rgba(255,255,255,.5);display:inline-flex;align-items:center;gap:6px;margin-top:4px;"><i class="fab fa-whatsapp" style="color:#25D366"></i> Chat on WhatsApp</a></div></div></li>
-      <li><div class="cd-icon"><i class="fas fa-envelope"></i></div><div><div class="cd-label">Email Address</div><div class="cd-value"><a href="mailto:info@goodwillbharat.com">info@goodwillbharat.com</a></div></div></li>
-      <li><div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="cd-label">Service Area</div><div class="cd-value">Bhopal &amp; all areas of Madhya Pradesh</div></div></li>
-      <li><div class="cd-icon"><i class="fas fa-bolt"></i></div><div><div class="cd-label">Emergency Service</div><div class="cd-value"><a href="EmergencyFloorCleaningService.html" style="color:var(--gold)">Available 24/7</a><div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:3px;">Flood, water damage &amp; urgent cleaning</div></div></div></li>
+      <li>
+        <div class="cd-icon"><i class="fas fa-phone"></i></div>
+        <div>
+          <div class="cd-label">Phone / WhatsApp</div>
+          <div class="cd-value">
+            <a href="tel:+919424430664">+91 94244 30664</a><br>
+            <a href="https://wa.me/919424430664" target="_blank" style="font-size:12px;color:rgba(255,255,255,.5);display:inline-flex;align-items:center;gap:6px;margin-top:4px;">
+              <i class="fab fa-whatsapp" style="color:#25D366"></i> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="cd-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <div class="cd-label">Email Address</div>
+          <div class="cd-value"><a href="mailto:Help.goodwillhome@gmail.com">Help.goodwillhome@gmail.com</a></div>
+        </div>
+      </li>
+      <li>
+        <div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <div class="cd-label">Service Area</div>
+          <div class="cd-value">Bhopal &amp; all areas of Madhya Pradesh</div>
+        </div>
+      </li>
+      <li>
+        <div class="cd-icon"><i class="fas fa-bolt"></i></div>
+        <div>
+          <div class="cd-label">Emergency Service</div>
+          <div class="cd-value">
+            <a href="EmergencyFloorCleaningService.html" style="color:var(--gold)">Available 24/7</a>
+            <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:3px;">Flood, water damage &amp; urgent cleaning</div>
+          </div>
+        </div>
+      </li>
     </ul>
-    <div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px;">Working Hours</div><div class="hours-grid"><div class="hours-row"><span class="hours-day">Monday - Sunday</span><span class="hours-time">Open 24 hrs</span></div><div class="hours-row"><span class="hours-day">Emergency</span><span class="hours-time">Always Available</span></div></div></div>
-    <div class="map-embed"><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px;">Find Us</div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117832.08038046!2d77.3218!3d23.2599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c428f8fd68fbd%3A0x2155716d572d4f8!2sBhopal%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Bhopal Location"></iframe></div>
-    <div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px;">Follow Us</div><div class="social-row"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://wa.me/919424430664" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+    <div>
+      <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px;">Working Hours</div>
+      <div class="hours-grid">
+        <div class="hours-row"><span class="hours-day">Monday - Sunday</span><span class="hours-time">Open 24 hrs</span></div>
+        <div class="hours-row"><span class="hours-day">Emergency</span><span class="hours-time">Always Available</span></div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px;">Follow Us</div>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/919424430664" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1241,26 +1320,123 @@ footer::before {
 <footer>
   <div class="footer-grid">
     <div class="footer-brand reveal">
-      <a href="index.html" class="logo-link" style="margin-bottom:12px; display:inline-flex;"><img src="images/Logo.jpeg" alt="GOODWILL BHARAT™" class="logo-img" onerror="this.style.display='none'"><div class="logo-text">GOODWILL BHARAT™<em>Sofa, Carpet &amp; Tile Cleaning</em></div></a>
+      <a href="index.html" class="logo-link" style="margin-bottom:12px; display:inline-flex;">
+        <img src="images/Logo.jpeg" alt="GOODWILL BHARAT™" class="logo-img" onerror="this.style.display='none'">
+        <div class="logo-text">GOODWILL BHARAT™<em>Sofa, Carpet &amp; Tile Cleaning</em></div>
+      </a>
       <p>Creating cleaner, healthier spaces with eco-friendly techniques and unmatched attention to detail in Bhopal, Madhya Pradesh.</p>
-      <div class="social-row"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://wa.me/919424430664" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/919424430664" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
     </div>
-    <div class="footer-col reveal" style="transition-delay:.1s"><h4>Quick Links</h4><ul><li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a></li><li><a href="sofa-cleaning.html"><i class="fas fa-chevron-right"></i> Sofa Cleaning</a></li><li><a href="carpet-cleaning.html"><i class="fas fa-chevron-right"></i> Carpet Cleaning</a></li><li><a href="contactus.html"><i class="fas fa-chevron-right"></i> Contact</a></li></ul></div>
-    <div class="footer-col reveal" style="transition-delay:.2s"><h4>Contact &amp; Hours</h4><ul><li><a href="tel:+919424430664"><i class="fas fa-phone"></i> +91 94244 30664</a></li><li><a href="https://wa.me/919424430664" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></li><li><span><i class="fas fa-map-marker-alt"></i> Bhopal, Madhya Pradesh</span></li><li><span><i class="fas fa-clock"></i> Mon – Sun: 24 Hours</span></li></ul></div>
+    <div class="footer-col reveal" style="transition-delay:.1s">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+        <li><a href="sofa-cleaning.html"><i class="fas fa-chevron-right"></i> Sofa Cleaning</a></li>
+        <li><a href="carpet-cleaning.html"><i class="fas fa-chevron-right"></i> Carpet Cleaning</a></li>
+        <li><a href="contactus.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal" style="transition-delay:.2s">
+      <h4>Contact &amp; Hours</h4>
+      <ul>
+        <li><a href="tel:+919424430664"><i class="fas fa-phone"></i> +91 94244 30664</a></li>
+        <li><a href="https://wa.me/919424430664" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></li>
+        <li><span><i class="fas fa-map-marker-alt"></i> Bhopal, Madhya Pradesh</span></li>
+        <li><span><i class="fas fa-clock"></i> Mon – Sun: 24 Hours</span></li>
+      </ul>
+    </div>
   </div>
-  <div class="footer-bottom"><p>© 2026 GOODWILL BHARAT™ Upholstery Cleaners Carpet &amp; Tile® — All rights reserved.</p><div class="footer-links-row"><a href="index.html">Home</a><a href="contactus.html">Free Quote</a><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+  <div class="footer-bottom">
+    <p>© 2026 GOODWILL BHARAT™ Upholstery Cleaners Carpet &amp; Tile® — All rights reserved.</p>
+    <div class="footer-links-row">
+      <a href="index.html">Home</a>
+      <a href="contactus.html">Free Quote</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
 </footer>
 
 <script>
-window.addEventListener('scroll', () => { document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60); });
-function toggleMenu() { const m = document.getElementById('mobileMenu'), o = document.getElementById('mOverlay'), t = document.getElementById('menuToggle'); const open = m.classList.contains('open'); m.classList.toggle('open', !open); o.classList.toggle('open', !open); t.classList.toggle('open', !open); document.body.style.overflow = open ? '' : 'hidden'; }
-function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.getElementById('mOverlay').classList.remove('open'); document.getElementById('menuToggle').classList.remove('open'); document.body.style.overflow = ''; }
-function toggleMobileSub(el) { el.classList.toggle('open'); el.nextElementSibling.classList.toggle('show'); }
+// ===== HEADER SCROLL =====
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ===== MOBILE MENU =====
+function toggleMenu() {
+  const m = document.getElementById('mobileMenu'), o = document.getElementById('mOverlay'), t = document.getElementById('menuToggle');
+  const open = m.classList.contains('open');
+  m.classList.toggle('open', !open);
+  o.classList.toggle('open', !open);
+  t.classList.toggle('open', !open);
+  document.body.style.overflow = open ? '' : 'hidden';
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('mOverlay').classList.remove('open');
+  document.getElementById('menuToggle').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function toggleMobileSub(el) {
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('show');
+}
 window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMenu(); });
-function handleSubmit(e) { e.preventDefault(); const btn = e.target.querySelector('.form-submit'); btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...'; btn.disabled = true; setTimeout(() => { e.target.style.display = 'none'; document.getElementById('formSuccess').classList.add('show'); }, 1500); }
-const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+
+// ===== FORM SUBMIT WITH EMAILJS =====
+function handleSubmit(e) {
+  e.preventDefault();
+
+  const btn = document.getElementById('submitBtn');
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  btn.disabled = true;
+
+  // Form data collect karna
+  const templateParams = {
+    user_name:        document.getElementById('user_name').value,
+    user_phone:       document.getElementById('user_phone').value,
+    user_email:       document.getElementById('user_email').value || 'Not provided',
+    service_required: document.getElementById('service_required').value,
+    preferred_date:   document.getElementById('preferred_date').value || 'Not specified',
+    preferred_time:   document.getElementById('preferred_time').value || 'Not specified',
+    user_address:     document.getElementById('user_address').value || 'Not provided',
+    message:          document.getElementById('message').value || 'No additional message',
+    to_email:         'Help.goodwillhome@gmail.com'
+  };
+
+  // EmailJS se email bhejna
+  // YOUR_SERVICE_ID aur YOUR_TEMPLATE_ID ko apne EmailJS dashboard se replace karo
+  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+    .then(function(response) {
+      // Success
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+      document.getElementById('formError').classList.remove('show');
+    }, function(error) {
+      // Error
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      btn.disabled = false;
+      document.getElementById('formError').classList.add('show');
+      console.error('EmailJS Error:', error);
+    });
+}
+
+// ===== SCROLL REVEAL =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
-```
